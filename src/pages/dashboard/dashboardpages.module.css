@@ -1,0 +1,107 @@
+.divider{
+    background-color: 'white';
+    height: 2px;
+    width: 90%;
+    margin: auto;
+}
+
+.container_texts {
+    background-color: #7E0B10;
+    border-radius: 20px;
+    min-height: 80vh;
+    width: 90% !important;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.text_titles {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-transform: uppercase;
+}
+
+
+.text_administrador {
+    margin-top: 40px;
+}
+
+
+.text_subtitle {
+    margin-top:10px;
+    font-weight: 300;
+}
+
+
+.grid_column {
+    display:flex;
+    /* justify-content: center; */
+    flex-direction:column !important;
+    align-items: center;
+}
+
+.grid_column12{
+    display:flex;
+    flex-direction:column !important;
+    align-items: flex-start;
+    padding-left: 8rem;
+}
+
+
+.text_titles_edit {
+    display: flex;
+    justify-content: flex-start;
+    text-transform: uppercase;
+    width: 70%;
+    font-weight: bold;
+    margin: 1rem 0 !important;
+   
+}
+
+.text_title_edit_player{
+ padding-left: 8rem;
+}
+.text_titles_player_edit{
+    margin: 0 !important;
+}
+.input_text {
+    width: 70%;
+    border-radius: 20px;
+    border: none;
+    height: 40px;
+    padding-left: 1rem;
+    margin: 10px 0;
+}
+
+
+.input_url {
+    width: 85%;
+}
+
+.textarea{
+    min-height: 200px;
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.textareaUS {
+    width: 90%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.players{
+    display: flex;
+    flex-direction: column !important;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}

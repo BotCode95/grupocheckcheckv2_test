@@ -1,0 +1,6 @@
+export { Nosotros } from './Nosotros'
+export { Entrevistas } from './Entrevistas'
+export { Viajes } from './Viajes'
+export { Faq } from './Faq'
+export { Inicio } from './Inicio'
+export { Error404 } from './Error404'

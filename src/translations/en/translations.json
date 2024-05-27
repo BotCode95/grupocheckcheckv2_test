@@ -1,0 +1,151 @@
+{
+    "navbar": {
+        "pages": {
+            "home" : "HOME",
+            "us": "US",
+            "interview": "INTERVIEWS",
+            "trips": "TRIPS"
+        },
+        "buttonsuscribe": "Apply here",
+        "changeLanguage" : "Translate the website into spanish"
+    },
+    "part_of_family": {
+        "title": "THE XX FAMILY",
+        "title_strong": "BE PART OF",
+        "button": "apply here"
+    },
+    "aboutme": {
+        "title": "About us",
+        "description_title": "Check Check is a company dedicated to the teaching and backing of poker players, who play SPIN and GO mode.",
+        "description_details": "We are the bridge to the world and we always open doors to communities to see this fantastic sector.",
+        "description_details_2": "Good energy, commitment, attitude and passion for this job are the mainstay of this project we want you to be part of."
+    },
+    "latest_videos": {
+        "title": "LATEST VIDEOS",
+        "buttonsuscribe" : "subscribe to youtube"
+    },
+    "search": {
+        "title": "What are we looking for?",
+        "items": [
+            "Effort",
+            "Energy",
+            "Honesty",
+            "Passion",
+            "Discipline",
+            "Commitment",
+            "Motivation",
+            "Responsibility"
+        ]
+    },
+    "offer": {
+        "title": "what do we offer?",
+        "items": [
+            "Passion",
+            "Loyalty",
+            "Respect",
+            "Patience",
+            "Training",
+            "Discipline",
+            "Learning",
+            "Commitment",
+            "Professionalism",
+            "Company"
+        ]
+    },
+    "followed_in_social_media": "FOLLOW US IN",
+    "players": [
+        {
+            "player_name": "giuseppe",
+            "description": "Check Check co-founder.",
+            "type_of_game": "Regular",
+            "values_game": "250/500",
+            "coach": "Coach",
+            "especialities": "en 50s 100s 500s 1000s",
+            "image": "giuseppe"
+        },
+      {
+        "player_name": "Emiliano",
+        "description": "Check Check co-founder.",
+        "type_of_game": "Regular",
+        "values_game": "100/250/500",
+        "coach": "Coach SPIN ULTRA",
+        "especialities": "in $50 $100s",
+        "image": "emiliano"
+      },
+      {
+        "player_name": "Mathias",
+        "description": "Check Check co-founder.",
+        "type_of_game": "Regular",
+        "values_game": "50/100",
+        "coach": "Coach SPIN ULTRA",
+        "especialities": "in $20s",
+        "image": "mathias"
+      },
+        {
+            "player_name": "Elson",
+            "description": "Member of XX family. Passionate about poker. Regular 50/100 Coach in 10-20s",
+            "type_of_game": "Regular",
+            "values_game": "50/100",
+            "coach": "Coach",
+            "especialities": "in $10 $20s",
+            "image": "elson"
+        },
+        {
+            "player_name": "Mariano",
+            "description": "Member of XX family. Passionate about poker.",
+            "type_of_game": "Regular",
+            "values_game": "50s",
+            "coach": "Coach",
+            "especialities": "in 5-10s",
+            "image": "mariano"
+        },
+      {
+        "player_name": "Hernán",
+        "description": "Member of XX family. Passionate about poker.",
+        "type_of_game": "Regular",
+        "values_game": "50s",
+        "coach": "Coach SPIN ULTRA",
+        "especialities": "in $3 $5s",
+        "image": "hernan"
+      },
+      {
+        "player_name": "José",
+        "description": "Member of XX family. Passionate about poker.",
+        "type_of_game": "Regular",
+        "values_game": "20s",
+        "coach": "Coach SPIN ULTRA",
+        "especialities": "in $0.25 $1 $3s",
+        "image": "jose"
+      },
+      {
+        "player_name": "Nicolás",
+        "description": "Member of XX family. Passionate about poker.",
+        "type_of_game": "Regular",
+        "values_game": "",
+        "coach": "Coach SPIN ULTRA",
+        "especialities": "in 3-5-10s",
+        "coach": "Coach REG SPEED",
+        "especialities": "in $3 $5 $10s",
+        "image": "nicolas"
+      }
+    ],
+    "trips": {
+        "title" : "TRIPS",
+        "rosario": "ROSARIO CAP"
+    },
+    "contact": {
+        "title": "Membership Application",
+        "description": "Complete the following information to become part of our stable. It is crucial to provide accurate Email and review it carefully, as you will receive a message there with further instructions to proceed with the interview.",
+        "name": "First Name",
+        "lastName": "Last Name",
+        "email": "Contact Email",
+        "countryResidence": "Country of Residence",
+        "xpPoker": "What is your experience in poker, especially in spins?",
+        "hsWeeks": "How many hours per week are you willing to dedicate to both playing and studying?",
+        "dispCoachig": "Are you available to attend coaching sessions?",
+        "previousStable": "Have you belonged to any previous stables?",
+        "isTrue": "Yes",
+        "buttonSend": "Send",
+        "isEnglish": true
+    }
+}

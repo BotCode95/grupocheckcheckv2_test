@@ -1,0 +1,15 @@
+{
+    "contact": {
+        "title": "Membership Application",
+        "description": "Complete the following information to become part of our stable. It is crucial to provide accurate Email and review it carefully, as you will receive a message there with further instructions to proceed with the interview.",
+        "name": "First Name",
+        "lastName": "Last Name",
+        "email": "Contact Email",
+        "countryResidence": "Country of Residence",
+        "xpPoker": "What is your experience in poker, especially in spins?",
+        "hsWeeks": "How many hours per week are you willing to dedicate to both playing and studying?",
+        "dispCoachig": "Are you available to attend coaching sessions?",
+        "previousStable": "Have you belonged to any previous stables?",
+        "buttonSend": "Send"
+    }
+}

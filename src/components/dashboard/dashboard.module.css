@@ -1,0 +1,17 @@
+
+
+.containerVideos{
+    min-height: 400px;
+}
+
+.containerEditVideosLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    background-color: #7E0B10;
+    border-radius: 20px;
+    margin-bottom: 1rem !important;
+
+}

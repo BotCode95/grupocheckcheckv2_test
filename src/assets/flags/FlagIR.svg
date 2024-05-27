@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42" height="28" viewBox="0 0 42 28">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectángulo_1670" data-name="Rectángulo 1670" width="42" height="28" rx="5" transform="translate(1228 1376)" fill="#fff"/>
+    </clipPath>
+    <clipPath id="clip-Mesa_de_trabajo_11">
+      <rect width="42" height="28"/>
+    </clipPath>
+  </defs>
+  <g id="Mesa_de_trabajo_11" data-name="Mesa de trabajo – 11" clip-path="url(#clip-Mesa_de_trabajo_11)">
+    <rect width="42" height="28" fill="#fff"/>
+    <g id="Enmascarar_grupo_10" data-name="Enmascarar grupo 10" transform="translate(-1228 -1376)" clip-path="url(#clip-path)">
+      <g id="Grupo_507" data-name="Grupo 507" transform="translate(1225 1376)">
+        <rect id="Rectángulo_1671" data-name="Rectángulo 1671" width="15.999" height="28" transform="translate(0 0)" fill="#3f9a64"/>
+        <rect id="Rectángulo_1672" data-name="Rectángulo 1672" width="15.999" height="28" transform="translate(15.999 0)" fill="#fff"/>
+        <rect id="Rectángulo_1673" data-name="Rectángulo 1673" width="16.002" height="28" transform="translate(31.998 0)" fill="#ed7e46"/>
+      </g>
+    </g>
+  </g>
+</svg>

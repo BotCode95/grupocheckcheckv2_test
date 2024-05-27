@@ -1,0 +1,15 @@
+{
+    "contact": {
+        "title": "Solicitud de Ingreso",
+        "description": "Completa los datos para formar parte de nuestro establo (Es muy importante completar correctamente su Email y revisarlo ya que ahi recibirar un mensaje con el contacto para poder continuar con la entrevista)",
+        "name": "Nombre",
+        "lastName": "Apellido",
+        "email": "Correo de contacto",
+        "countryResidence": "País de Residencia",
+        "xpPoker": "¿Cuál es tu experiencia en el poker y en particular en spins?",
+        "hsWeeks": "¿Cuántas horas semanales estás dispuesto a dedicarle tanto al juego como estudio?",
+        "dispCoachig": "¿Tenés disponibilidad para asistir a los coaching?",
+        "previousStable": "¿Perteneciste a algún establo anteriormente?",
+        "buttonSend": "Enviar"
+    }
+}

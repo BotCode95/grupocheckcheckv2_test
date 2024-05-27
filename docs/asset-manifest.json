@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "https://checkcheckpoker.com/static/css/main.566f47a8.css",
+    "main.js": "https://checkcheckpoker.com/static/js/main.50224ac2.js",
+    "static/js/787.7b03f868.chunk.js": "https://checkcheckpoker.com/static/js/787.7b03f868.chunk.js",
+    "static/media/mathias.jpg": "https://checkcheckpoker.com/static/media/mathias.05a3bd99b03ab1c1c4fc.jpg",
+    "static/media/emiliano.jpg": "https://checkcheckpoker.com/static/media/emiliano.209ab1dfabd92d63e24e.jpg",
+    "static/media/nicolas.jpg": "https://checkcheckpoker.com/static/media/nicolas.784d61b8a3fe6ca77e9e.jpg",
+    "static/media/mariano.jpg": "https://checkcheckpoker.com/static/media/mariano.2df2f36ead2efd210050.jpg",
+    "static/media/guiseppe.jpg": "https://checkcheckpoker.com/static/media/guiseppe.dba1152310c085811d14.jpg",
+    "static/media/xx.png": "https://checkcheckpoker.com/static/media/xx.e3c3fc3ad225c830042a.png",
+    "static/media/jose.jpg": "https://checkcheckpoker.com/static/media/jose.ea4cfd5acb3992b80ba9.jpg",
+    "static/media/hernan.jpg": "https://checkcheckpoker.com/static/media/hernan.58f17ec1ed8a433c75b2.jpg",
+    "static/media/elson.jpg": "https://checkcheckpoker.com/static/media/elson.51de166d99bd2f725cd8.jpg",
+    "static/media/404.svg": "https://checkcheckpoker.com/static/media/404.ff0ad1f0e1d594361107d94fcad601ad.svg",
+    "static/media/bg.png": "https://checkcheckpoker.com/static/media/bg.33a5f488d7ebcdb738fc.png",
+    "static/media/casino-chip.svg": "https://checkcheckpoker.com/static/media/casino-chip.25110f25f14e0e65bf976e12eaa499c0.svg",
+    "static/media/logo_check.svg": "https://checkcheckpoker.com/static/media/logo_check.ce76084eca86be2d6c232afeb835f5a2.svg",
+    "static/media/poker-cards.svg": "https://checkcheckpoker.com/static/media/poker-cards.e9b3850b6312e99ee8f14bb28320143c.svg",
+    "static/media/FlagAR.svg": "https://checkcheckpoker.com/static/media/FlagAR.3dd319bc127b3e5bc2bb8cba50bc2848.svg",
+    "static/media/instagram.svg": "https://checkcheckpoker.com/static/media/instagram.969008d1933f4a47ffd3478c71945c76.svg",
+    "static/media/gmail.svg": "https://checkcheckpoker.com/static/media/gmail.f46094b0d732d516ea69534af57745fa.svg",
+    "static/media/twitter.svg": "https://checkcheckpoker.com/static/media/twitter.c62b697a438432569b2fc5ede346b0ad.svg",
+    "static/media/twitch.svg": "https://checkcheckpoker.com/static/media/twitch.8aeaa9b7c7c67460ecce1dfa8bb8caee.svg",
+    "static/media/youtube.svg": "https://checkcheckpoker.com/static/media/youtube.a43a674396f89e01bbb32c94014f38df.svg",
+    "index.html": "https://checkcheckpoker.com/index.html",
+    "main.566f47a8.css.map": "https://checkcheckpoker.com/static/css/main.566f47a8.css.map",
+    "main.50224ac2.js.map": "https://checkcheckpoker.com/static/js/main.50224ac2.js.map",
+    "787.7b03f868.chunk.js.map": "https://checkcheckpoker.com/static/js/787.7b03f868.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.566f47a8.css",
+    "static/js/main.50224ac2.js"
+  ]
+}

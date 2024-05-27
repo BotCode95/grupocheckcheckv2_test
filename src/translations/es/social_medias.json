@@ -1,0 +1,36 @@
+{
+    "primary_social_medias": [
+        {
+            "page_name": "grupocheckcheck",
+            "social_media": "twitch",
+            "primary_color": "#864FF6",
+            "link" : "https://www.twitch.tv/grupocheckcheck"
+        },
+        {
+            "page_name": "grupocheckcheck",
+            "social_media": "instagram",
+            "primary_color": "#EE2A7B",
+            "link" : "https://www.instagram.com/grupocheckcheck/?hl=es-la"
+        },
+        {
+            "page_name": "grupocheckcheck",
+            "social_media": "youtube",
+            "primary_color": "#BC0F0F",
+            "link" : "https://www.youtube.com/@grupocheckcheck1467"
+        }
+],
+"secondary_social_medias": [
+    {
+        "page_name": "grupocheckcheck@gmail.com",
+        "social_media": "gmail",
+        "primary_color": "#D80E0E",
+        "link" : "mailto:grupocheckcheck@gmail.com@correo.com?Subject=Contacto"
+    },
+    {
+        "page_name": "grupocheckcheck",
+        "social_media": "twitter",
+        "primary_color": "#7BC5F8",
+        "link" : "https://twitter.com/GrupoCheckCheck"
+    }
+]
+}
