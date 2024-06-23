@@ -1,78 +1,127 @@
-import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material'
-import logo_check from '../../assets/logo_check.svg'
+import logo_check_check from '../../assets/logo_checkcheck.svg'
+import logo_facebook from '../../assets/redes/facebook.svg'
+import logo_instagram from '../../assets/redes/instagram.svg'
+import logo_twitter from '../../assets/redes/twitter.svg'
 import { Language } from '../Language/Language'
 import { useTranslation } from 'react-i18next'
+import { Grid } from '@mui/material'
+import { ButtonInscribite } from '../UI/Buttons/ButtonInscribite'
 export const MenuMobile = () => {
-	const [menuOpen, setMenuOpen] = useState(true)
 	const [t] = useTranslation('global')
 
+	const menuHandle = () => {
+		const btn = document.querySelector('.navbar_mobile_btn')
+		const nav = document.querySelector('.navbar')
+		const width = document.body.clientWidth
+		if (width < 992) {
+			btn?.classList.toggle('open')
+			nav?.classList.toggle('open')
+		}
+	}
+
 	return (
-		<div>
-			<div
-				onClick={() => setMenuOpen(!menuOpen)}
-				className={` ${
-					menuOpen
-						? 'menu-only-mobile row justify-content-between'
-						: 'icono-close visible-menu'
-				}`}
+		<div className='navbar_mobile text-white'>
+			<Grid
+				container
+				className='navbar_mobile_container'
+				display={'flex'}
+				justifyContent={'space-between'}
+				alignItems={'center'}
 			>
-				<div className="col-6">
-					<MenuIcon sx={{ fontSize: 50, color: '#7E0B10' }} />
-				</div>
-				<div className="col-6" style={{ paddingLeft: '40px' }}>
-					<img src={logo_check} alt="logo_check" width={110} />
-				</div>
-			</div>
-			<div className={` nav-menu-hamburg ${menuOpen ? '' : 'visible-menu'} `}>
-				<div className="row icono-imagen-show">
-					<div
-						className="col-9 d-flex justify-content-between"
-						style={{ textAlign: 'left' }}
+				<Grid item sm={6} className='navbar_mobile_logo'>
+					<NavLink
+						aria-current="page"
+						to={'/'}
 					>
+						<img src={logo_check_check} alt="logo_check" width={70}/>
+					</NavLink>
+				</Grid>
+				<Grid item sm={6}
+					display={'flex'}
+					justifyContent={'center'}
+					alignItems={'center'}
+					gap={2}
+				>
+					<div className='navbar_mobile_signup'>
 						<NavLink
-							className="nav-link link_navbar"
-							aria-current="page"
-							to="/"
+							to="/aplicar"
+							rel="noreferrer"
+							style={{ textDecoration: 'none' }}
 						>
-							<img src={logo_check} alt="logo_check" width={100} />
+							<ButtonInscribite />
 						</NavLink>
-						<Language />
 					</div>
-					<div className="col-3">
-						<span
-							onClick={() => setMenuOpen(!menuOpen)}
-							className={` ${menuOpen ? 'icono-close' : ''}`}
+					<div className="navbar_mobile_btn" onClick={menuHandle}>
+						<div className="navbar_mobile_btn_burger"></div>
+					</div>
+				</Grid>
+			</Grid>
+			<div className='navbar_mobile_links'>
+				<ul className='d-flex gap-3 list-unstyled m-0'>
+					<li>
+						<NavLink
+							to='/teams'
+							aria-current="page"
+							className='navbar_link'
+							style={({ isActive }) => ({
+								color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
+							})}
 						>
-							<CloseIcon
-								sx={{ fontSize: 50, color: '#7E0B10', cursor: 'pointer' }}
-							/>
-						</span>
-					</div>
+							{t('navbar.pages.team')}
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to='/testimonials'
+							aria-current="page"
+							className='navbar_link'
+							style={({ isActive }) => ({
+								color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
+							})}
+						>
+							{t('navbar.pages.testimonials')}
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to='/faq'
+							aria-current="page"
+							className='navbar_link'
+							style={({ isActive }) => ({
+								color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
+							})}
+						>
+							{t('navbar.pages.faq')}
+						</NavLink>
+					</li>
+				</ul>
+				<div className='navbar_mobile_language'>
+					<Language />
 				</div>
-				<nav>
-					<ul className="navbar-nav">
-						<li className="nav-item nav-menu">
-							<NavLink
-								to="/nosotros"
-								className="nav-link active"
-								onClick={() => setMenuOpen(!menuOpen)}
-							>
-								{t('navbar.pages.us')}
-							</NavLink>
-						</li>
-						<li className="nav-item nav-menu">
-							<NavLink
-								to="/viajes"
-								className="nav-link"
-								onClick={() => setMenuOpen(!menuOpen)}
-							>
-								{t('navbar.pages.trips')}
-							</NavLink>
-						</li>
-					</ul>
-				</nav>
+				<div className='navbar_mobile_social'>
+					<a
+						href='https://facebook.com'
+						target='_blank'
+						rel="noreferrer"
+					>
+						<img src={logo_facebook} alt='Facebook' width={32} />
+					</a>
+					<a
+						href='https://instagram.com'
+						target='_blank'
+						rel="noreferrer"
+					>
+						<img src={logo_instagram} alt='Instagram' width={32} />
+					</a>
+					<a
+						href='https://x.com'
+						target='_blank'
+						rel="noreferrer"
+					>
+						<img src={logo_twitter} alt='Twitter' width={32} />
+					</a>
+				</div>
 			</div>
 		</div>
 	)

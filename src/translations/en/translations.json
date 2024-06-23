@@ -4,7 +4,11 @@
             "home" : "HOME",
             "us": "US",
             "interview": "INTERVIEWS",
-            "trips": "TRIPS"
+            "trips": "TRIPS",
+            "team": "TEAM",
+            "testimonials": "TESTIMONIALS",
+            "faq": "FAQ",
+            "blog": "BLOG"
         },
         "buttonsuscribe": "Apply here",
         "changeLanguage" : "Translate the website into spanish"

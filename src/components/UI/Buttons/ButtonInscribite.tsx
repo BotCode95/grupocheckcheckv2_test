@@ -6,6 +6,7 @@ export const ButtonInscribite = () => {
 		<Button
 			variant="contained"
 			style={{ backgroundColor: '#7E0B10', color: 'white' }}
+			className='buttonInscribite'
 		>
 			{t('navbar.buttonsuscribe')}
 		</Button>

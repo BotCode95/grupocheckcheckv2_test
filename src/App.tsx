@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import { Inicio, Viajes, Nosotros, Entrevistas, Faq, Error404 } from './pages'
+import './App2.css'
+import { Inicio, Viajes, Nosotros, Faq, Error404 } from './pages'
 import { UIState } from './context/UIContext/'
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute'
 import { UserProvider } from './context/UserContext'

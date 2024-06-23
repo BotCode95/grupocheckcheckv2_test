@@ -29,8 +29,8 @@ export const Language = () => {
 	}
 	return (
 		<Tooltip title={t('navbar.changeLanguage')}>
-			<button className="button_language" onClick={() => handleLanguage()}>
-				<Flag country={language.flag} size={40} />
+			<button className="language_button" onClick={() => handleLanguage()}>
+				<Flag country={language.flag} size={24} />
 			</button>
 		</Tooltip>
 	)
