@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.116c9641.css",
-    "main.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.05ffb184.js",
-    "static/js/787.88a8d568.chunk.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.88a8d568.chunk.js",
+    "main.css": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.93279d4e.css",
+    "main.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.800db37e.js",
+    "static/js/787.7b03f868.chunk.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.7b03f868.chunk.js",
     "static/media/mathias.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/mathias.05a3bd99b03ab1c1c4fc.jpg",
     "static/media/emiliano.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/emiliano.209ab1dfabd92d63e24e.jpg",
     "static/media/nicolas.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/nicolas.784d61b8a3fe6ca77e9e.jpg",
@@ -29,12 +29,12 @@
     "static/media/twitch.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/twitch.8aeaa9b7c7c67460ecce1dfa8bb8caee.svg",
     "static/media/youtube.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/youtube.a43a674396f89e01bbb32c94014f38df.svg",
     "index.html": "https://botcode95.github.io/grupocheckcheckV2/index.html",
-    "main.116c9641.css.map": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.116c9641.css.map",
-    "main.05ffb184.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.05ffb184.js.map",
-    "787.88a8d568.chunk.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.88a8d568.chunk.js.map"
+    "main.93279d4e.css.map": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.93279d4e.css.map",
+    "main.800db37e.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.800db37e.js.map",
+    "787.7b03f868.chunk.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.7b03f868.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.116c9641.css",
-    "static/js/main.05ffb184.js"
+    "static/css/main.93279d4e.css",
+    "static/js/main.800db37e.js"
   ]
 }
