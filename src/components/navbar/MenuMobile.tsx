@@ -7,6 +7,7 @@ import { Language } from '../Language/Language'
 import { useTranslation } from 'react-i18next'
 import { Grid } from '@mui/material'
 import { ButtonInscribite } from '../UI/Buttons/ButtonInscribite'
+import { RedSocialList } from '../RedSocial/RedSocialList'
 export const MenuMobile = () => {
 	const [t] = useTranslation('global')
 
@@ -58,7 +59,7 @@ export const MenuMobile = () => {
 				</Grid>
 			</Grid>
 			<div className='navbar_mobile_links'>
-				<ul className='d-flex gap-3 list-unstyled m-0'>
+				<ul className='d-flex gap-3 list-unstyled m-0 navbar_mobile_links_list'>
 					<li>
 						<NavLink
 							to='/teams'
@@ -100,27 +101,7 @@ export const MenuMobile = () => {
 					<Language />
 				</div>
 				<div className='navbar_mobile_social'>
-					<a
-						href='https://facebook.com'
-						target='_blank'
-						rel="noreferrer"
-					>
-						<img src={logo_facebook} alt='Facebook' width={32} />
-					</a>
-					<a
-						href='https://instagram.com'
-						target='_blank'
-						rel="noreferrer"
-					>
-						<img src={logo_instagram} alt='Instagram' width={32} />
-					</a>
-					<a
-						href='https://x.com'
-						target='_blank'
-						rel="noreferrer"
-					>
-						<img src={logo_twitter} alt='Twitter' width={32} />
-					</a>
+					<RedSocialList redes={['facebook', 'instagram', 'twitter']} width={32} />
 				</div>
 			</div>
 		</div>

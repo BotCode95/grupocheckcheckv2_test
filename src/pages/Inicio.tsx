@@ -1,14 +1,16 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Button, Grid } from '@mui/material'
 import { Navbar } from '../components/navbar/Navbar'
 import { SpinnerImg } from '../components/UI/Spinners/SpinnerImg'
 import { UIContext } from '../context/UIContext/UIContext'
 import { TextsContext } from '../context/Dashboard/Texts'
 import banner from '../assets/bannerCutted.jpg'
-import coachingJpg from '../assets/icons/coaching.jpg'
-import desarrolloJpg from '../assets/icons/desarrollo.jpg'
-import growthJpg from '../assets/icons/growth.jpg'
-import placeholderJpg from '../assets/bannerPlaceholder.jpg'
+import coachingImg from '../assets/icons/coaching.jpg'
+import desarrolloImg from '../assets/icons/desarrollo.jpg'
+import growthImg from '../assets/icons/growth.jpg'
+import supportImg from '../assets/icons/support.png'
+import personImg from '../assets/icons/person.png'
+import videoplayerImg from '../assets/icons/videoplayer.png'
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Footer } from '../components/UI/Footer'
@@ -16,6 +18,7 @@ import { Footer } from '../components/UI/Footer'
 
 export const Inicio = () => {
 	const { loading, loadingHome } = useContext(UIContext)
+	const [bannerLoaded, setBannerLoaded] = useState<boolean>(false)
 	const isLoadingOK: string | null = localStorage.getItem('loading')
 	const [t] = useTranslation('global')
 
@@ -31,6 +34,10 @@ export const Inicio = () => {
 		getTextByLanguage(language)
 	}, [language])
 
+	const handleImageLoad = () => {
+		setBannerLoaded(true)
+	}
+	console.log({bannerLoaded, isLoadingOK, loading})
 	return (
 		<div className="home">
 			{loading ? (
@@ -50,7 +57,7 @@ export const Inicio = () => {
 				<>
 					<Navbar />
 					<div className='home_banner_container'>
-						<img src={banner} />
+						<img src={banner} onLoad={handleImageLoad} />
 					</div>
 					<main>
 						<h1>Welcome to TeamCheckCheck</h1>
@@ -62,21 +69,21 @@ export const Inicio = () => {
 							<h2>Why choose TeamCheckCheck?</h2>
 							<Grid container className='home_why_list'>
 								<Grid item md={4} sm={12} className="home_why_list_item">
-									<img src={coachingJpg} alt='Expert Coaching' width={110} />
+									<img src={coachingImg} alt='Expert Coaching' width={110} />
 									<h3>Expert Coaching</h3>
 									<p>
 										{'Our team comprises top-tier coaches with years of experience in Spin & Go poker. They\'re not just instructors; they\'re mentors committed to helping you reach your full potential.'}
 									</p>
 								</Grid>
 								<Grid item md={4} sm={12} className="home_why_list_item">
-									<img src={desarrolloJpg} alt='Unleash Your Potential' width={116} />
+									<img src={desarrolloImg} alt='Unleash Your Potential' width={116} />
 									<h3>Unleash Your Potential</h3>
 									<p>
 										{'We believe in unlocking the hidden talents within every player. Our mission is to equip you with the knowledge, strategies, and mindset to excel at the poker table and beyond.'}
 									</p>
 								</Grid>
 								<Grid item md={4} sm={12} className="home_why_list_item">
-									<img src={growthJpg} alt='No Limits, Only Growth' width={116}/>
+									<img src={growthImg} alt='No Limits, Only Growth' width={116}/>
 									<h3>No Limits, Only Growth</h3>
 									<p>
 										{'At Teamcheckcheck, we\'re dedicated to fostering a culture of continuous improvement. We\'ll never hold you back – instead, we\'ll empower you to maximize your skill sets and achieve success on your terms.'}
@@ -91,17 +98,17 @@ export const Inicio = () => {
 							</p>
 							<div className='home_community_list'>
 								<div className='home_community_list_item'>
-									<img src={placeholderJpg} width={137} />
+									<img src={videoplayerImg} width={100} />
 									<h4>Extensive Video Library</h4>
 									<p>Over 1000 videos, with a minimun of 20 nex videos per month</p>
 								</div>
 								<div className='home_community_list_item'>
-									<img src={placeholderJpg} width={137} />
+									<img src={personImg} width={100} />
 									<h4>Regular Group Coaching</h4>
 									<p>A staking system with 14 levels designated to help players of all abilities succeed.</p>
 								</div>
 								<div className='home_community_list_item'>
-									<img src={placeholderJpg} width={137} />
+									<img src={supportImg} width={100} />
 									<h4>Dedicately support</h4>
 									<p>A private Skype group for each player with 4 experienced managers</p>
 								</div>

@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
-import { CardRedSocial } from '../CardRedes/CardRedSocial'
-import redessoc from '../../data/redes_sociales.json'
-import { TituloSeccion } from '../UI/Titulos/TituloSeccion'
+// import { CardRedSocial } from '../CardRedes/CardRedSocial'
+// import redessoc from '../../data/redes_sociales.json'
+// import { TituloSeccion } from '../UI/Titulos/TituloSeccion'
 import { useTranslation } from 'react-i18next'
 
 export const RedesSociales = () => {
@@ -12,7 +12,7 @@ export const RedesSociales = () => {
 			paddingTop={5}
 			className="padding_left90 banner_redes"
 		>
-			<TituloSeccion
+			{/* <TituloSeccion
 				titulo={t('followed_in_social_media')}
 				variant={'h5'}
 				fontWeigth={'bold'}
@@ -36,7 +36,7 @@ export const RedesSociales = () => {
 					justifyContent={'center'}
 				>
 					{/* spacing={2}  en desktop se veia mejor*/}
-					<Grid item xs={0} md={2}></Grid>
+			{/* <Grid item xs={0} md={2}></Grid>
 					{redessoc.redesSecundarias.map((red, index) => (
 						<Grid item xs={10} md={4} key={index}>
 							<CardRedSocial
@@ -49,7 +49,7 @@ export const RedesSociales = () => {
 					))}
 					<Grid item xs={0} md={2}></Grid>
 				</Grid>
-			</Grid>
+			</Grid>  */}
 		</Grid>
 	)
 }

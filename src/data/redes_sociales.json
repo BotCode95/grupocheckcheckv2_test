@@ -1,37 +1,39 @@
-{
-    "redesPrincipales": [
+[
         {
-            "nombrePagina": "grupocheckcheck",
+            "nombrePagina": "Grupo Check Check",
             "redSocial": "twitch",
             "colorPrincipal": "#864FF6",
             "link" : "https://www.twitch.tv/grupocheckcheck"
         },
         {
-            "nombrePagina": "grupocheckcheck",
+            "nombrePagina": "Grupo Check Check",
             "redSocial": "instagram",
             "colorPrincipal": "#EE2A7B",
             "link" : "https://www.instagram.com/grupocheckcheck/?hl=es-la"
         },
         {
-            "nombrePagina": "grupocheckcheck",
+            "nombrePagina": "Grupo Check Check",
             "redSocial": "youtube",
             "colorPrincipal": "#BC0F0F",
             "link" : "https://www.youtube.com/@CheckCheckPoker"
             
+        },
+        {
+            "nombrePagina": "grupocheckcheck@gmail.com",
+            "redSocial": "gmail",
+            "colorPrincipal": "#D80E0E",
+            "link" : "mailto:grupocheckcheck@gmail.com@correo.com?Subject=Contacto"
+        },
+        {
+            "nombrePagina": "Grupo Check Check",
+            "redSocial": "twitter",
+            "colorPrincipal": "#7BC5F8",
+            "link" : "https://twitter.com/GrupoCheckCheck"
+        },
+        {
+            "nombrePagina": "Grupo Check Check",
+            "redSocial": "facebook",
+            "colorPrincipal": "#7BC5F8",
+            "link" : "https://facebook.com/GrupoCheckCheck"
         }
-],
-"redesSecundarias": [
-    {
-        "nombrePagina": "grupocheckcheck@gmail.com",
-        "redSocial": "gmail",
-        "colorPrincipal": "#D80E0E",
-        "link" : "mailto:grupocheckcheck@gmail.com@correo.com?Subject=Contacto"
-    },
-    {
-        "nombrePagina": "grupocheckcheck",
-        "redSocial": "twitter",
-        "colorPrincipal": "#7BC5F8",
-        "link" : "https://twitter.com/GrupoCheckCheck"
-    }
 ]
-}

@@ -1,6 +1,6 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import './App2.css'
+// import './App.css'
 import { Inicio, Viajes, Nosotros, Faq, Error404 } from './pages'
 import { UIState } from './context/UIContext/'
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute'
@@ -11,6 +11,7 @@ import { LatestVideos } from './pages/dashboard/LatestVideos'
 import { TextsEdit } from './pages/dashboard/TextsEdit'
 import { TextsProvider } from './context/Dashboard/Texts/TextsProvider'
 import { AplicarAqui } from './pages/AplicarAqui'
+import { Team } from './pages/Team'
 
 function App() {
 	return (
@@ -22,6 +23,9 @@ function App() {
 							<Routes>
 								<Route path="/">
 									<Route index element={<Inicio />} />
+									<Route path="/teams" element={<Team />} />
+
+
 									<Route path="/nosotros" element={<Nosotros />} />
 									{/* <Route path="/entrevistas" element={<Entrevistas />} /> */}
 									<Route path="/viajes" element={<Viajes />} />

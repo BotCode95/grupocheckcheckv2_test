@@ -6,6 +6,7 @@ import logo_instagram from '../../assets/redes/instagram.svg'
 import logo_twitter from '../../assets/redes/twitter.svg'
 import { useTranslation } from 'react-i18next'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import { RedSocialList } from '../RedSocial/RedSocialList'
 
 export const Footer = () => {
 	const [t] = useTranslation('global')
@@ -101,35 +102,7 @@ export const Footer = () => {
 				<div className='footer_hr'></div>
 				<Grid container>
 					<Grid item md={6} sm={12} className='footer_social'>
-						<ul className='d-flex gap-3 list-unstyled m-0 navbar_social_list'>
-							<li>
-								<a
-									href='https://facebook.com'
-									target='_blank'
-									rel="noreferrer"
-								>
-									<img src={logo_facebook} alt='Facebook' width={24} />
-								</a>
-							</li>
-							<li>
-								<a
-									href='https://instagram.com'
-									target='_blank'
-									rel="noreferrer"
-								>
-									<img src={logo_instagram} alt='Instagram' width={24} />
-								</a>
-							</li>
-							<li>
-								<a
-									href='https://x.com'
-									target='_blank'
-									rel="noreferrer"
-								>
-									<img src={logo_twitter} alt='Twitter' width={24} />
-								</a>
-							</li>
-						</ul>
+						<RedSocialList redes={['facebook', 'instagram', 'twitter']} />
 					</Grid>
 					<Grid item md={6} sm={12} className='footer_copy'>
 						{`© ${new Date().getFullYear()} Check Check Group. All rights reserved`}

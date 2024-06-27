@@ -1,0 +1,4 @@
+.red_social_list li:hover {
+  opacity: 0.5;
+  transition: opacity .2s ease-in-out;
+}

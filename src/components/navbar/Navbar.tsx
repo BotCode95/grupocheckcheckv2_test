@@ -6,9 +6,7 @@ import { ScroolToTop } from '../UI/Scrool/ScroolToTop'
 import { useTranslation } from 'react-i18next'
 import { Language } from '../Language/Language'
 import logo_check_check from '../../assets/logo_checkcheck.svg'
-import logo_facebook from '../../assets/redes/facebook.svg'
-import logo_instagram from '../../assets/redes/instagram.svg'
-import logo_twitter from '../../assets/redes/twitter.svg'
+import { RedSocialList } from '../RedSocial/RedSocialList'
 
 export const Navbar = () => {
 	const [t] = useTranslation('global')
@@ -75,6 +73,18 @@ export const Navbar = () => {
 								{t('navbar.pages.faq')}
 							</NavLink>
 						</li>
+						<li>
+							<NavLink
+								to='/blog'
+								aria-current="page"
+								className='navbar_link'
+								style={({ isActive }) => ({
+									color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
+								})}
+							>
+								{t('navbar.pages.blog')}
+							</NavLink>
+						</li>
 					</ul>
 				</Grid>
 				<Grid 
@@ -85,35 +95,7 @@ export const Navbar = () => {
 					alignItems={'center'}
 				>
 					<div className='navbar_social'>
-						<ul className='d-flex gap-3 list-unstyled m-0 navbar_social_list'>
-							<li>
-								<a
-									href='https://facebook.com'
-									target='_blank'
-									rel="noreferrer"
-								>
-									<img src={logo_facebook} alt='Facebook' width={24} />
-								</a>
-							</li>
-							<li>
-								<a
-									href='https://instagram.com'
-									target='_blank'
-									rel="noreferrer"
-								>
-									<img src={logo_instagram} alt='Instagram' width={24} />
-								</a>
-							</li>
-							<li>
-								<a
-									href='https://x.com'
-									target='_blank'
-									rel="noreferrer"
-								>
-									<img src={logo_twitter} alt='Twitter' width={24} />
-								</a>
-							</li>
-						</ul>
+						<RedSocialList redes={['facebook', 'instagram', 'twitter']}/>
 					</div>
 					<div className='navbar_signup'>
 						<NavLink
