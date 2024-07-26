@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.0f1e059c.css",
+    "main.css": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.a1cf80aa.css",
     "main.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.86cb5c63.js",
     "static/js/787.88a8d568.chunk.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.88a8d568.chunk.js",
     "static/media/mathias.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/mathias.05a3bd99b03ab1c1c4fc.jpg",
@@ -32,12 +32,12 @@
     "static/media/youtube.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/youtube.a43a674396f89e01bbb32c94014f38df.svg",
     "index.html": "https://botcode95.github.io/grupocheckcheckV2/index.html",
     "static/media/twitch.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/twitch.4bb1d0ecdb4f24cfd1f4eec00109bd5a.svg",
-    "main.0f1e059c.css.map": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.0f1e059c.css.map",
+    "main.a1cf80aa.css.map": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.a1cf80aa.css.map",
     "main.86cb5c63.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.86cb5c63.js.map",
     "787.88a8d568.chunk.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.88a8d568.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f1e059c.css",
+    "static/css/main.a1cf80aa.css",
     "static/js/main.86cb5c63.js"
   ]
 }

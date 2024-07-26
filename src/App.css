@@ -78,6 +78,38 @@ h1, h2, h3, h4, h5, h6 {
   width: 100px;
   margin-bottom: 1em;
 }
+
+@media screen and (max-width: 992px) {
+  .intro_content {
+    justify-content: flex-start;
+  }
+  .intro_logo img {
+    width: 200px;
+    margin-bottom: 2em;
+    margin-top: 5em;
+  }
+
+  .intro_lang {
+    gap: 20px;
+  }
+
+  .intro_lang li {
+    font-size: 0.7em;
+  }
+
+  .intro_lang li img {
+    width: 75px;
+  }
+
+  .intro_crosses {
+    bottom: -8em;
+    left: -10em;
+  }
+
+  .intro_crosses img {
+    width: 500px;
+  }
+}
 /* INTRO END */
 
 /* Navbar */
