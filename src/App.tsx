@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 // import './App.css'
 import { Inicio, Faq, Error404, Team, Testimonials, Trips, Intro, Signup } from './pages'
@@ -17,7 +17,7 @@ function App() {
 			<UIState>
 				<TextsProvider>
 					<div className="App">
-						<BrowserRouter>
+						<HashRouter>
 							<Routes>
 								<Route path="/">
 									<Route index element={<Intro />} />
@@ -57,7 +57,7 @@ function App() {
 									<Route path="*" element={<Error404 />} />
 								</Route>
 							</Routes>
-						</BrowserRouter>
+						</HashRouter>
 					</div>
 				</TextsProvider>
 			</UIState>
