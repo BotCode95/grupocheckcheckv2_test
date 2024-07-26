@@ -3,8 +3,10 @@ import { Grid, Typography, Button } from '@mui/material'
 import { Navbar } from '../components/navbar/Navbar'
 import Erro404Img from '../assets/404.svg'
 import background from '../assets/bg.png'
+import { useLanguage } from '../hooks/useLanguage'
 
 export const Error404 = () => {
+	const lang = useLanguage()
 	return (
 		<div
 			style={{
@@ -73,7 +75,7 @@ export const Error404 = () => {
 						style={{ borderRadius: '10px' }}
 					>
 						<Link
-							to={'/'}
+							to={`/${lang}`}
 							style={{
 								color: 'white',
 								textDecoration: 'none',

@@ -1,15 +1,17 @@
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Grid } from '@mui/material'
 import { ButtonInscribite } from '../UI/Buttons/ButtonInscribite'
 import { MenuMobile } from './MenuMobile'
 import { ScroolToTop } from '../UI/Scrool/ScroolToTop'
 import { useTranslation } from 'react-i18next'
-import { Language } from '../Language/Language'
 import logo_check_check from '../../assets/logo_checkcheck.svg'
 import { RedSocialList } from '../RedSocial/RedSocialList'
+import { useLanguage } from '../../hooks/useLanguage'
 
 export const Navbar = () => {
 	const [t] = useTranslation('global')
+	const lang = useLanguage()
+
 	return (
 		<nav className='navbar'>
 			<MenuMobile />
@@ -24,9 +26,9 @@ export const Navbar = () => {
 				>
 					<NavLink
 						aria-current="page"
-						to={'/'}
+						to={`/${lang}/`}
 					>
-						<img src={logo_check_check} alt="logo_check" width={100}/>
+						<img src={logo_check_check} alt={t('header.title') || ''} width={100}/>
 					</NavLink>
 				</Grid>
 				<Grid 
@@ -39,50 +41,50 @@ export const Navbar = () => {
 					<ul className='navbar_links d-flex gap-3 list-unstyled m-0'>
 						<li>
 							<NavLink
-								to='/teams'
+								to={`/${lang}/teams`}
 								aria-current="page"
 								className='navbar_link'
 								style={({ isActive }) => ({
 									color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 								})}
 							>
-								{t('navbar.pages.team')}
+								{t('header.pages.team')}
 							</NavLink>
 						</li>
 						<li>
 							<NavLink
-								to='/testimonials'
+								to={`/${lang}/testimonials`}
 								aria-current="page"
 								className='navbar_link'
 								style={({ isActive }) => ({
 									color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 								})}
 							>
-								{t('navbar.pages.testimonials')}
+								{t('header.pages.testimonials')}
 							</NavLink>
 						</li>
 						<li>
 							<NavLink
-								to='/faq'
+								to={`/${lang}/faq`}
 								aria-current="page"
 								className='navbar_link'
 								style={({ isActive }) => ({
 									color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 								})}
 							>
-								{t('navbar.pages.faq')}
+								{t('header.pages.faq')}
 							</NavLink>
 						</li>
 						<li>
 							<NavLink
-								to='/blog'
+								to={`/${lang}/blog`}
 								aria-current="page"
 								className='navbar_link'
 								style={({ isActive }) => ({
 									color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 								})}
 							>
-								{t('navbar.pages.blog')}
+								{t('header.pages.blog')}
 							</NavLink>
 						</li>
 					</ul>
@@ -95,19 +97,16 @@ export const Navbar = () => {
 					alignItems={'center'}
 				>
 					<div className='navbar_social'>
-						<RedSocialList redes={['facebook', 'instagram', 'twitter']}/>
+						<RedSocialList redes={['twitter', 'instagram', 'facebook']} />
 					</div>
 					<div className='navbar_signup'>
 						<NavLink
-							to="/aplicar"
+							to={`/${lang}/signup`}
 							rel="noreferrer"
 							style={{ textDecoration: 'none' }}
 						>
 							<ButtonInscribite />
 						</NavLink>
-					</div>
-					<div className='navbar_language'>
-						<Language />
 					</div>
 				</Grid>
 			</Grid>

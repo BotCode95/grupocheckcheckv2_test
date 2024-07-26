@@ -1,82 +1,80 @@
 import { NavLink } from 'react-router-dom'
 import { Divider, Grid, IconButton, InputBase, Paper } from '@mui/material'
 import logo_checkcheck from '../../assets/logo_checkcheck.svg'
-import logo_facebook from '../../assets/redes/facebook.svg'
-import logo_instagram from '../../assets/redes/instagram.svg'
-import logo_twitter from '../../assets/redes/twitter.svg'
 import { useTranslation } from 'react-i18next'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { RedSocialList } from '../RedSocial/RedSocialList'
+import { useLanguage } from '../../hooks/useLanguage'
 
 export const Footer = () => {
 	const [t] = useTranslation('global')
+	const lang = useLanguage()
 	return (
 		<div className='footer'>
 			<div className='footer_container'>
 				<Grid container>
 					<Grid item md={3} sm={12} className='footer_contact'>
 						<NavLink
-							to='/'
+							to={`/${lang}/`}
 							aria-current="page"
 							className='footer_links_link'
 							style={({ isActive }) => ({
 								color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 							})}
 						>
-							<img src={logo_checkcheck} alt="Logo TeamCheckCheck" width={100} />
+							<img src={logo_checkcheck} alt={t('header.title') || ''} width={100} />
 						</NavLink>
-						<p>+1 (7635) 547-12-97</p>
-						<a href={'mailto:support@checkcheck.com'} target='_blank' rel='noreferrer'>support@checkcheck.com</a>
+						<p><a href={`mailto:${t('footer.email')}`} target='_blank' rel='noreferrer'>{t('footer.email')}</a></p>
 					</Grid>
 					<Grid item md={6} sm={12} className='footer_links'>
-						<h6>Quick Links</h6>
+						<h6>{t('footer.links')}</h6>
 						<ul>
 							<li>
 								<NavLink
-									to='/teams'
+									to={`/${lang}/teams`}
 									aria-current="page"
 									className='footer_links_link'
 									style={({ isActive }) => ({
 										color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 									})}
 								>
-									{t('navbar.pages.team')}
+									{t('header.pages.team')}
 								</NavLink>
 							</li>
 							<li>
 								<NavLink
-									to='/testimonials'
+									to={`/${lang}/testimonials`}
 									aria-current="page"
 									className='footer_links_link'
 									style={({ isActive }) => ({
 										color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 									})}
 								>
-									{t('navbar.pages.testimonials')}
+									{t('header.pages.testimonials')}
 								</NavLink>
 							</li>
 							<li>
 								<NavLink
-									to='/faq'
+									to={`/${lang}/faq`}
 									aria-current="page"
 									className='footer_links_link'
 									style={({ isActive }) => ({
 										color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 									})}
 								>
-									{t('navbar.pages.faq')}
+									{t('header.pages.faq')}
 								</NavLink>
 							</li>
 							<li>
 								<NavLink
-									to='/blog'
+									to={`/${lang}/blog`}
 									aria-current="page"
 									className='footer_links_link'
 									style={({ isActive }) => ({
 										color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 									})}
 								>
-									{t('navbar.pages.blog')}
+									{t('header.pages.blog')}
 								</NavLink>
 							</li>
 						</ul>

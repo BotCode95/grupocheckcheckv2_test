@@ -8,7 +8,7 @@ export const ButtonInscribite = () => {
 			style={{ backgroundColor: '#7E0B10', color: 'white' }}
 			className='buttonInscribite'
 		>
-			{t('navbar.buttonsuscribe')}
+			{t('header.buttonCTA')}
 		</Button>
 	)
 }

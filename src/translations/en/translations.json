@@ -1,155 +1,250 @@
 {
-    "navbar": {
+    "header": {
+        "title": "Team Check Check",
         "pages": {
-            "home" : "HOME",
-            "us": "US",
-            "interview": "INTERVIEWS",
-            "trips": "TRIPS",
+            "home": "HOME",
+            "us": "NOSOTROS",
+            "interview": "ENTREVISTAS",
+            "trips":"TRIPS",
             "team": "TEAM",
             "testimonials": "TESTIMONIALS",
             "faq": "FAQ",
             "blog": "BLOG"
         },
-        "buttonsuscribe": "Apply here",
-        "changeLanguage" : "Translate the website into spanish"
+        "buttonCTA": "Sign up",
+        "socialMedia": {
+            "instagram": "https://www.instagram.com/grupocheckcheck/",
+            "youtube": "https://www.youtube.com/channel/UC6B_Q2labPyTD1iXEAG1DeA",
+            "twitch": "https://www.twitch.tv/grupocheckcheck"
+        }
     },
-    "part_of_family": {
-        "title": "THE XX FAMILY",
-        "title_strong": "BE PART OF",
-        "button": "apply here"
+    "footer": {
+        "email": "grupocheckcheck@gmail.com",
+        "links": "Quick Links",
+        "contact": "Contact",
+        "inputs": {
+            "name": "Name",
+            "email": "Email",
+            "message": "Message",
+            "button": "Send"
+        },
+        "socialMedia": {
+            "instagram": "https://www.instagram.com/grupocheckcheck/",
+            "youtube": "https://www.youtube.com/channel/UC6B_Q2labPyTD1iXEAG1DeA",
+            "twitch": "https://www.twitch.tv/grupocheckcheck",
+            "x": "https://twitter.com/grupocheckcheck",
+            "tiktok": "https://www.tiktok.com/@pokercheckcheck"
+        }
     },
-    "aboutme": {
-        "title": "About us",
-        "description_title": "Check Check is a company dedicated to the teaching and backing of poker players, who play SPIN and GO mode.",
-        "description_details": "We are the bridge to the world and we always open doors to communities to see this fantastic sector.",
-        "description_details_2": "Good energy, commitment, attitude and passion for this job are the mainstay of this project we want you to be part of."
+    "intro": {
+        "urlSpanish": "grupocheckcheckpoker.com",
+        "urlEnglish": "teamcheckcheck.com"
     },
-    "latest_videos": {
-        "title": "LATEST VIDEOS",
-        "buttonsuscribe" : "subscribe to youtube"
+    "home": {
+        "title": "Welcome to teamcheckcheck",
+        "description": "At teamcheckcheck we're more than just a backing platform – we're a community dedicated to empowering poker players worldwide. Whether you're a novice looking to refine your skills or a seasoned player aiming for mastery, our elite coaches from around the globe are here to guide you every step of the way.",
+        "why": {
+            "title": "Why Choose Teamcheckcheck?",
+            "coaching": {
+                "title": "Expert Coaching",
+                "description": "Our team comprises top-tier coaches with years of experience in Spin & Go poker. They're not just instructors; they're mentors committed to helping you reach your full potential."
+            },
+            "potential": {
+                "title": "Unleash Your Potential",
+                "description": "We believe in unlocking the hidden talents within every player. Our mission is to equip you with the knowledge, strategies, and mindset to excel at the poker table and beyond."
+            },
+            "growth": {
+                "title": "No Limits, Only Growth",
+                "description": "At Teamcheckcheck, we're dedicated to fostering a culture of continuous improvement. We'll never hold you back – instead, we'll empower you to maximize your skill sets and achieve success on your terms."
+            }
+        },
+        "community": {
+            "title": "Join Our Community Today",
+            "description": "Whether you're aiming for the top ranks or seeking to sharpen your edge, Teamcheckcheck is your ultimate destination for poker excellence. Take the first step towards realizing your true potential and join our vibrant community of poker enthusiasts.",
+            "library": {
+                "title": "Extensive Video Library",
+                "description": "Over 1000 videos, with a minimun of 20 nex videos per month"
+            },
+            "coaching": {
+                "title": "Regular Group Coaching",
+                "description": "A staking system with 14 levels designated to help players of all abilities succeed."
+            },
+            "support": {
+                "title": "Dedicately support",
+                "description": "A private Skype group for each player with 4 experienced managers"
+            }
+        },
+        "cta": {
+            "title": "Are you ready to elevate your game? Let's embark on this journey together.",
+            "subtitle": "Your success starts here.",
+            "button": "Sign up"
+        }
     },
-    "search": {
-        "title": "What are we looking for?",
-        "items": [
-            "Effort",
-            "Energy",
-            "Honesty",
-            "Passion",
-            "Discipline",
-            "Commitment",
-            "Motivation",
-            "Responsibility"
-        ]
+    "team": {
+        "title": "TEAM",
+        "description": "XX is a company dedicated to teaching and banking players who are dedicated to POKER in the SPIN AND GO modality."
     },
-    "offer": {
-        "title": "what do we offer?",
-        "items": [
-            "Passion",
-            "Loyalty",
-            "Respect",
-            "Patience",
-            "Training",
-            "Discipline",
-            "Learning",
-            "Commitment",
-            "Professionalism",
-            "Company"
-        ]
+    "bannerCTA": {
+        "title": "Your success starts here",
+        "button": "Sign up"
     },
-    "followed_in_social_media": "FOLLOW US IN",
     "players": [
         {
-            "player_name": "giuseppe",
-            "description": "Check Check co-founder.",
+            "player_name": "Giuseppe",
+            "description": "Check Check co-founder.\nUno de los streamers principales de XX.\n\nHace 10 años que soy profesional del poker y soy co-fundador de la gran familia XX.\n\nSiempre me interesaron los naipes y empecé jugando como todos, con poca experiencia hasta que me dí cuenta de la pasión que tenía por este deporte.\n\nSí, considero que es un deporte de elite y para estar en lo más alto hay que tener disciplina, sacrificio, responsabilidad y sobre todo estar fuerte de la cabeza para afrontar día a día esta profesión.\n\nSi no lo crees no podés dedicarte al poker.\n\nEs por ello que doy lo mejor de mí para sentarme en la mesa con los mejores.\n\nMtt en $50-$2100",
             "type_of_game": "Regular",
             "values_game": "250/500",
             "coach": "Coach",
             "especialities": "en 50s 100s 500s 1000s",
-            "image": "giuseppe"
+            "image": "https://i.ibb.co/tH8nSsT/giusenew2023.jpg",
+            "flag": "https://flagcdn.com/ar.svg"
         },
-      {
-        "player_name": "Emiliano",
-        "description": "Check Check co-founder.",
-        "type_of_game": "Regular",
-        "values_game": "100/250/500",
-        "coach": "Coach SPIN ULTRA",
-        "especialities": "in $50 $100s",
-        "image": "emiliano"
-      },
-      {
-        "player_name": "Mathias",
-        "description": "Check Check co-founder.",
-        "type_of_game": "Regular",
-        "values_game": "50/100",
-        "coach": "Coach SPIN ULTRA",
-        "especialities": "in $20s",
-        "image": "mathias"
-      },
         {
-            "player_name": "Elson",
-            "description": "Member of XX family. Passionate about poker. Regular 50/100 Coach in 10-20s",
-            "type_of_game": "Regular",
-            "values_game": "50/100",
+            "player_name": "Emiliano",
+            "description": "Check Check co-founder.\n.\nI have been a poker professional for 15 years and I am co-founder of the great XX family.\n\nI was always interested in mental and strategy games.\n\nI started playing what is called closed poker with friends and when the holdem mode appeared it caught my attention.\n\nIn my free time I like to play sports, play paddle tennis, soccer, have dinner with friends, travel and meditate.\n\nWhat I like most about XX is that we created it from scratch and there are many people who are in the company that I love very much.\n\nMy greatest achievement in poker is the financial freedom to be able to do what I want and be able to live doing what I like.",
+            "type_of_game": "",
+            "values_game": "",
+            "coach": "Streamer Spin Max",
+            "especialities": "",
+            "image": "https://i.ibb.co/mNbVmKZ/EMILIANO.jpg",
+            "flag": "https://flagcdn.com/ar.svg"
+        },
+        {
+            "player_name": "Mathias",
+            "description": "Check Check co-founder.\n.\nHace 5 años que soy profesional del poker y soy uno de los co-fundadores de la familia XX.\n\nDesde chico miraba poker con mi papa, me enseñó las reglas, practicábamos sumado a mi gusto por la competencia en cualquier ámbito me llevó a querer descubrir más sobre este juego.\n\nEn mis tiempos libre disfruto de estar con amigos, familia, jugar al fútbol, disfrutar de la vida básicamente.\n\nLo que me gusta de Check Check son todos los momentos vividos desde que comenzó y fuimos creciendo paso a paso todos juntos.\n\nMe guardo en mi corazón cada momento en el que le pusimos cada gota de esfuerzo a este proyecto.\n\nEl mayor logro en el poker sin dudas es poder vivir de esta hermosa profesión.",
+            "type_of_game": "Spin Flash y Normal",
+            "values_game": "50",
             "coach": "Coach",
-            "especialities": "in $10 $20s",
-            "image": "elson"
+            "especialities": "5 - 10$",
+            "image": "https://i.ibb.co/qWYbsCD/matiasnew2023.jpg",
+            "flag": "https://flagcdn.com/ar.svg"
+        },
+        {
+            "player_name": "Juan",
+            "description": "I started playing when I was 19 at university (18 years ago now! How crazy.\n\nI immediately saw that it attracted me and that it could truly become a source of income.\n\nI'm amazed by every aspect of the team, honestly.\n\nThe professional team that comprises it is amazing.\n\nHow they get involved and make all kinds of tools available to the players, how they are interested in each player's personal situation, and they always individually look for the best spot for each player.\n\nI chose it because I really trust the judgment of Ryan, who was the one who made me the offer, and everyone showed blind faith and confidence in me to join me, so I decided to join with all my will to get the best out of each of the players with those who work.\n\nToday, without a doubt my first goal as a coach is to ensure that as many XX players climb to the highest levels and feel that they are finding their best version.\n\nAs a player, continue perfecting my game in spin&go and feel that I continue to improve myself every day, since we never stop learning and that is the beauty of poker.",
+            "type_of_game": "Spin Normal",
+            "values_game": "$50-$100",
+            "coach": "Coach",
+            "especialities": "25 - 50 - 100$",
+            "image": "https://i.ibb.co/sFM0tvn/Juan.jpg",
+            "flag": "https://flagcdn.com/es.svg"
         },
         {
             "player_name": "Mariano",
-            "description": "Member of XX family. Passionate about poker.",
-            "type_of_game": "Regular",
-            "values_game": "50s",
+            "description": "Check check is the school that trusted me, trained me from initial fees and allowed me to grow in the world of poker by providing me with technical knowledge and behaviors typical of a professional.\n\n3 and a half years have passed since that moment when I decided to dedicate myself fully to this profession.\n\nIn my free time, I share moments with my family, my friends and I go to see my club: San Lorenzo.\n\nWhat I like most about the stable is the meritocracy policy that those who run it preach, since they grant many opportunities to those who are truly committed.\n\nFor this reason and because we are always at the forefront of poker to be able to improve, I chose it.\n\nMy current goal is to continue improving myself, becoming a better player, coach and streamer day by day, always looking to the highest rates that will be to come.\n\n\nCoach SPIN in $10s",
+            "type_of_game": "Spin Flash",
+            "values_game": "$50",
             "coach": "Coach",
-            "especialities": "in 5-10s",
-            "image": "mariano"
+            "especialities": "2 - 5$",
+            "image": "https://i.ibb.co/hD7kQMN/ILLUSTRATOR-EU.png",
+            "flag": "https://flagcdn.com/ar.svg"
         },
-      {
-        "player_name": "Hernán",
-        "description": "Member of XX family. Passionate about poker.",
-        "type_of_game": "Regular",
-        "values_game": "50s",
-        "coach": "Coach SPIN ULTRA",
-        "especialities": "in $3 $5s",
-        "image": "hernan"
-      },
-      {
-        "player_name": "José",
-        "description": "Member of XX family. Passionate about poker.",
-        "type_of_game": "Regular",
-        "values_game": "20s",
-        "coach": "Coach SPIN ULTRA",
-        "especialities": "in $0.25 $1 $3s",
-        "image": "jose"
-      },
-      {
-        "player_name": "Nicolás",
-        "description": "Member of XX family. Passionate about poker.",
-        "type_of_game": "Regular",
-        "values_game": "",
-        "coach": "Coach SPIN ULTRA",
-        "especialities": "in 3-5-10s",
-        "coach": "Coach REG SPEED",
-        "especialities": "in $3 $5 $10s",
-        "image": "nicolas"
-      }
+        {
+            "player_name": "Hernán",
+            "description": "I have been part of Check Check for two years.\n\nI like poker because it is an exciting game that doesn't allow you to stop learning and improving.\n\nI started playing because I discovered that it is a game of skill and I began to realize that with a few thoughts I could identify what was happening on the table and that it no longer depended on what cards were on the table and what I had in my hand.\n\nThe day a friend taught me this I fell in love with poker.\n\nIn my free time I like to spend it with my family and friends, traveling and getting to know new places and cultures.\n\nWhat I like most about CheckCheck is the atmosphere.\n\nFrom the first to the last, the energy that runs through the company is positive, of helping, motivating, teaching, here no one asks for anything in return and everyone does it with passion and love.\n\nMy greatest achievement in life is believing in myself.\n\nKnowing how to dismiss all opinions that went against my objectives, values ​​and beliefs.\n\nThanks to this I always kept trying, and I continue fighting for my dreams.\n\nRegular 10-25s\n\nCoach SPIN at $0.25 $1 $3s",
+            "type_of_game": "Spin Flash",
+            "values_game": "$25",
+            "coach": "Coach",
+            "especialities": "1 - 3$",
+            "image": "https://i.ibb.co/pyq915M/hernan.jpg",
+            "flag": "https://flagcdn.com/ar.svg"
+        },
+        {
+            "player_name": "Miguel",
+            "description": "Soy el Mental Coach de Check Check.\n\nLlevo 4 años como profesional.\n\nEl poker es un deporte que me encanta jugar.\n\nLa competencia me genera hermosas emociones y grandes desafíos.\n\nA través del coaching y el entrenamiento mental aporto herramientas para la mejora de los jugadores.\n\nCreo que es un área que se trabaja muy poco y considero que el 90% de los resultados depende de nuestras capacidades mentales.\n\nEn mis tiempos libres, la verdad son muy pocos, me gusta y disfruto estar con mi familia.\n\nCheck Check es el cambio de perspectiva a una actividad que siempre se la vio como marginal en la sociedad.\n\nProfesionalismo, seriedad, proyección, disciplina son conceptos instalados en el póker y XX tiene mucho que ver para que así fuera.\n\nMi mayor objetivo es colaborar para el crecimiento de este deporte.",
+            "type_of_game": "",
+            "values_game": "",
+            "coach": "Mental Coach",
+            "especialities": "",
+            "image": "https://i.ibb.co/pj0V23w/miguel.jpg",
+            "flag": "https://flagcdn.com/ar.svg"
+        },
+        {
+            "player_name": "Juanse",
+            "description": "Soy el preparador físico de Check Check, hace un año que estoy en la empresa.\n\nMe interesó mucho el mundo del poker ya que no sabía que era un deporte de alto rendimiento y por eso decidí aportar mi conocimiento.\n\nMi principal objetivo es brindarles a los jugadores, protocolos para que mejoren su SALUD, que tengan su nivel energético a tope y que puedan lograr su mejor versión física.\n\nElegí trabajar en XX por la calidad de las personas que lo integran.\n\nDesde su cúpula, quieren que logren sus sueños con ellos, que sean mejores jugadores, los capacitan y les dan todo el apoyo necesario para que lo logren.",
+            "type_of_game": "",
+            "values_game": "",
+            "coach": "Coach Físico Training",
+            "especialities": "",
+            "image": "https://i.ibb.co/VB76LLt/Juanse-Rec.jpg",
+            "flag": "https://flagcdn.com/ar.svg"
+        }
     ],
-    "trips": {
-        "title" : "TRIPS",
-        "rosario": "ROSARIO CAP"
+    "testimonials": {
+        "title": "Testimonials",
+        "testimonials": [
+            {
+                "title": "Highly recommended",
+                "description": "I started playing al $5 stakes and quicky immersed myself in the game and coaching. Within about 11 months, I was comfortably beating $100 stakes. The knowledge and support from the coaches have been crucial in my progress, backed by hard work. I´ve been with them for",
+                "author": "PATRICIO",
+                "image": "https://i.ibb.co/mHb3LWg/patricio.jpg"
+            },
+            {
+                "title": "Outstanding",
+                "description": "I chose to join the Check Check poker stable because of its outstanding reputation and supportive environment. The stable provides top-notch coaching, resources, and a community of like-minded players who are all dedicated to improving their game. Being a part of Check Check has significantly boosted my poker skills and confidence. The camaraderie and collective drive for success make it an inspiring place to be. I love being here because it feels like a family where everyone pushes each other to achieve their best, both on and off the table",
+                "author": "MARIANO G.",
+                "image": "https://i.ibb.co/1djjVfZ/mariano.png"
+            },
+            {
+                "title": "Im happy",
+                "description": "Check check is the school that trusted me, trained me from initial fees and allowed me to grow in the world of poker by providing me with technical knowledge and behaviors typical of a professional. I strongly highlight the meritocracy policy proclaimed by those who run the stable since they grant many opportunities to those who are truly committed. THANK YOU for developing me in this discipline that makes me happy!", 
+                "author": "JOAQUIN",
+                "image": "https://i.ibb.co/gT0M34c/joaquin.jpg"
+            }       
+        ]
+    },
+    "faq": {
+        "title": "FAQ",
+        "questions": [
+            {
+                "title": "Do you release new mockups often?",
+                "description": "Yes, new mockups are released every month.\n\n The goal of Superdope is to release high-end mockups constantly so you can never run out of mockup ideas to showcase your app or your designs."
+            },
+            {
+                "title": "Is Superdope free?",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Suspendisse alesuada lacus ex, sit amet blandit leo lobortis eget."
+            },
+            {
+                "title": "Can I use Superdope for commercial use?",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Suspendisse alesuada lacus ex, sit amet blandit leo lobortis eget."
+            },
+            {
+                "title": "Can I cancel my subscription anytime?",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Suspendisse alesuada lacus ex, sit amet blandit leo lobortis eget."
+            },
+            {
+                "title": "Can I cancel my subscription anytime?",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Suspendisse alesuada lacus ex, sit amet blandit leo lobortis eget."
+            }
+        ]
     },
     "contact": {
-        "title": "Membership Application",
-        "description": "Complete the following information to become part of our stable. It is crucial to provide accurate Email and review it carefully, as you will receive a message there with further instructions to proceed with the interview.",
-        "name": "First Name",
-        "lastName": "Last Name",
-        "email": "Contact Email",
-        "countryResidence": "Country of Residence",
-        "xpPoker": "What is your experience in poker, especially in spins?",
-        "hsWeeks": "How many hours per week are you willing to dedicate to both playing and studying?",
-        "dispCoachig": "Are you available to attend coaching sessions?",
-        "previousStable": "Have you belonged to any previous stables?",
-        "isTrue": "Yes",
-        "buttonSend": "Send",
-        "isEnglish": true
+        "title": "Sign up",
+        "form": {
+            "fullName": "Full Name",
+            "birthdate": "Date of birth",
+            "countryResidence": "Country of Residence",
+            "email": "Email address",
+            "skype": "Skype Username",
+            "pokerSites": "What Poker Sites do you play on?",
+            "pokerstarUser": "Pokerstars Username",
+            "winamaxUser": "Winamax Username",
+            "partypokerUser": "PartyPoker Username",
+            "ggpokerUser": "GGPoker Username",
+            "user888": "888 Username",
+            "anotherUsers": "Do you use any other Poker sites/Usernames/Aliases?",
+            "backed": "Have you been backed before?",
+            "spinsExperience": "Tell us about your Spins experience",
+            "hoursDedicate": "How many hours a week are you willing to dedicate to playing and studying?",
+            "hearAboutUs": "How did you hear about us?",
+            "fileDescription": "Please add your Chip EV uploads - including last 6 months of your play, dates, and screen name shown",
+            "fileUploadDescription": "Drag and drop your chosen file to upload your files.\n The types of pdf, doc are supported."
+        },
+        "buttonSend": "SEND",
+        "success": "Email sent successfully",
+        "error": {
+            "title": "Something went wrong when sending the email.",
+            "message": "You can contact us directly at grupocheckcheck@gmail.com"
+        }
     }
 }

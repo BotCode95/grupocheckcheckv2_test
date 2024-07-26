@@ -4,13 +4,14 @@ import { useTranslation } from 'react-i18next'
 import { useContext } from 'react'
 import { TextsContext } from '../../context/Dashboard/Texts/TextsContext'
 import { NavLink } from 'react-router-dom'
+import { useLanguage } from '../../hooks/useLanguage'
 
 export const BannerFormaParte = () => {
 	const [t] = useTranslation('global')
 	const { text } = useContext(TextsContext)
 	const [title_strong, setTitleStrong] = useState<string | undefined>(undefined)
 	const [title, setTitle] = useState<string | undefined>(undefined)
-
+	const lang = useLanguage()
 	useEffect(() => {
 		if (text.home.length) {
 			setTitleStrong(text.home.split(' ')[0] + ' ' + text.home.split(' ')[1])
@@ -67,7 +68,7 @@ export const BannerFormaParte = () => {
 				}}
 			>
 				<NavLink
-					to="/aplicar"
+					to={`/${lang}/signup`}
 					rel="noreferrer"
 					style={{ textDecoration: 'none' }}
 				>

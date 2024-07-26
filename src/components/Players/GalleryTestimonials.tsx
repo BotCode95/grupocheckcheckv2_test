@@ -1,15 +1,15 @@
-import './GalleryPlayers.css'
-import { IPlayer } from '../../types/texts'
-import { useRef, useState } from 'react'
+import './GalleryTestimonials.css'
+import { ITestimonial } from '../../types/texts'
+import { useEffect, useRef, useState } from 'react'
+
 interface Props {
-  players: IPlayer[]
-  setPlayer: (player: IPlayer) => void
+  testimonials: ITestimonial[]
 }
 
 // Ajusta el factor de desplazamiento según sea necesario
 const SPEED_GALLERY = 1
 
-export const GalleryPlayers = ({ players, setPlayer }: Props) => {
+export const GalleryTestimonials = ({ testimonials }: Props) => {
 
 	const galleryWrapperRef = useRef<HTMLDivElement>(null)
 	const [isDown, setIsDown] = useState(false)
@@ -62,10 +62,19 @@ export const GalleryPlayers = ({ players, setPlayer }: Props) => {
 			galleryWrapperRef.current.scrollLeft = scrollLeft - walk
 		}
 	}
+
+	useEffect(() => {
+		if (galleryWrapperRef.current) {
+			const galleryWidth = galleryWrapperRef.current.scrollWidth
+			const visibleWidth = galleryWrapperRef.current.clientWidth
+			const centerPosition = (galleryWidth - visibleWidth) / 2
+			galleryWrapperRef.current.scrollLeft = centerPosition
+		}
+	}, [testimonials])
     
-	return <div className="galleryPlayers">
+	return <div className="galleryTestimonials">
 		<div 
-			className='galleryPlayers_wrapper'                 
+			className='galleryTestimonials_wrapper'                 
 			ref={galleryWrapperRef}
 			onMouseDown={handleMouseDown}
 			onMouseLeave={handleMouseLeave}
@@ -76,17 +85,18 @@ export const GalleryPlayers = ({ players, setPlayer }: Props) => {
 			onTouchMove={handleTouchMove}
 		>
 			{
-				players.map(player => (<div
-					key={player.player_name} className="galleryPlayers_card"
-					onClick={() => setPlayer(player)}
+				testimonials.map(testimonial => (<div
+					key={testimonial.author} className="galleryTestimonials_card"
 				>
-					<div
-						style={{
-							backgroundImage: `url(${player.image})`
-						}}
-					>
-						<h3 className="galleryPlayers_playername">{player.player_name.toUpperCase()}</h3>
-						<div className="galleryPlayers_shadow"></div>
+					<div className='galleryTestimonials_imgContainer'>
+						<img src={testimonial.image} alt={testimonial.author} />
+					</div>
+					<div className='galleryTestimonials_info'>
+						<h3 className="galleryTestimonials_title">{testimonial.title}</h3>
+						<p>
+							{testimonial.description}
+						</p>
+						<span>by {testimonial.author}</span>
 					</div>
 				</div>))
 			}

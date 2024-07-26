@@ -25,7 +25,18 @@ export interface IPlayer{
     coach?: string
     flag?: string
     image: string
+}
 
+export interface ITestimonial {
+    title: string;
+    description: string;
+    author: string;
+    image: string;
+}
+
+export interface IQuestion {
+    title: string;
+    description: string;
 }
 
 export interface Trips {

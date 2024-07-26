@@ -1,3 +1,8 @@
+export { Signup } from './Signup'
+export { Intro } from './Intro'
+export { Team } from './Team'
+export { Testimonials } from './Testimonials'
+export { Trips } from './Trips'
 export { Nosotros } from './Nosotros'
 export { Entrevistas } from './Entrevistas'
 export { Viajes } from './Viajes'

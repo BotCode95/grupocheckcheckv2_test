@@ -3,6 +3,7 @@
   border: 2px solid var(--primary-color);
   margin: 3em 0em 4em 0em;
   padding: 1em 2em;
+  box-sizing: border-box !important;
 }
 
 .playerView_playerImage {

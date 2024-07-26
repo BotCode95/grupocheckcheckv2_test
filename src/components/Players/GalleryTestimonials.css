@@ -1,0 +1,88 @@
+.galleryTestimonials {
+  overflow: hidden;
+  width: 100%;
+}
+
+.galleryTestimonials_wrapper {
+  display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  cursor: pointer;
+}
+
+.galleryTestimonials_wrapper::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, and Opera */
+}
+
+.galleryTestimonials_card {
+  flex: 0 0 auto;
+  width: 745px;  /* Adjust image size as needed */
+  margin: 0em 3em;  /* Space between images */
+  position: relative;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: 245px 1fr;
+  border: 1px solid var(--primary-color);
+}
+
+.galleryTestimonials_imgContainer {
+  object-fit: contain;
+}
+.galleryTestimonials_imgContainer img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  pointer-events: none;
+}
+
+.galleryTestimonials_info {
+  padding: 4em 2em 4em 2em;
+}
+
+.galleryTestimonials_title {
+  font-size: 24px !important;
+}
+
+.galleryTestimonials_info p {
+  font-size: 12px;
+  font-weight: 300 !important;
+  margin: 2em 0em; 
+}
+
+.galleryTestimonials_info span {
+  font-size: 11px;
+  font-weight: 300 !important;
+  font-style: italic;
+}
+/* 
+.galleryTestimonials_shadow {
+  position: absolute;
+  z-index: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 25%);
+} */
+
+@media (max-width: 1240px) {
+  .galleryTestimonials {
+    margin: 1em;
+  }
+
+  /* .galleryTestimonials_wrapper .galleryTestimonials_card {
+    height: 260px;
+    width: 200px;
+  } */
+}
+
+/* .galleryPlayers_card {
+  
+  
+}
+
+.galleryPlayers_playername {
+  width: 250px;
+} */

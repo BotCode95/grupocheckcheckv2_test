@@ -14,15 +14,15 @@ import videoplayerImg from '../assets/icons/videoplayer.png'
 import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Footer } from '../components/UI/Footer'
+import { useLanguage } from '../hooks/useLanguage'
 
 
 export const Inicio = () => {
 	const { loading, loadingHome } = useContext(UIContext)
-	const [bannerLoaded, setBannerLoaded] = useState<boolean>(false)
 	const isLoadingOK: string | null = localStorage.getItem('loading')
 	const [t] = useTranslation('global')
-
-	const { language, getTextByLanguage } = useContext(TextsContext)
+	const lang = useLanguage()
+	const { getTextByLanguage } = useContext(TextsContext)
 	
 	useEffect(() => {
 		if (!isLoadingOK) {
@@ -31,13 +31,9 @@ export const Inicio = () => {
 	}, [])
 
 	useEffect(() => {
-		getTextByLanguage(language)
-	}, [language])
+		getTextByLanguage(lang)
+	}, [lang])
 
-	const handleImageLoad = () => {
-		setBannerLoaded(true)
-	}
-	console.log({bannerLoaded, isLoadingOK, loading})
 	return (
 		<div className="home">
 			{loading ? (
@@ -57,70 +53,70 @@ export const Inicio = () => {
 				<>
 					<Navbar />
 					<div className='home_banner_container'>
-						<img src={banner} onLoad={handleImageLoad} />
+						<img src={banner} />
 					</div>
 					<main>
-						<h1>Welcome to TeamCheckCheck</h1>
+						<h1>{t('home.title')}</h1>
 						<div className="home_main_hr"></div>
 						<p>
-							{'At teamcheckcheck we\'re more than just a backing platform – we\'re a community dedicated to empowering poker players worldwide. Whether you\'re a novice looking to refine your skills or a seasoned player aiming for mastery, our elite coaches from around the globe are here to guide you every step of the way.'}
+							{t('home.description')}
 						</p>
 						<section className="home_why">
-							<h2>Why choose TeamCheckCheck?</h2>
+							<h2>{t('home.why.title')}</h2>
 							<Grid container className='home_why_list'>
 								<Grid item md={4} sm={12} className="home_why_list_item">
 									<img src={coachingImg} alt='Expert Coaching' width={110} />
-									<h3>Expert Coaching</h3>
+									<h3>{t('home.why.coaching.title')}</h3>
 									<p>
-										{'Our team comprises top-tier coaches with years of experience in Spin & Go poker. They\'re not just instructors; they\'re mentors committed to helping you reach your full potential.'}
+										{t('home.why.coaching.description')}
 									</p>
 								</Grid>
 								<Grid item md={4} sm={12} className="home_why_list_item">
 									<img src={desarrolloImg} alt='Unleash Your Potential' width={116} />
-									<h3>Unleash Your Potential</h3>
+									<h3>{t('home.why.potential.title')}</h3>
 									<p>
-										{'We believe in unlocking the hidden talents within every player. Our mission is to equip you with the knowledge, strategies, and mindset to excel at the poker table and beyond.'}
+										{t('home.why.potential.description')}
 									</p>
 								</Grid>
 								<Grid item md={4} sm={12} className="home_why_list_item">
 									<img src={growthImg} alt='No Limits, Only Growth' width={116}/>
-									<h3>No Limits, Only Growth</h3>
+									<h3>{t('home.why.growth.title')}</h3>
 									<p>
-										{'At Teamcheckcheck, we\'re dedicated to fostering a culture of continuous improvement. We\'ll never hold you back – instead, we\'ll empower you to maximize your skill sets and achieve success on your terms.'}
+										{t('home.why.growth.description')}
 									</p>
 								</Grid>
 							</Grid>
 						</section>
 						<section className="home_community">
-							<h2>Join Our Community Today</h2>
+							<h2>{t('home.community.title')}</h2>
 							<p>
-								{'Whether you\'re aiming for the top ranks or seeking to sharpen your edge, Teamcheckcheck is your ultimate destination for poker excellence. Take the first step towards realizing your true potential and join our vibrant community of poker enthusiasts.'}
+								{t('home.community.description')}
 							</p>
 							<div className='home_community_list'>
 								<div className='home_community_list_item'>
 									<img src={videoplayerImg} width={100} />
-									<h4>Extensive Video Library</h4>
-									<p>Over 1000 videos, with a minimun of 20 nex videos per month</p>
+									<h4>{t('home.community.library.title')}</h4>
+									<p>{t('home.community.library.description')}</p>
 								</div>
 								<div className='home_community_list_item'>
 									<img src={personImg} width={100} />
-									<h4>Regular Group Coaching</h4>
-									<p>A staking system with 14 levels designated to help players of all abilities succeed.</p>
+									<h4>{t('home.community.coaching.title')}</h4>
+									<p>{t('home.community.coaching.description')}</p>
 								</div>
 								<div className='home_community_list_item'>
 									<img src={supportImg} width={100} />
-									<h4>Dedicately support</h4>
-									<p>A private Skype group for each player with 4 experienced managers</p>
+									<h4>{t('home.community.support.title')}</h4>
+									<p>{t('home.community.support.description')}</p>
 								</div>
 							</div>
 						</section>
 					</main>
 					<section className='home_cta'>
 						<div className='home_cta_container'>
-							<h2>{'Are you ready to elevate your game? Let\'s embark on this journey together.'}</h2>
-							<h2>{'Your success starts here.'}</h2>
+							<h2>{t('home.cta.title')}</h2>
+							<h2>{t('home.cta.subtitle')}</h2>
 							<NavLink
-								to="/aplicar"
+								to={`/${lang}/signup`}
 								rel="noreferrer"
 								style={{ textDecoration: 'none' }}
 							>
@@ -134,7 +130,7 @@ export const Inicio = () => {
 										fontSize: 20,
 									}}
 								>
-									{t('part_of_family.button')}
+									{t('home.cta.button')}
 								</Button>
 							</NavLink>
 						</div>

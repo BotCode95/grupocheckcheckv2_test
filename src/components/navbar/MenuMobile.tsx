@@ -1,15 +1,13 @@
 import { NavLink } from 'react-router-dom'
 import logo_check_check from '../../assets/logo_checkcheck.svg'
-import logo_facebook from '../../assets/redes/facebook.svg'
-import logo_instagram from '../../assets/redes/instagram.svg'
-import logo_twitter from '../../assets/redes/twitter.svg'
-import { Language } from '../Language/Language'
 import { useTranslation } from 'react-i18next'
 import { Grid } from '@mui/material'
 import { ButtonInscribite } from '../UI/Buttons/ButtonInscribite'
 import { RedSocialList } from '../RedSocial/RedSocialList'
+import { useLanguage } from '../../hooks/useLanguage'
 export const MenuMobile = () => {
 	const [t] = useTranslation('global')
+	const lang = useLanguage()
 
 	const menuHandle = () => {
 		const btn = document.querySelector('.navbar_mobile_btn')
@@ -33,9 +31,9 @@ export const MenuMobile = () => {
 				<Grid item sm={6} className='navbar_mobile_logo'>
 					<NavLink
 						aria-current="page"
-						to={'/'}
+						to={`/${lang}/`}
 					>
-						<img src={logo_check_check} alt="logo_check" width={70}/>
+						<img src={logo_check_check} alt={t('header.title') || ''} width={70}/>
 					</NavLink>
 				</Grid>
 				<Grid item sm={6}
@@ -46,7 +44,7 @@ export const MenuMobile = () => {
 				>
 					<div className='navbar_mobile_signup'>
 						<NavLink
-							to="/aplicar"
+							to={`/${lang}/signup`}
 							rel="noreferrer"
 							style={{ textDecoration: 'none' }}
 						>
@@ -62,44 +60,53 @@ export const MenuMobile = () => {
 				<ul className='d-flex gap-3 list-unstyled m-0 navbar_mobile_links_list'>
 					<li>
 						<NavLink
-							to='/teams'
+							to={`/${lang}/teams`}
 							aria-current="page"
 							className='navbar_link'
 							style={({ isActive }) => ({
 								color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 							})}
 						>
-							{t('navbar.pages.team')}
+							{t('header.pages.team')}
 						</NavLink>
 					</li>
 					<li>
 						<NavLink
-							to='/testimonials'
+							to={`/${lang}/testimonials`}
 							aria-current="page"
 							className='navbar_link'
 							style={({ isActive }) => ({
 								color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 							})}
 						>
-							{t('navbar.pages.testimonials')}
+							{t('header.pages.testimonials')}
 						</NavLink>
 					</li>
 					<li>
 						<NavLink
-							to='/faq'
+							to={`/${lang}/faq`}
 							aria-current="page"
 							className='navbar_link'
 							style={({ isActive }) => ({
 								color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
 							})}
 						>
-							{t('navbar.pages.faq')}
+							{t('header.pages.faq')}
+						</NavLink>
+					</li>
+					<li>
+						<NavLink
+							to={`/${lang}/blog`}
+							aria-current="page"
+							className='navbar_link'
+							style={({ isActive }) => ({
+								color: isActive ? 'var(--secondary-color)' : 'var(--white-color)',
+							})}
+						>
+							{t('header.pages.blog')}
 						</NavLink>
 					</li>
 				</ul>
-				<div className='navbar_mobile_language'>
-					<Language />
-				</div>
 				<div className='navbar_mobile_social'>
 					<RedSocialList redes={['facebook', 'instagram', 'twitter']} width={32} />
 				</div>
