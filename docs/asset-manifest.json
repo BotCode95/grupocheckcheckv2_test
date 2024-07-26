@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.93279d4e.css",
-    "main.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.800db37e.js",
-    "static/js/787.7b03f868.chunk.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.7b03f868.chunk.js",
+    "main.css": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.0f1e059c.css",
+    "main.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.b8868e92.js",
+    "static/js/787.88a8d568.chunk.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.88a8d568.chunk.js",
     "static/media/mathias.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/mathias.05a3bd99b03ab1c1c4fc.jpg",
     "static/media/emiliano.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/emiliano.209ab1dfabd92d63e24e.jpg",
     "static/media/nicolas.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/nicolas.784d61b8a3fe6ca77e9e.jpg",
     "static/media/mariano.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/mariano.2df2f36ead2efd210050.jpg",
     "static/media/guiseppe.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/guiseppe.dba1152310c085811d14.jpg",
+    "static/media/crosses.png": "https://botcode95.github.io/grupocheckcheckV2/static/media/crosses.be40c03349300e2e3ea4.png",
     "static/media/jose.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/jose.ea4cfd5acb3992b80ba9.jpg",
     "static/media/bannerCutted.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/bannerCutted.a9939ec2afcf86185248.jpg",
+    "static/media/ar.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/ar.a9d5eaad84a3e0ea646d89155e8d7e26.svg",
     "static/media/hernan.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/hernan.58f17ec1ed8a433c75b2.jpg",
     "static/media/elson.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/elson.51de166d99bd2f725cd8.jpg",
     "static/media/404.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/404.ff0ad1f0e1d594361107d94fcad601ad.svg",
@@ -22,19 +24,20 @@
     "static/media/logo_check.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/logo_check.ce76084eca86be2d6c232afeb835f5a2.svg",
     "static/media/poker-cards.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/poker-cards.e9b3850b6312e99ee8f14bb28320143c.svg",
     "static/media/FlagAR.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/FlagAR.3dd319bc127b3e5bc2bb8cba50bc2848.svg",
+    "static/media/gb.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/gb.e3a50cb620985ceb5610166a53faf23c.svg",
     "static/media/gmail.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/gmail.f46094b0d732d516ea69534af57745fa.svg",
     "static/media/twitter.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/twitter.446613d9270c3e1b3a200f2c63220716.svg",
     "static/media/instagram.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/instagram.2b6ed445cfe91189427b61dd3b0eba4a.svg",
     "static/media/facebook.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/facebook.b2d613918d5f1f23e66aad936381c296.svg",
-    "static/media/twitch.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/twitch.8aeaa9b7c7c67460ecce1dfa8bb8caee.svg",
     "static/media/youtube.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/youtube.a43a674396f89e01bbb32c94014f38df.svg",
     "index.html": "https://botcode95.github.io/grupocheckcheckV2/index.html",
-    "main.93279d4e.css.map": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.93279d4e.css.map",
-    "main.800db37e.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.800db37e.js.map",
-    "787.7b03f868.chunk.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.7b03f868.chunk.js.map"
+    "static/media/twitch.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/twitch.4bb1d0ecdb4f24cfd1f4eec00109bd5a.svg",
+    "main.0f1e059c.css.map": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.0f1e059c.css.map",
+    "main.b8868e92.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.b8868e92.js.map",
+    "787.88a8d568.chunk.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.88a8d568.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.93279d4e.css",
-    "static/js/main.800db37e.js"
+    "static/css/main.0f1e059c.css",
+    "static/js/main.b8868e92.js"
   ]
 }
