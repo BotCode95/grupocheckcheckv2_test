@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.a1cf80aa.css",
-    "main.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.86cb5c63.js",
+    "main.css": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.a87912f4.css",
+    "main.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.ee547ab3.js",
     "static/js/787.88a8d568.chunk.js": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.88a8d568.chunk.js",
     "static/media/mathias.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/mathias.05a3bd99b03ab1c1c4fc.jpg",
     "static/media/emiliano.jpg": "https://botcode95.github.io/grupocheckcheckV2/static/media/emiliano.209ab1dfabd92d63e24e.jpg",
@@ -23,21 +23,23 @@
     "static/media/logo_checkcheck.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/logo_checkcheck.645f9f2acacf43bd2a93b50090453034.svg",
     "static/media/logo_check.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/logo_check.ce76084eca86be2d6c232afeb835f5a2.svg",
     "static/media/poker-cards.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/poker-cards.e9b3850b6312e99ee8f14bb28320143c.svg",
+    "static/media/instagramOutlined.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/instagramOutlined.8d0cc729ef1b01b6dac49effd8c784af.svg",
     "static/media/FlagAR.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/FlagAR.3dd319bc127b3e5bc2bb8cba50bc2848.svg",
     "static/media/gb.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/gb.e3a50cb620985ceb5610166a53faf23c.svg",
-    "static/media/gmail.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/gmail.f46094b0d732d516ea69534af57745fa.svg",
-    "static/media/twitter.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/twitter.446613d9270c3e1b3a200f2c63220716.svg",
+    "static/media/tiktokOutlined.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/tiktokOutlined.2e10dd14c97622a5aada47e6f5b9cf2b.svg",
     "static/media/instagram.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/instagram.2b6ed445cfe91189427b61dd3b0eba4a.svg",
-    "static/media/facebook.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/facebook.b2d613918d5f1f23e66aad936381c296.svg",
-    "static/media/youtube.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/youtube.a43a674396f89e01bbb32c94014f38df.svg",
+    "static/media/xOutlined.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/xOutlined.4c9731389a674296bd7c6218d3964160.svg",
     "index.html": "https://botcode95.github.io/grupocheckcheckV2/index.html",
-    "static/media/twitch.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/twitch.4bb1d0ecdb4f24cfd1f4eec00109bd5a.svg",
-    "main.a1cf80aa.css.map": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.a1cf80aa.css.map",
-    "main.86cb5c63.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.86cb5c63.js.map",
+    "static/media/youtube.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/youtube.e0711e1a8661bbd35408d31699a9fa79.svg",
+    "static/media/youtubeOutlined.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/youtubeOutlined.a3570a3decee201d9dcbb2a5eaab459c.svg",
+    "static/media/twitchOutlined.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/twitchOutlined.25030d989537c01b88f10fabd9c68d50.svg",
+    "static/media/twitch.svg": "https://botcode95.github.io/grupocheckcheckV2/static/media/twitch.e266946ea07c14281a0a369cc777c138.svg",
+    "main.a87912f4.css.map": "https://botcode95.github.io/grupocheckcheckV2/static/css/main.a87912f4.css.map",
+    "main.ee547ab3.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/main.ee547ab3.js.map",
     "787.88a8d568.chunk.js.map": "https://botcode95.github.io/grupocheckcheckV2/static/js/787.88a8d568.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a1cf80aa.css",
-    "static/js/main.86cb5c63.js"
+    "static/css/main.a87912f4.css",
+    "static/js/main.ee547ab3.js"
   ]
 }
