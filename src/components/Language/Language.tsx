@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
+import { TextsContext } from '../../context/Dashboard/Texts'
 import { Tooltip } from '@mui/material'
 import { useTranslation } from 'react-i18next'
-import { TextsContext } from '../../context/Dashboard/Texts'
 import Flag from 'react-flagkit'
 
 export const Language = () => {

@@ -21,7 +21,6 @@ export const BannerCTA = () => {
 					className='buttonInscribite'
 					style={{
 						backgroundColor: 'var(--black-color)',
-						height: '60px',
 						fontSize: 20,
 					}}
 				>

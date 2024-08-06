@@ -108,7 +108,7 @@ export const MenuMobile = () => {
 					</li>
 				</ul>
 				<div className='navbar_mobile_social'>
-					<RedSocialList redes={['facebook', 'instagram', 'twitter']} width={32} />
+					<RedSocialList redes={['twitch', 'instagram', 'youtube']} type='contained' width={32} />
 				</div>
 			</div>
 		</div>

@@ -97,7 +97,7 @@ export const Navbar = () => {
 					alignItems={'center'}
 				>
 					<div className='navbar_social'>
-						<RedSocialList redes={['twitter', 'instagram', 'facebook']} />
+						<RedSocialList redes={['twitch', 'instagram', 'youtube']} type="contained" />
 					</div>
 					<div className='navbar_signup'>
 						<NavLink

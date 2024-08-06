@@ -78,6 +78,38 @@
   } */
 }
 
+@media (max-width: 992px) {
+  .galleryTestimonials_card {
+    grid-template-columns: 1fr;
+    width: 300px;
+    margin: 0 1.5em;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .galleryTestimonials_imgContainer {
+    height: 300px;
+  }
+
+  .galleryTestimonials_imgContainer img {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+  }
+
+  .galleryTestimonials_info {
+    padding: 2em;
+  }
+
+  .galleryTestimonials_info p {
+    font-size: 14px;
+    font-weight: 400 !important;
+  }
+
+
+}
+
 /* .galleryPlayers_card {
   
   

@@ -45,6 +45,18 @@
   border: 2px solid var(--white-color);
   display: inline-block;
   margin: 0.5em 0.5em 0.5em 0em;
+  font-weight: 700;
+}
+
+.chipText.red {
+  background-color: var(--primary-color);
+  border: 2px solid var(--white-color);
+}
+
+.chipText.white {
+  background-color: var(--white-color);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
 @media (max-width: 1240px) {

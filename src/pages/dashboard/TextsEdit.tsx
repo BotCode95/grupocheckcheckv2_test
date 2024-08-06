@@ -322,7 +322,7 @@ export const TextsEdit = () => {
 											<InputText
 												classname={styles.input_text}
 												placeholder={''}
-												value={player.especialities}
+												value={player.coach_especialities}
 												name="especialities"
 												onChange={(e) => onChangePlayers(e, player.player_name)}
 											/>

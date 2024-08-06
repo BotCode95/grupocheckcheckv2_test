@@ -73,9 +73,9 @@ export const Nosotros = () => {
 									descripcion={player.description}
 									tipoDeJuego={player.type_of_game}
 									valoresDeJuego={player.values_game}
-									image={player.image}
+									image={player.image || ''}
 									coach={player.coach}
-									especialidades={player.especialities}
+									especialidades={player.coach_especialities}
 									flag={player.flag}
 									key={index}
 								/>

@@ -8,16 +8,16 @@ interface Props {
 }
 
 interface ChipTextProps {
-  text?: string
+  text?: string,
+	type?: 'white' | 'red'
 }
 
-const ChipText = ({text}: ChipTextProps) => {
+const ChipText = ({text, type}: ChipTextProps) => {
 	if (!text) return <></>
-	return <span className='chipText'>{text}</span>
+	return <span className={`chipText ${type ? type : ''}`}>{text}</span>
 }
 
 export const PlayerView = ({ player }: Props) => {
-	console.log('PlayerView', {player})
 	if (!player) {
 		return <Grid display={'flex'} justifyContent={'center'} padding={10}>
 			<Spinner />
@@ -35,9 +35,13 @@ export const PlayerView = ({ player }: Props) => {
 				<ChipText text={player.type_of_game} />
 				<span>{player.values_game}</span>
 			</div>
+			<div className='playerView_extraType'>
+				<ChipText text={player.extra_type_of_game} type='white' />
+				<span>{player.extra_values_game}</span>
+			</div>
 			<div className='playerView_playerCoach'>
 				<ChipText text={player.coach} />
-				<span>{player.especialities}</span>
+				<span>{player.coach_especialities}</span>
 			</div>
 			<div className='playerView_playerDescription'>
 				{player.description.split('\n').map((desc, idx) => <p key={idx}>{desc}</p>)}

@@ -20,9 +20,10 @@ import { useLanguage } from '../hooks/useLanguage'
 export const Inicio = () => {
 	const { loading, loadingHome } = useContext(UIContext)
 	const isLoadingOK: string | null = localStorage.getItem('loading')
+	const [loadingPage, setLoadingPage] = useState(isLoadingOK === 'cargado' ? false : true)
 	const [t] = useTranslation('global')
 	const lang = useLanguage()
-	const { getTextByLanguage } = useContext(TextsContext)
+	const { text } = useContext(TextsContext)
 	
 	useEffect(() => {
 		if (!isLoadingOK) {
@@ -31,12 +32,16 @@ export const Inicio = () => {
 	}, [])
 
 	useEffect(() => {
-		getTextByLanguage(lang)
-	}, [lang])
-
+		if(text._id && text._id !== '') {
+			setTimeout(() => {
+				setLoadingPage(false)
+			}, 2000)
+		}
+	}, [text])
+	
 	return (
 		<div className="home">
-			{loading ? (
+			{loading || loadingPage ? (
 				<Grid container>
 					<Grid
 						item
@@ -126,7 +131,6 @@ export const Inicio = () => {
 									className='buttonInscribite'
 									style={{
 										backgroundColor: 'var(--black-color)',
-										height: '60px',
 										fontSize: 20,
 									}}
 								>

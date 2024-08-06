@@ -1,4 +1,5 @@
-[
+{
+    "es": [
         {
             "nombrePagina": "Grupo Check Check",
             "redSocial": "twitch",
@@ -15,7 +16,7 @@
             "nombrePagina": "Grupo Check Check",
             "redSocial": "youtube",
             "colorPrincipal": "#BC0F0F",
-            "link" : "https://www.youtube.com/@CheckCheckPoker"
+            "link" : "https://www.youtube.com/channel/UC6B_Q2labPyTD1iXEAG1DeA"
             
         },
         {
@@ -26,14 +27,66 @@
         },
         {
             "nombrePagina": "Grupo Check Check",
-            "redSocial": "twitter",
+            "redSocial": "x",
             "colorPrincipal": "#7BC5F8",
-            "link" : "https://twitter.com/GrupoCheckCheck"
+            "link" : "https://x.com/grupocheckcheck"
         },
         {
             "nombrePagina": "Grupo Check Check",
             "redSocial": "facebook",
             "colorPrincipal": "#7BC5F8",
             "link" : "https://facebook.com/GrupoCheckCheck"
+        },
+        {
+            "nombrePagina": "Grupo Check Check",
+            "redSocial": "tiktok",
+            "colorPrincipal": "#7BC5F8",
+            "link" : "https://www.tiktok.com/@pokercheckcheck"
         }
-]
+    ],
+    "en": [
+        {
+            "nombrePagina": "Team Check Check",
+            "redSocial": "twitch",
+            "colorPrincipal": "#864FF6",
+            "link" : "https://www.twitch.tv/grupocheckcheck"
+        },
+        {
+            "nombrePagina": "Team Check Check",
+            "redSocial": "instagram",
+            "colorPrincipal": "#EE2A7B",
+            "link" : "https://www.instagram.com/grupocheckcheck/?hl=es-la"
+        },
+        {
+            "nombrePagina": "Team Check Check",
+            "redSocial": "youtube",
+            "colorPrincipal": "#BC0F0F",
+            "link" : "https://www.youtube.com/channel/UC6B_Q2labPyTD1iXEAG1DeA"
+            
+        },
+        {
+            "nombrePagina": "grupocheckcheck@gmail.com",
+            "redSocial": "gmail",
+            "colorPrincipal": "#D80E0E",
+            "link" : "mailto:grupocheckcheck@gmail.com@correo.com?Subject=Contacto"
+        },
+        {
+            "nombrePagina": "Team Check Check",
+            "redSocial": "x",
+            "colorPrincipal": "#7BC5F8",
+            "link" : "https://x.com/grupocheckcheck"
+        },
+        {
+            "nombrePagina": "Team Check Check",
+            "redSocial": "facebook",
+            "colorPrincipal": "#7BC5F8",
+            "link" : "https://facebook.com/GrupoCheckCheck"
+        },
+        {
+            "nombrePagina": "Team Check Check",
+            "redSocial": "tiktok",
+            "colorPrincipal": "#7BC5F8",
+            "link" : "https://www.tiktok.com/@pokercheckcheck"
+        }
+    ]
+}

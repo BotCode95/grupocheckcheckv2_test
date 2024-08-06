@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState, useContext, useEffect } from 'react'
+import { TextsContext } from '../../../context/Dashboard/Texts/TextsContext'
 import { InputVideo } from '../Inputs/InputVideo'
 import { Box, Grid, Select, MenuItem, SelectChangeEvent } from '@mui/material'
 import { TituloSeccion } from '../../UI/Titulos/TituloSeccion'
@@ -12,7 +13,6 @@ import { ButtonAddInput } from '../Buttons/ButtonAddInput'
 import { ButtonDeleteInput } from '../Buttons/ButtonDeleteInput'
 import { Spinner } from '../Spinner/Spinner'
 import styles from '../dashboard.module.css'
-import { TextsContext } from '../../../context/Dashboard/Texts/TextsContext'
 
 export const ViajesDashboard = () => {
 	const [videos, setVideos] = useState<VideoTrips[]>([])

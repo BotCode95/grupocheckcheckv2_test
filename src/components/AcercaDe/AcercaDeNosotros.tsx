@@ -3,16 +3,13 @@ import { TituloSeccion } from '../UI/Titulos/TituloSeccion'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 import xx from '../../assets/xx.png'
 import { useTranslation } from 'react-i18next'
-import { useContext } from 'react'
-import { TextsContext } from '../../context/Dashboard/Texts/TextsContext'
 
 export const AcercaDeNosotros = () => {
 	const [t] = useTranslation('global')
-	const { text } = useContext(TextsContext)
 	return (
 		<>
 			<TituloSeccion
-				titulo={text.us ?? t('aboutme.title')}
+				titulo={t('aboutme.title')}
 				variant={'h5'}
 				fontWeigth={'bold'}
 				className={'padding_left90 acercade_titulo'}

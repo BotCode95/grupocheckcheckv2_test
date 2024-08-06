@@ -1,7 +1,7 @@
 import i18next from 'i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { TextsContext } from '../context/Dashboard/Texts'
 import { useContext, useEffect } from 'react'
+import { TextsContext } from '../context/Dashboard/Texts'
 
 export const useLanguage = () => {
 	const location = useLocation()

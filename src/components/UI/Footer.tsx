@@ -12,8 +12,8 @@ export const Footer = () => {
 	return (
 		<div className='footer'>
 			<div className='footer_container'>
-				<Grid container>
-					<Grid item md={3} sm={12} className='footer_contact'>
+				<Grid container justifyContent={'space-between'}>
+					<Grid item md={4} sm={12} className='footer_contact'>
 						<NavLink
 							to={`/${lang}/`}
 							aria-current="page"
@@ -26,7 +26,7 @@ export const Footer = () => {
 						</NavLink>
 						<p><a href={`mailto:${t('footer.email')}`} target='_blank' rel='noreferrer'>{t('footer.email')}</a></p>
 					</Grid>
-					<Grid item md={6} sm={12} className='footer_links'>
+					<Grid item md={4} sm={12} className='footer_links'>
 						<h6>{t('footer.links')}</h6>
 						<ul>
 							<li>
@@ -79,7 +79,7 @@ export const Footer = () => {
 							</li>
 						</ul>
 					</Grid>
-					<Grid item md={3} sm={12} className='footer_newsletter'>
+					{/* <Grid item md={3} sm={12} className='footer_newsletter'>
 						<h6>Suscribe</h6>
 						<Paper
 							component="form"
@@ -95,12 +95,12 @@ export const Footer = () => {
 								<ArrowForwardIcon />
 							</IconButton>
 						</Paper>
-					</Grid>
+					</Grid> */}
 				</Grid>
 				<div className='footer_hr'></div>
 				<Grid container>
 					<Grid item md={6} sm={12} className='footer_social'>
-						<RedSocialList redes={['facebook', 'instagram', 'twitter']} />
+						<RedSocialList redes={['twitch', 'instagram', 'youtube', 'x', 'tiktok']} type="outlined" width={32} />
 					</Grid>
 					<Grid item md={6} sm={12} className='footer_copy'>
 						{`© ${new Date().getFullYear()} Check Check Group. All rights reserved`}

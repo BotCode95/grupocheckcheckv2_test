@@ -1,16 +1,18 @@
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material'
-import { RedesSociales } from '../components/Banners/RedesSociales'
+import { useContext } from 'react'
 import { BannerPage } from '../components/UI/BannerPage/BannerPage'
 import { Footer } from '../components/UI/Footer'
 import { Navbar } from '../components/navbar/Navbar'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useTranslation } from 'react-i18next'
 import { BannerCTA } from '../components/Banners/BannerCTA'
-import { type IQuestion } from '../types/texts'
+import { TextsContext } from '../context/Dashboard/Texts'
 
 export const Faq = () => {
 	const [t] = useTranslation('global')
-	const questions = t('faq.questions', { returnObjects: true }) as IQuestion[]
+	const { text } = useContext(TextsContext)
+	const questions = text.questions
+	console.log('questions', questions)
 	return (
 		<>
 			<Navbar />

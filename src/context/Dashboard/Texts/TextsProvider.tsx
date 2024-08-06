@@ -25,12 +25,17 @@ export const objTextEmpty = {
 		{
 			player_name: '',
 			description: '',
-			especialities: '',
+			coach_especialities: '',
+			coach: '',
+			extra_type_of_game: 'string',
+			extra_values_game: 'string',
 			image: '',
 			type_of_game: '',
 			values_game: '',
 		},
 	],
+	questions: [],
+	testimonials: [],
 	language: 'es',
 	imagesTrips: [],
 }

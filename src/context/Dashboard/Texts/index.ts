@@ -1,3 +1,3 @@
-export { TextsContext } from './TextsContext'
 export {TextsProvider } from './TextsProvider'
+export { TextsContext } from './TextsContext'
 export { textsReducer } from './textsReducer'

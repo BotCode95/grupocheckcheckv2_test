@@ -3,8 +3,7 @@ import { RedesSociales } from '../components/Banners/RedesSociales'
 import { BannerPage } from '../components/UI/BannerPage/BannerPage'
 import { Footer } from '../components/UI/Footer'
 import { Navbar } from '../components/navbar/Navbar'
-import { type ChangeEvent, useState } from 'react'
-import emailjs from 'emailjs-com'
+import { type ChangeEvent, useState, useMemo } from 'react'
 import Swal from 'sweetalert2'
 import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../hooks/useLanguage'
@@ -13,6 +12,8 @@ import { BasicDateField } from '../components/UI/Inputs/BasicDateField'
 import { type Dayjs } from 'dayjs'
 import { Spinner } from '../components/dashboard/Spinner/Spinner'
 import FileUpload from '../components/FileUpload'
+import api from '../api/api'
+import { type EmailSend } from '../types/texts'
 
 interface FormState {
 	fullName: string
@@ -109,32 +110,24 @@ export const Signup = () => {
 			backed: formState.backed,
 			spinsExperience: formState.spinsExperience,
 			hearAboutUs: formState.hearAboutUs,
-			files: formState.files
+			files: formState.files || []
 		}
-		console.log(state)
-		setTimeout(() => {
-			setSendingData(false)
-			Swal.fire({
-				title: t('contact.success') || 'Email enviado correctamente',
-				icon: 'success',
-				confirmButtonText: 'OK',
-			}).then((result) => {
-				if (result.isConfirmed) {
-					history(`/${lang}`)
-				}
-			})
-		}, 1000)
-		return
+		// console.log(state)
+		// setTimeout(() => {
+		// 	setSendingData(false)
+		// 	Swal.fire({
+		// 		title: t('contact.success') || 'Email enviado correctamente',
+		// 		icon: 'success',
+		// 		confirmButtonText: 'OK',
+		// 	}).then((result) => {
+		// 		if (result.isConfirmed) {
+		// 			history(`/${lang}`)
+		// 		}
+		// 	})
+		// }, 1000)
+		// return
 		try {
-			const templateEmail = t('contact.isEnglish')
-				? process.env.REACT_APP_EMAILJS_TEMPLATEID_ENGLISH
-				: process.env.REACT_APP_EMAILJS_TEMPLATEID
-			const response = await emailjs.send(
-				process.env.REACT_APP_EMAILJS_SERVICEID ?? '',
-				templateEmail ?? '',
-				state,
-				process.env.REACT_APP_EMAILJS_USERID ?? ''
-			)
+			await api.post<EmailSend>('/email/send-email', state)
 			Swal.fire({
 				title: t('contact.success') || 'Email enviado correctamente',
 				icon: 'success',
@@ -156,6 +149,17 @@ export const Signup = () => {
 			setSendingData(false)
 		}
 	}
+
+	const isValid = useMemo(() => {
+		let valid = true
+		
+		if(!formState.fullName) valid = false
+		if(!formState.birthdate) valid = false
+		if(!formState.email) valid = false
+		if(!formState.countryResidence) valid = false
+		console.log('isValid', valid)
+		return valid
+	}, [formState])
 
 	return <>
 		<Navbar />
@@ -961,7 +965,7 @@ export const Signup = () => {
 						variant="contained"
 						fullWidth
 						color="error"
-						disabled={sendingData}
+						disabled={sendingData || !isValid}
 						onClick={(event: React.FormEvent) => handleSubmit(event)}
 					>
 						{sendingData ? (
