@@ -39,6 +39,10 @@
   border-radius: 1em;
 }
 
+.galleryPlayers_card.galleryPlayers_selected > div {
+  filter: none;
+}
+
 .galleryPlayers_wrapper .galleryPlayers_card:hover {
   border: 4px solid var(--primary-color);
   transition: border 100ms ease;

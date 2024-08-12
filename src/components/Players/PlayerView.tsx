@@ -2,6 +2,7 @@ import './PlayerView.css'
 import { Grid } from '@mui/material'
 import { IPlayer } from '../../types/texts'
 import { Spinner } from '../dashboard/Spinner/Spinner'
+import { useEffect } from 'react'
 
 interface Props {
   player: IPlayer | null
@@ -23,7 +24,7 @@ export const PlayerView = ({ player }: Props) => {
 			<Spinner />
 		</Grid>
 	}
-	return <Grid container className="playerView">
+	return <Grid container className="playerView" id="playerView">
 		<Grid item sm={12} md={6} className="playerView_playerInfo">
 			<div className='playerView_playerName'>
 				<h2>{player.player_name.toUpperCase()}</h2>

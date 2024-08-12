@@ -4,12 +4,13 @@ import { useRef, useState } from 'react'
 interface Props {
   players: IPlayer[]
   setPlayer: (player: IPlayer) => void
+	playerSelected: IPlayer | null
 }
 
 // Ajusta el factor de desplazamiento según sea necesario
 const SPEED_GALLERY = 1
 
-export const GalleryPlayers = ({ players, setPlayer }: Props) => {
+export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) => {
 
 	const galleryWrapperRef = useRef<HTMLDivElement>(null)
 	const [isDown, setIsDown] = useState(false)
@@ -77,8 +78,15 @@ export const GalleryPlayers = ({ players, setPlayer }: Props) => {
 		>
 			{
 				players.map(player => (<div
-					key={player.player_name} className="galleryPlayers_card"
-					onClick={() => setPlayer(player)}
+					key={player.player_name} className={`galleryPlayers_card ${playerSelected?.player_name === player.player_name && 'galleryPlayers_selected'}`}
+					onClick={() => {
+						const element = document.getElementById('playerView')
+						if (element) {
+							const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 150
+							window.scrollTo({ top: offsetTop, behavior: 'smooth' })
+						}	
+						setPlayer(player)
+					}}
 				>
 					<div
 						style={{

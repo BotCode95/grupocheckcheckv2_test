@@ -26,7 +26,7 @@ export const Team = () => {
 		<div className='page'>
 			<div className="page_container">
 				<p className='team_paragraph'>{t('team.description')}</p>
-				<GalleryPlayers players={text.players} setPlayer={setPlayerSelected} />
+				<GalleryPlayers players={text.players} playerSelected={playerSelected} setPlayer={setPlayerSelected} />
 				<PlayerView player={playerSelected} />
 			</div>
 		</div>
