@@ -17,7 +17,7 @@ export const Testimonials = () => {
 		<BannerPage title={t('testimonials.title')} />
 		<div className='page my-5'>
 			<div className="py-5">
-				{testimonials !== null && testimonials.length > 0  && <GalleryTestimonials testimonials={testimonials} />}
+				{testimonials !== null && testimonials?.length > 0  && <GalleryTestimonials testimonials={testimonials} />}
 			</div>
 		</div>
 		<BannerCTA />
