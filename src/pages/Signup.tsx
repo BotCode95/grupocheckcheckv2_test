@@ -93,41 +93,38 @@ export const Signup = () => {
 
 	const sendEmail = async () => {
 		setSendingData(true)
-		const state: Record<string, unknown> = {
-			fullName: formState.fullName,
-			email: formState.email,
-			countryResidence: formState.countryResidence,
-			hoursDedicate: formState.hoursDedicate,
-			birthdate: formState.birthdate,
-			skype: formState.skype,
-			pokerSites: formState.pokerSites,
-			pokerstarUser: formState.pokerstarUser,
-			winamaxUser: formState.winamaxUser,
-			partypokerUser: formState.partypokerUser,
-			ggpokerUser: formState.ggpokerUser,
-			user888: formState.user888,
-			anotherUsers: formState.anotherUsers,
-			backed: formState.backed,
-			spinsExperience: formState.spinsExperience,
-			hearAboutUs: formState.hearAboutUs,
-			files: formState.files || []
+
+		const formData = new FormData()
+		formData.append('fullName', formState.fullName)
+		formData.append('email', formState.email)
+		formData.append('countryResidence', formState.countryResidence)
+		formData.append('hoursDedicate', formState.hoursDedicate)
+		formData.append('birthdate', formState.birthdate?.toString() || '')
+		formData.append('skype', formState.skype)
+		formData.append('pokerstarUser', formState.pokerstarUser)
+		formData.append('winamaxUser', formState.winamaxUser)
+		formData.append('partypokerUser', formState.partypokerUser)
+		formData.append('ggpokerUser', formState.ggpokerUser)
+		formData.append('user888', formState.user888)
+		formData.append('backed', formState.backed)
+		formData.append('spinsExperience', formState.spinsExperience)
+		formData.append('hearAboutUs', formState.hearAboutUs)
+		formData.append('pokerSites', formState.pokerSites)
+		formData.append('anotherUsers', formState.anotherUsers)
+
+		if(formState.files && formState.files?.length > 0) {
+			formState.files?.forEach((file, index) => {
+				console.log('file', typeof file, file)
+				formData.append(`files[${index}]`, file)
+			})
 		}
-		// console.log(state)
-		// setTimeout(() => {
-		// 	setSendingData(false)
-		// 	Swal.fire({
-		// 		title: t('contact.success') || 'Email enviado correctamente',
-		// 		icon: 'success',
-		// 		confirmButtonText: 'OK',
-		// 	}).then((result) => {
-		// 		if (result.isConfirmed) {
-		// 			history(`/${lang}`)
-		// 		}
-		// 	})
-		// }, 1000)
-		// return
+		
 		try {
-			await api.post<EmailSend>('/email/send-email', state)
+			await api.post<EmailSend>('/email/send-email', formData, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+				},
+			})
 			Swal.fire({
 				title: t('contact.success') || 'Email enviado correctamente',
 				icon: 'success',
