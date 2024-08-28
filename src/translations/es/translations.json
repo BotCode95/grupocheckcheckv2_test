@@ -11,12 +11,7 @@
             "faq": "FAQ",
             "blog": "BLOG"
         },
-        "buttonCTA": "Registrarse",
-        "socialMedia": {
-            "instagram": "https://www.instagram.com/grupocheckcheck/",
-            "youtube": "https://www.youtube.com/channel/UC6B_Q2labPyTD1iXEAG1DeA",
-            "twitch": "https://www.twitch.tv/grupocheckcheck"
-        }
+        "buttonCTA": "Registrarse"
     },
     "footer": {
         "email": "grupocheckcheck@gmail.com",
@@ -27,40 +22,40 @@
             "email": "Email",
             "message": "Mensaje",
             "button": "Enviar"
-        },
-        "socialMedia": {
-            "instagram": "https://www.instagram.com/grupocheckcheck/",
-            "youtube": "https://www.youtube.com/channel/UC6B_Q2labPyTD1iXEAG1DeA",
-            "twitch": "https://www.twitch.tv/grupocheckcheck",
-            "x": "https://twitter.com/grupocheckcheck",
-            "tiktok": "https://www.tiktok.com/@pokercheckcheck"
         }
+    },
+    "socialMedia": {
+        "instagram": "https://www.instagram.com/grupocheckcheck/",
+        "youtube": "https://www.youtube.com/channel/UC6B_Q2labPyTD1iXEAG1DeA",
+        "twitch": "https://www.twitch.tv/grupocheckcheck",
+        "x": "https://x.com/grupocheckcheck",
+        "tiktok": "https://www.tiktok.com/@pokercheckcheck"
     },
     "intro": {
         "urlSpanish": "grupocheckcheckpoker.com",
         "urlEnglish": "teamcheckcheck.com"
     },
     "home": {
-        "title": "Bienvenido a Grupo Check Check",
-        "description": "En teamcheckcheck somos más que una simple plataforma de respaldo: somos una comunidad dedicada a capacitar a los jugadores de póquer de todo el mundo. Ya seas un novato que busca perfeccionar tus habilidades o un jugador experimentado que busca dominar, nuestros entrenadores de élite de todo el mundo están aquí para guiarte en cada paso del camino.",
+        "title": "Bienvenido a GrupoCheckCheck",
+        "description": "En GrupoCheckCheck somos más que una simple plataforma de bancaje: Somos una comunidad dedicada a capacitar a los jugadores de Poker de todo el mundo. Ya seas un novato que busca perfeccionar tus habilidades o un jugador experimentado que busca dominar, nuestros entrenadores de élite de todo el mundo están aquí para guiarte en cada paso del camino.",
         "why": {
-            "title": "¿Por qué elegir TeamCheckCheck?",
+            "title": "¿Por qué elegir GrupoCheckCheck?",
             "coaching": {
                 "title": "Coaching Experto",
-                "description": "Nuestro equipo está formado por entrenadores de primer nivel con años de experiencia en el póquer Spin & Go. No son solo instructores, son mentores comprometidos a ayudarte a alcanzar tu máximo potencial."
+                "description": "Nuestro equipo está formado por entrenadores de primer nivel con años de experiencia en la modalidad Spin & Go. No son solo instructores, son mentores comprometidos a ayudarte a alcanzar tu máximo potencial."
             },
             "potential": {
                 "title": "Libera tu Potencial",
-                "description": "Creemos en descubrir los talentos ocultos de cada jugador. Nuestra misión es brindarte los conocimientos, las estrategias y la mentalidad para que te destaques en la mesa de póquer y más allá."
+                "description": "Creemos en descubrir los talentos ocultos de cada jugador. Nuestra misión es brindarte los conocimientos, las estrategias y la mentalidad para que te destaques en la mesa de Poker y más allá."
             },
             "growth": {
                 "title": "Sin límites, sólo crecimiento",
-                "description": "En Teamcheckcheck, nos dedicamos a fomentar una cultura de mejora continua. Nunca lo detendremos; en cambio, lo capacitaremos para maximizar sus habilidades y lograr el éxito en sus términos."
+                "description": "En GreupoCheCkcheck, nos dedicamos a fomentar una cultura de mejora continua. Nunca lo detendremos; en cambio,te capacitaremos para maximizar tus habilidades y lograr el éxito en un proceso considerable."
             }
         },
         "community": {
-            "title": "Únase a nuestra Comunidad hoy",
-            "description": "Ya sea que aspires a los primeros puestos o quieras mejorar tu juego, Teamcheckcheck es tu destino definitivo para alcanzar la excelencia en el póquer. Da el primer paso para alcanzar tu verdadero potencial y únete a nuestra vibrante comunidad de entusiastas del póquer.",
+            "title": "Unite a nuestra Comunidad hoy",
+            "description": "Ya sea que aspires a los niveles altos o quieras mejorar tu juego, GrupoCheckCheck es tu destino definitivo para alcanzar la excelencia en el Poker. Da el primer paso para alcanzar tu verdadero potencial y únete a nuestra vibrante comunidad de apasionados del Poker.",
             "library": {
                 "title": "Amplia videoteca",
                 "description": "Más de 1000 vídeos, con un mínimo de 20 vídeos próximos por mes"
@@ -81,8 +76,8 @@
         }
     },
     "team": {
-        "title": "TEAM",
-        "description": "XX es una empresa dedicada a la enseñanza y bancarización de jugadores que se dedican al POKER en la modalidad SPIN AND GO."
+        "title": "EQUIPO",
+        "description": "XX es una empresa dedicada a la enseñanza y bancaje de jugadores que se dedican al POKER en la modalidad SPIN AND GO."
     },
     "bannerCTA": {
         "title": "Tu éxito comienza aquí.",

@@ -14,19 +14,19 @@ export const Intro = () => {
 			</div>
 			<ul className="intro_lang">
 				<li>
-					<NavLink to='/en/'>
+					<NavLink to='/es/'>
 						<div className='intro_lang_img'>
-							<img src={GbFlag} alt="AR" />
+							<img src={ArFlag} alt="AR" />
 						</div>
-						<span>{t('intro.urlEnglish')}</span>
+						<span>{t('intro.urlSpanish')}</span>
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to='/es/'>
+					<NavLink to='/en/'>
 						<div className='intro_lang_img'>
-							<img src={ArFlag} alt="GB" />
+							<img src={GbFlag} alt="GB" />
 						</div>
-						<span>{t('intro.urlSpanish')}</span>
+						<span>{t('intro.urlEnglish')}</span>
 					</NavLink>
 				</li>
 			</ul>

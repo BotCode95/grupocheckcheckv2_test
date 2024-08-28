@@ -11,12 +11,7 @@
             "faq": "FAQ",
             "blog": "BLOG"
         },
-        "buttonCTA": "Sign up",
-        "socialMedia": {
-            "instagram": "https://www.instagram.com/grupocheckcheck/",
-            "youtube": "https://www.youtube.com/channel/UC6B_Q2labPyTD1iXEAG1DeA",
-            "twitch": "https://www.twitch.tv/grupocheckcheck"
-        }
+        "buttonCTA": "Sign up"
     },
     "footer": {
         "email": "grupocheckcheck@gmail.com",
@@ -27,24 +22,24 @@
             "email": "Email",
             "message": "Message",
             "button": "Send"
-        },
-        "socialMedia": {
-            "instagram": "https://www.instagram.com/grupocheckcheck/",
-            "youtube": "https://www.youtube.com/channel/UC6B_Q2labPyTD1iXEAG1DeA",
-            "twitch": "https://www.twitch.tv/grupocheckcheck",
-            "x": "https://twitter.com/grupocheckcheck",
-            "tiktok": "https://www.tiktok.com/@pokercheckcheck"
         }
+    },
+    "socialMedia": {
+        "instagram": "https://www.instagram.com/team.checkcheck/",
+        "youtube": "https://www.youtube.com/@3handedpoker",
+        "twitch": "https://www.twitch.tv/grupocheckcheck",
+        "x": "https://x.com/grupocheckcheck",
+        "tiktok": "https://www.tiktok.com/@pokercheckcheck"
     },
     "intro": {
         "urlSpanish": "grupocheckcheckpoker.com",
         "urlEnglish": "teamcheckcheck.com"
     },
     "home": {
-        "title": "Welcome to teamcheckcheck",
-        "description": "At teamcheckcheck we're more than just a backing platform – we're a community dedicated to empowering poker players worldwide. Whether you're a novice looking to refine your skills or a seasoned player aiming for mastery, our elite coaches from around the globe are here to guide you every step of the way.",
+        "title": "Welcome to TeamCheckCheck",
+        "description": "At TeamCheckCheck we're more than just a backing platform – we're a community dedicated to empowering poker players worldwide. Whether you're a novice looking to refine your skills or a seasoned player aiming for mastery, our elite coaches from around the globe are here to guide you every step of the way.",
         "why": {
-            "title": "Why Choose Teamcheckcheck?",
+            "title": "Why Choose TeamCheckCheck?",
             "coaching": {
                 "title": "Expert Coaching",
                 "description": "Our team comprises top-tier coaches with years of experience in Spin & Go poker. They're not just instructors; they're mentors committed to helping you reach your full potential."
@@ -55,12 +50,12 @@
             },
             "growth": {
                 "title": "No Limits, Only Growth",
-                "description": "At Teamcheckcheck, we're dedicated to fostering a culture of continuous improvement. We'll never hold you back – instead, we'll empower you to maximize your skill sets and achieve success on your terms."
+                "description": "At TeamCheckCheck, we're dedicated to fostering a culture of continuous improvement. We'll never hold you back – instead, we'll empower you to maximize your skill sets and achieve success on your terms."
             }
         },
         "community": {
             "title": "Join Our Community Today",
-            "description": "Whether you're aiming for the top ranks or seeking to sharpen your edge, Teamcheckcheck is your ultimate destination for poker excellence. Take the first step towards realizing your true potential and join our vibrant community of poker enthusiasts.",
+            "description": "Whether you're aiming for the top ranks or seeking to sharpen your edge, TeamCheckCheck is your ultimate destination for poker excellence. Take the first step towards realizing your true potential and join our vibrant community of poker enthusiasts.",
             "library": {
                 "title": "Extensive Video Library",
                 "description": "Over 1000 videos, with a minimun of 20 nex videos per month"

@@ -10,6 +10,7 @@ import instagramOutlined from '../../assets/redes/instagramOutlined.svg'
 import tiktokOutlined from '../../assets/redes/tiktokOutlined.svg'
 import xOutlined from '../../assets/redes/xOutlined.svg'
 import { useLanguage } from '../../hooks/useLanguage'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   redes: string[]
@@ -104,6 +105,8 @@ export const RedSocialList = ({
   type
 }: Props) => {
   const lang = useLanguage()
+  const [t] = useTranslation('global')
+
   return (
     <ul className='d-flex gap-3 list-unstyled m-0 red_social_list'>
       {redes?.length > 0 && lang && redes.map(red => {
@@ -112,7 +115,7 @@ export const RedSocialList = ({
           key={red}
           width={width}
           redSocial={result.redSocial}
-          link={result.link}
+          link={t(`socialMedia.${result.redSocial}`)}
           nombrePagina={result.nombrePagina}
           type={type}
         />
