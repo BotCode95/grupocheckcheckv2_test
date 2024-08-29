@@ -64,7 +64,6 @@ export const Signup = () => {
 
 	const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target
-		console.log('handleInputChange', name, value)
 		setFormState((prevState) => ({
 			...prevState,
 			[name]: value,
@@ -72,7 +71,6 @@ export const Signup = () => {
 	}
 
 	const handleBirthdateChange = (birthdate: Dayjs | null) => {
-		console.log('handleBirthdateChange', birthdate)
 		setFormState((prevState) => ({
 			...prevState,
 			birthdate
@@ -114,7 +112,6 @@ export const Signup = () => {
 
 		if(formState.files && formState.files?.length > 0) {
 			formState.files?.forEach((file, index) => {
-				console.log('file', typeof file, file)
 				formData.append(`files[${index}]`, file)
 			})
 		}
@@ -154,7 +151,6 @@ export const Signup = () => {
 		if(!formState.birthdate) valid = false
 		if(!formState.email) valid = false
 		if(!formState.countryResidence) valid = false
-		console.log('isValid', valid)
 		return valid
 	}, [formState])
 

@@ -13,7 +13,6 @@ export const Trips = () => {
 	const [t] = useTranslation('global')
 	const { trips } = useTrips()
 
-	console.log('trips', {trips})
 	return <>
 		<Navbar />
 		<BannerPage title={t('header.pages.blog')} />

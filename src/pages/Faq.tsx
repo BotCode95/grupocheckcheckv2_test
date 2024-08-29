@@ -12,7 +12,6 @@ export const Faq = () => {
 	const [t] = useTranslation('global')
 	const { text } = useContext(TextsContext)
 	const questions = text.questions
-	console.log('questions', questions)
 	return (
 		<>
 			<Navbar />
