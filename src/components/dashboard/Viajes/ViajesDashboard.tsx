@@ -19,15 +19,15 @@ export const ViajesDashboard = () => {
 	const [videosInitials, setVideosInitials] = useState<VideoTrips[]>([])
 	const [updateLatestVideos, setUpdateLatestVideos] = useState(false)
 	const [loaded, setLoaded] = useState(false)
-	const {
-		text: { imagesTrips },
-		getTextByLanguage,
-	} = useContext(TextsContext)
-	useEffect(() => {
-		if (imagesTrips?.length === 0) {
-			getTextByLanguage()
-		}
-	}, [])
+	// const {
+	// 	text: { imagesTrips },
+	// 	getTextByLanguage,
+	// } = useContext(TextsContext)
+	// useEffect(() => {
+	// 	if (imagesTrips?.length === 0) {
+	// 		getTextByLanguage()
+	// 	}
+	// }, [])
 
 	const activeUpdateVideos = () => {
 		getTripsVideos()
@@ -174,7 +174,7 @@ export const ViajesDashboard = () => {
 				loaded ? (
 					<div className={styles.containerEditVideosLink}>
 						<TituloSeccion titulo="Página Viajes" variant={'h3'} />
-						<Box
+						{/* <Box
 							component="form"
 							sx={{
 								'& .MuiTextField-root': { m: 1, width: '70ch' },
@@ -260,7 +260,7 @@ export const ViajesDashboard = () => {
 									<ButtonAddInput title={'Agregar video'} onClick={addVideo} />
 								</>
 							)}
-						</Box>
+						</Box> */}
 					</div>
 				) : (
 					<Spinner />

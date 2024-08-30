@@ -37,7 +37,7 @@ export const Viajes = () => {
 						fontWeigth="bold"
 					/>
 				</Grid>
-				{trips.map((trip: VideoResponse, index) => (
+				{/* {trips.map((trip: VideoResponse, index) => (
 					<Grid container key={index}>
 						<Grid
 							item
@@ -72,7 +72,7 @@ export const Viajes = () => {
 						</Grid>
 						<VideosViajesNuevo viajesUrl={trip.videos} />
 					</Grid>
-				))}
+				))} */}
 			</Grid>
 			<RedesSociales />
 			<Footer />
