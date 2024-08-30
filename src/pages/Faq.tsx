@@ -1,4 +1,9 @@
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material'
+import {
+	Accordion,
+	AccordionDetails,
+	AccordionSummary,
+	Typography,
+} from '@mui/material'
 import { useContext } from 'react'
 import { BannerPage } from '../components/UI/BannerPage/BannerPage'
 import { Footer } from '../components/UI/Footer'
@@ -12,29 +17,35 @@ export const Faq = () => {
 	const [t] = useTranslation('global')
 	const { text } = useContext(TextsContext)
 	const questions = text.questions
-	console.log('questions', questions)
 	return (
 		<>
 			<Navbar />
 			<BannerPage title={t('faq.title')} />
-			<div className='page_container faq'>
-				{
-					questions?.length > 0 && questions.map((question, idx) => (
-						<Accordion key={`faq${idx}`} sx={{ color: 'var(--white-color)', bgcolor: 'var(--dark-color)' }} className='faq_accordion'>
+			<div className="page_container faq">
+				{questions?.length > 0 &&
+					questions.map((question, idx) => (
+						<Accordion
+							key={`faq${idx}`}
+							sx={{ color: 'var(--white-color)', bgcolor: 'var(--dark-color)' }}
+							className="faq_accordion"
+						>
 							<AccordionSummary
-								expandIcon={<ExpandMoreIcon sx={{color: 'var(--white-color)'}}/>}
+								expandIcon={
+									<ExpandMoreIcon sx={{ color: 'var(--white-color)' }} />
+								}
 								aria-controls={`faq${idx}`}
 								id={`faq${idx}`}
 							>
-								<Typography fontWeight={600}><span className='faq_icon'>✦</span>{question.title}</Typography>
+								<Typography fontWeight={600}>
+									<span className="faq_icon">✦</span>
+									{question.title}
+								</Typography>
 							</AccordionSummary>
 							<AccordionDetails>
-								<Typography>
-									{question.description}
-								</Typography>
+								<Typography>{question.description}</Typography>
 							</AccordionDetails>
-						</Accordion>))
-				}
+						</Accordion>
+					))}
 			</div>
 			<BannerCTA />
 			<Footer />

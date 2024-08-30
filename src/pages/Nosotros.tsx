@@ -23,7 +23,7 @@ export const Nosotros = () => {
 
 	useEffect(() => {
 		setLoading(true)
-		getTextByLanguage(language ?? 'es')
+		// getTextByLanguage(language ?? 'es')
 		// setLoading(false)
 	}, [language])
 

@@ -31,7 +31,7 @@ interface FormState {
 	anotherUsers: string
 	backed: string
 	spinsExperience: string
-	hearAboutUs: string,
+	hearAboutUs: string
 	files: File[] | null
 }
 
@@ -52,7 +52,7 @@ const initialFormState: FormState = {
 	backed: '',
 	spinsExperience: '',
 	hearAboutUs: '',
-	files: null
+	files: null,
 }
 
 export const Signup = () => {
@@ -64,7 +64,6 @@ export const Signup = () => {
 
 	const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
 		const { name, value } = event.target
-		console.log('handleInputChange', name, value)
 		setFormState((prevState) => ({
 			...prevState,
 			[name]: value,
@@ -72,17 +71,16 @@ export const Signup = () => {
 	}
 
 	const handleBirthdateChange = (birthdate: Dayjs | null) => {
-		console.log('handleBirthdateChange', birthdate)
 		setFormState((prevState) => ({
 			...prevState,
-			birthdate
+			birthdate,
 		}))
 	}
 
 	const handleFileChange = (files: File[]) => {
 		setFormState((prevState) => ({
 			...prevState,
-			files
+			files,
 		}))
 	}
 
@@ -112,13 +110,12 @@ export const Signup = () => {
 		formData.append('pokerSites', formState.pokerSites)
 		formData.append('anotherUsers', formState.anotherUsers)
 
-		if(formState.files && formState.files?.length > 0) {
+		if (formState.files && formState.files?.length > 0) {
 			formState.files?.forEach((file, index) => {
-				console.log('file', typeof file, file)
 				formData.append(`files[${index}]`, file)
 			})
 		}
-		
+
 		try {
 			await api.post<EmailSend>('/email/send-email', formData, {
 				headers: {
@@ -139,7 +136,9 @@ export const Signup = () => {
 		} catch (error) {
 			Swal.fire({
 				title: t('contact.error.title') || 'Algo fallo en el envió del email',
-				text: t('contact.error.message') || 'Podes contactarnos directamente a grupocheckcheck@gmail.com',
+				text:
+					t('contact.error.message') ||
+					'Podes contactarnos directamente a grupocheckcheck@gmail.com',
 				icon: 'error',
 				confirmButtonText: 'OK',
 			})
@@ -149,832 +148,879 @@ export const Signup = () => {
 
 	const isValid = useMemo(() => {
 		let valid = true
-		
-		if(!formState.fullName) valid = false
-		if(!formState.birthdate) valid = false
-		if(!formState.email) valid = false
-		if(!formState.countryResidence) valid = false
-		console.log('isValid', valid)
+
+		if (!formState.fullName) valid = false
+		if (!formState.birthdate) valid = false
+		if (!formState.email) valid = false
+		if (!formState.countryResidence) valid = false
 		return valid
 	}, [formState])
 
-	return <>
-		<Navbar />
-		<BannerPage title={t('contact.title')} />
-		<div className='signup page_container mt-5 mb-5'>
-			<Grid container spacing={2}>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={6}
-				>
-					<TextField
-						name="fullName"
-						label={t('contact.form.fullName')}
-						value={formState.fullName}
-						onChange={handleInputChange}
-						required
-						fullWidth
-						autoComplete="off"
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={3}
-				>
-					<BasicDateField
-						label={t('contact.form.birthdate')}
-						onChange={handleBirthdateChange}
-						color="error"
-						fullWidth
-						required
-						value={formState.birthdate}
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={3}
-				>
-					<TextField
-						name="countryResidence"
-						label={t('contact.form.countryResidence')}
-						value={formState.countryResidence}
-						onChange={handleInputChange}
-						required
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={6}
-				>
-					<TextField
-						name="email"
-						label={t('contact.form.email')}
-						value={formState.email}
-						onChange={handleInputChange}
-						required
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={6}
-				>
-					<TextField
-						name="skype"
-						label={t('contact.form.skype') || 'Skype username'}
-						value={formState.skype}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				>
-					<TextField
-						name="pokerSites"
-						label={t('contact.form.pokerSites') || 'What Poker Sites do you play on?'}
-						value={formState.pokerSites}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={4}
-				>
-					<TextField
-						name="pokerstarUser"
-						label={t('contact.form.pokerstarUser') || 'Pokerstars Username'}
-						value={formState.pokerstarUser}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={4}
-				>
-					<TextField
-						name="winamaxUser"
-						label={t('contact.form.winamaxUser') || 'Winamax Username'}
-						value={formState.winamaxUser}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={4}
-				>
-					<TextField
-						name="partypokerUser"
-						label={t('contact.form.partypokerUser') || 'Partypoker Username'}
-						value={formState.partypokerUser}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={6}
-				>
-					<TextField
-						name="ggpokerUser"
-						label={t('contact.form.ggpokerUser') || 'GGPoker Username'}
-						value={formState.ggpokerUser}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={6}
-				>
-					<TextField
-						name="user888"
-						label={t('contact.form.user888') || '888 Username'}
-						value={formState.user888}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={6}
-				>
-					<TextField
-						name="anotherUsers"
-						label={t('contact.form.anotherUsers') || 'Do you use any other Poker sites/Usernames/Aliases?'}
-						value={formState.anotherUsers}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={6}
-				>
-					<TextField
-						name="backed"
-						label={t('contact.form.backed') || 'Have you been backed before?'}
-						value={formState.backed}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				>
-					<TextField
-						name="spinsExperience"
-						label={t('contact.form.spinsExperience') || 'Have you been backed before?'}
-						value={formState.spinsExperience}
-						onChange={handleInputChange}
-						multiline
-						rows={3}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={6}
-				>
-					<TextField
-						name="hoursDedicate"
-						label={t('contact.form.hoursDedicate') || 'How many hours a week are you willing to dedicate to playing and studying?'}
-						value={formState.hoursDedicate}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sx={{
-					'& .MuiInputBase-input': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:hover': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:active': {
-						color: 'white',
-					},
-					'& .MuiInputBase-input:focus': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root': {
-						color: 'white',
-					},
-					'& .MuiFormLabel-root:hover': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:active': {
-						color: 'white !important',
-					},
-					'& .MuiFormLabel-root:focus': {
-						color: 'white !important',
-					},
-					'& .Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-						color: 'white',
-						borderColor: 'white !important'
-					},
-					'& .MuiOutlinedInput-notchedOutline': {
-						borderColor: 'white'
-					},
-				}}
-				sm={12}
-				md={6}
-				>
-					<TextField
-						name="hearAboutUs"
-						label={t('contact.form.hearAboutUs') || 'How did you hear about us? '}
-						value={formState.hearAboutUs}
-						onChange={handleInputChange}
-						fullWidth
-						color="error"
-					/>
-				</Grid>
-				<Grid item sm={12} className='my-3'>
-					{t('contact.form.fileDescription')}
-					<br />
-					<br />
-					<FileUpload handleFiles={handleFileChange} />
-				</Grid>
-				<Grid item sm={12}>
-					<Button
-						variant="contained"
-						fullWidth
-						color="error"
-						disabled={sendingData || !isValid}
-						onClick={(event: React.FormEvent) => handleSubmit(event)}
+	return (
+		<>
+			<Navbar />
+			<BannerPage title={t('contact.title')} />
+			<div className="signup page_container mt-5 mb-5">
+				<Grid container spacing={2}>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={6}
 					>
-						{sendingData ? (
-							<Spinner height="30" />
-						) : (
-							<span>{t('contact.buttonSend')}</span>
-						)}
-					</Button>
+						<TextField
+							name="fullName"
+							label={t('contact.form.fullName')}
+							value={formState.fullName}
+							onChange={handleInputChange}
+							required
+							fullWidth
+							autoComplete="off"
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={3}
+					>
+						<BasicDateField
+							label={t('contact.form.birthdate')}
+							onChange={handleBirthdateChange}
+							color="error"
+							fullWidth
+							required
+							value={formState.birthdate}
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={3}
+					>
+						<TextField
+							name="countryResidence"
+							label={t('contact.form.countryResidence')}
+							value={formState.countryResidence}
+							onChange={handleInputChange}
+							required
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={6}
+					>
+						<TextField
+							name="email"
+							label={t('contact.form.email')}
+							value={formState.email}
+							onChange={handleInputChange}
+							required
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={6}
+					>
+						<TextField
+							name="skype"
+							label={t('contact.form.skype') || 'Skype username'}
+							value={formState.skype}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+					>
+						<TextField
+							name="pokerSites"
+							label={
+								t('contact.form.pokerSites') ||
+								'What Poker Sites do you play on?'
+							}
+							value={formState.pokerSites}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={4}
+					>
+						<TextField
+							name="pokerstarUser"
+							label={t('contact.form.pokerstarUser') || 'Pokerstars Username'}
+							value={formState.pokerstarUser}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={4}
+					>
+						<TextField
+							name="winamaxUser"
+							label={t('contact.form.winamaxUser') || 'Winamax Username'}
+							value={formState.winamaxUser}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={4}
+					>
+						<TextField
+							name="partypokerUser"
+							label={t('contact.form.partypokerUser') || 'Partypoker Username'}
+							value={formState.partypokerUser}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={6}
+					>
+						<TextField
+							name="ggpokerUser"
+							label={t('contact.form.ggpokerUser') || 'GGPoker Username'}
+							value={formState.ggpokerUser}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={6}
+					>
+						<TextField
+							name="user888"
+							label={t('contact.form.user888') || '888 Username'}
+							value={formState.user888}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={6}
+					>
+						<TextField
+							name="anotherUsers"
+							label={
+								t('contact.form.anotherUsers') ||
+								'Do you use any other Poker sites/Usernames/Aliases?'
+							}
+							value={formState.anotherUsers}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={6}
+					>
+						<TextField
+							name="backed"
+							label={t('contact.form.backed') || 'Have you been backed before?'}
+							value={formState.backed}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+					>
+						<TextField
+							name="spinsExperience"
+							label={
+								t('contact.form.spinsExperience') ||
+								'Have you been backed before?'
+							}
+							value={formState.spinsExperience}
+							onChange={handleInputChange}
+							multiline
+							rows={3}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={6}
+					>
+						<TextField
+							name="hoursDedicate"
+							label={
+								t('contact.form.hoursDedicate') ||
+								'How many hours a week are you willing to dedicate to playing and studying?'
+							}
+							value={formState.hoursDedicate}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid
+						item
+						sx={{
+							'& .MuiInputBase-input': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:hover': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:active': {
+								color: 'white',
+							},
+							'& .MuiInputBase-input:focus': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root': {
+								color: 'white',
+							},
+							'& .MuiFormLabel-root:hover': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:active': {
+								color: 'white !important',
+							},
+							'& .MuiFormLabel-root:focus': {
+								color: 'white !important',
+							},
+							'& .Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+								color: 'white',
+								borderColor: 'white !important',
+							},
+							'& .MuiOutlinedInput-notchedOutline': {
+								borderColor: 'white',
+							},
+						}}
+						sm={12}
+						md={6}
+					>
+						<TextField
+							name="hearAboutUs"
+							label={
+								t('contact.form.hearAboutUs') || 'How did you hear about us? '
+							}
+							value={formState.hearAboutUs}
+							onChange={handleInputChange}
+							fullWidth
+							color="error"
+						/>
+					</Grid>
+					<Grid item sm={12} className="my-3">
+						{t('contact.form.fileDescription')}
+						<br />
+						<br />
+						<FileUpload handleFiles={handleFileChange} />
+					</Grid>
+					<Grid item sm={12}>
+						<Button
+							variant="contained"
+							fullWidth
+							color="error"
+							disabled={sendingData || !isValid}
+							onClick={(event: React.FormEvent) => handleSubmit(event)}
+						>
+							{sendingData ? (
+								<Spinner height="30" />
+							) : (
+								<span>{t('contact.buttonSend')}</span>
+							)}
+						</Button>
+					</Grid>
 				</Grid>
-			</Grid>
-		</div>
-		<RedesSociales />
-		<Footer />
-	</>
+			</div>
+			<RedesSociales />
+			<Footer />
+		</>
+	)
 }
