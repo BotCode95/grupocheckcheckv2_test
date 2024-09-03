@@ -15,22 +15,31 @@ export const Team = () => {
 	const { text } = useContext(TextsContext)
 
 	useEffect(() => {
-		if((playerSelected === null || !playerSelected.player_name) && text.players?.length > 0) {
+		if (
+			(playerSelected === null || !playerSelected.player_name) &&
+			text.players?.length > 0
+		) {
 			setPlayerSelected(text.players[0])
 		}
 	}, [text.players])
-	
-	return <>
-		<Navbar />
-		<BannerPage title={t('team.title')} />
-		<div className='page'>
-			<div className="page_container">
-				<p className='team_paragraph'>{t('team.description')}</p>
-				<GalleryPlayers players={text.players} playerSelected={playerSelected} setPlayer={setPlayerSelected} />
-				<PlayerView player={playerSelected} />
+
+	return (
+		<>
+			<Navbar />
+			<BannerPage title={t('team.title')} />
+			<div className="page">
+				<div className="page_container">
+					<p className="team_paragraph">{t('team.description')}</p>
+					<GalleryPlayers
+						players={text.players}
+						playerSelected={playerSelected}
+						setPlayer={setPlayerSelected}
+					/>
+					<PlayerView player={playerSelected} />
+				</div>
 			</div>
-		</div>
-		<BannerCTA />
-		<Footer />
-	</>
+			<BannerCTA />
+			<Footer />
+		</>
+	)
 }

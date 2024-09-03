@@ -10,17 +10,21 @@ import { TextsContext } from '../context/Dashboard/Texts'
 export const Testimonials = () => {
 	const [t] = useTranslation('global')
 	const { text } = useContext(TextsContext)
-	const testimonials = text.testimonials
+	const testimonials = text?.testimonials
 
-	return <>
-		<Navbar />
-		<BannerPage title={t('testimonials.title')} />
-		<div className='page my-5'>
-			<div className="py-5">
-				{testimonials !== null && testimonials?.length > 0  && <GalleryTestimonials testimonials={testimonials} />}
+	return (
+		<>
+			<Navbar />
+			<BannerPage title={t('testimonials.title')} />
+			<div className="page my-5">
+				<div className="py-5">
+					{testimonials !== null && testimonials?.length > 0 && (
+						<GalleryTestimonials testimonials={testimonials} />
+					)}
+				</div>
 			</div>
-		</div>
-		<BannerCTA />
-		<Footer />
-	</>
+			<BannerCTA />
+			<Footer />
+		</>
+	)
 }

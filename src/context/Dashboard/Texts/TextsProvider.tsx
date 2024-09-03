@@ -49,7 +49,29 @@ const Texts_INITIAL_STATE: TextsState = {
 }
 
 export const TextsProvider: FC<Props> = ({ children }) => {
-	const [state, dispatch] = useReducer(textsReducer, Texts_INITIAL_STATE)
+	const [state, dispatch] = useReducer(
+		textsReducer,
+		Texts_INITIAL_STATE,
+		(initial) => {
+			const persistedState = sessionStorage.getItem('appState')
+
+			if (persistedState) {
+				const parsedState = JSON.parse(persistedState)
+				if (parsedState) {
+					return {
+						...initial,
+						...parsedState,
+						text: parsedState || objTextEmpty,
+					}
+				}
+				return {
+					...initial,
+					...parsedState,
+				}
+			}
+			return initial
+		}
+	)
 
 	const getTexts = async () => {
 		try {
@@ -77,6 +99,7 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 				type: 'TextByLanguage',
 				payload: data.text[0],
 			})
+			sessionStorage.setItem('appState', JSON.stringify(data.text[0]))
 		} catch (error) {
 			let message = ''
 			if (error instanceof Error) message = error.message
