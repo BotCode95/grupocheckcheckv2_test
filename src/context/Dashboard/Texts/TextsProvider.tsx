@@ -53,7 +53,8 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 		textsReducer,
 		Texts_INITIAL_STATE,
 		(initial) => {
-			const persistedState = sessionStorage.getItem('appState')
+			const lng = localStorage.getItem('lng')
+			const persistedState = sessionStorage.getItem('appState' + lng)
 
 			if (persistedState) {
 				const parsedState = JSON.parse(persistedState)
@@ -99,7 +100,8 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 				type: 'TextByLanguage',
 				payload: data.text[0],
 			})
-			sessionStorage.setItem('appState', JSON.stringify(data.text[0]))
+			sessionStorage.setItem('appState' + lng, JSON.stringify(data.text[0]))
+			localStorage.setItem('lng', lng)
 		} catch (error) {
 			let message = ''
 			if (error instanceof Error) message = error.message

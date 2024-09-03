@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 import { Button, Grid } from '@mui/material'
 import { Navbar } from '../components/navbar/Navbar'
 import { SpinnerImg } from '../components/UI/Spinners/SpinnerImg'
 import { UIContext } from '../context/UIContext/UIContext'
-import { TextsContext } from '../context/Dashboard/Texts'
 import banner from '../assets/bannerCutted.jpg'
 import coachingImg from '../assets/icons/coaching.jpg'
 import desarrolloImg from '../assets/icons/desarrollo.jpg'
@@ -11,24 +10,16 @@ import growthImg from '../assets/icons/growth.jpg'
 import supportImg from '../assets/icons/support.png'
 import personImg from '../assets/icons/person.png'
 import videoplayerImg from '../assets/icons/videoplayer.png'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Footer } from '../components/UI/Footer'
 import { useLanguage } from '../hooks/useLanguage'
 
-interface Props {
-	lng: 'es' | 'en'
-}
-
-export const Inicio = ({ lng }: Props) => {
+export const Inicio = () => {
 	const { loading, loadingHome } = useContext(UIContext)
 	const isLoadingOK: string | null = localStorage.getItem('loading')
-	const [loadingPage, setLoadingPage] = useState(
-		isLoadingOK === 'cargado' ? false : true
-	)
 	const [t] = useTranslation('global')
 	const lang = useLanguage()
-	const { text, getTextByLanguage } = useContext(TextsContext)
 
 	useEffect(() => {
 		if (!isLoadingOK) {
@@ -36,25 +27,9 @@ export const Inicio = ({ lng }: Props) => {
 		}
 	}, [])
 
-	const location = useLocation()
-
-	const language = lng ?? location.pathname.split('/')[1]
-
-	useEffect(() => {
-		if (text._id && text._id !== '') {
-			setTimeout(() => {
-				setLoadingPage(false)
-			}, 2000)
-		}
-	}, [])
-
-	useEffect(() => {
-		getTextByLanguage(language)
-	}, [])
-
 	return (
 		<div className="home">
-			{loading || loadingPage ? (
+			{loading ? (
 				<Grid container>
 					<Grid
 						item

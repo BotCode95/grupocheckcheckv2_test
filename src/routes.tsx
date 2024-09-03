@@ -20,7 +20,7 @@ export const AppRoutes = () => {
 				<Route path="/">
 					<Route index element={<Intro />} />
 					<Route path="/es">
-						<Route index element={<Inicio lng="es" />} />
+						<Route index element={<Inicio />} />
 						<Route path="/es/teams" element={<Team />} />
 						<Route path="/es/testimonials" element={<Testimonials />} />
 						<Route path="/es/blog" element={<TripsBlog />} />
@@ -28,7 +28,7 @@ export const AppRoutes = () => {
 						<Route path="/es/signup" element={<Signup />} />
 					</Route>
 					<Route path="/en">
-						<Route index element={<Inicio lng="en" />} />
+						<Route index element={<Inicio />} />
 						<Route path="/en/teams" element={<Team />} />
 						<Route path="/en/testimonials" element={<Testimonials />} />
 						<Route path="/en/blog" element={<TripsBlog />} />

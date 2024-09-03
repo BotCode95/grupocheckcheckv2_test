@@ -1,38 +1,50 @@
-import crosses from '../assets/crosses.png'
+import { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
+import { TextsContext } from '../context/Dashboard/Texts'
 import logo_check_check from '../assets/logo_checkcheck.svg'
 import ArFlag from '../assets/icons/ar.svg'
 import GbFlag from '../assets/icons/gb.svg'
+import crosses from '../assets/crosses.png'
 import { NavLink } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 
 export const Intro = () => {
 	const [t] = useTranslation('global')
-	return <div className="intro">
-		<div className='intro_content'>
-			<div className="intro_logo">
-				<img src={logo_check_check} alt="Logo Check Check" />
+	const { getTextByLanguage } = useContext(TextsContext)
+
+	return (
+		<div className="intro">
+			<div className="intro_content">
+				<div className="intro_logo">
+					<img src={logo_check_check} alt="Logo Check Check" />
+				</div>
+				<ul className="intro_lang">
+					<li>
+						<NavLink to="/es/">
+							<div
+								className="intro_lang_img"
+								onClick={() => getTextByLanguage('es')}
+							>
+								<img src={ArFlag} alt="AR" />
+							</div>
+							<span>{t('intro.urlSpanish')}</span>
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to="/en/">
+							<div
+								className="intro_lang_img"
+								onClick={() => getTextByLanguage('en')}
+							>
+								<img src={GbFlag} alt="GB" />
+							</div>
+							<span>{t('intro.urlEnglish')}</span>
+						</NavLink>
+					</li>
+				</ul>
 			</div>
-			<ul className="intro_lang">
-				<li>
-					<NavLink to='/es/'>
-						<div className='intro_lang_img'>
-							<img src={ArFlag} alt="AR" />
-						</div>
-						<span>{t('intro.urlSpanish')}</span>
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to='/en/'>
-						<div className='intro_lang_img'>
-							<img src={GbFlag} alt="GB" />
-						</div>
-						<span>{t('intro.urlEnglish')}</span>
-					</NavLink>
-				</li>
-			</ul>
+			<div className="intro_crosses">
+				<img src={crosses} alt="Crosses" />
+			</div>
 		</div>
-		<div className="intro_crosses">
-			<img src={crosses} alt="Crosses" />
-		</div>
-	</div>
+	)
 }
