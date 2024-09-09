@@ -14,18 +14,37 @@ import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Footer } from '../components/UI/Footer'
 import { useLanguage } from '../hooks/useLanguage'
+import { TextsContext } from '../context/Dashboard/Texts'
 
 export const Inicio = () => {
 	const { loading, loadingHome } = useContext(UIContext)
 	const isLoadingOK: string | null = localStorage.getItem('loading')
 	const [t] = useTranslation('global')
 	const lang = useLanguage()
+	const { loading: loadingFetch } = useContext(TextsContext)
 
 	useEffect(() => {
 		if (!isLoadingOK) {
 			loadingHome(2000)
 		}
 	}, [])
+
+	if (loadingFetch) {
+		return (
+			<Grid container>
+				<Grid
+					item
+					xs={12}
+					display={'flex'}
+					justifyContent={'center'}
+					alignItems={'center'}
+					height={'100vh'}
+				>
+					<SpinnerImg />
+				</Grid>
+			</Grid>
+		)
+	}
 
 	return (
 		<div className="home">

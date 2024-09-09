@@ -8,11 +8,13 @@ import { type IPlayer } from '../types/texts'
 import { useTranslation } from 'react-i18next'
 import { BannerCTA } from '../components/Banners/BannerCTA'
 import { TextsContext } from '../context/Dashboard/Texts'
+import { Grid } from '@mui/material'
+import { SpinnerImg } from '../components/UI/Spinners/SpinnerImg'
 
 export const Team = () => {
 	const [playerSelected, setPlayerSelected] = useState<IPlayer | null>(null)
 	const [t] = useTranslation('global')
-	const { text } = useContext(TextsContext)
+	const { text, loading: loadingFetch } = useContext(TextsContext)
 
 	useEffect(() => {
 		if (
@@ -27,17 +29,33 @@ export const Team = () => {
 		<>
 			<Navbar />
 			<BannerPage title={t('team.title')} />
-			<div className="page">
-				<div className="page_container">
-					<p className="team_paragraph">{t('team.description')}</p>
-					<GalleryPlayers
-						players={text.players}
-						playerSelected={playerSelected}
-						setPlayer={setPlayerSelected}
-					/>
-					<PlayerView player={playerSelected} />
+			{loadingFetch ? (
+				<Grid container>
+					<Grid
+						item
+						xs={12}
+						display={'flex'}
+						justifyContent={'center'}
+						alignItems={'center'}
+						height={'100vh'}
+					>
+						<SpinnerImg />
+					</Grid>
+				</Grid>
+			) : (
+				<div className="page">
+					<div className="page_container">
+						<p className="team_paragraph">{t('team.description')}</p>
+						<GalleryPlayers
+							players={text.players}
+							playerSelected={playerSelected}
+							setPlayer={setPlayerSelected}
+						/>
+						<PlayerView player={playerSelected} />
+					</div>
 				</div>
-			</div>
+			)}
+
 			<BannerCTA />
 			<Footer />
 		</>

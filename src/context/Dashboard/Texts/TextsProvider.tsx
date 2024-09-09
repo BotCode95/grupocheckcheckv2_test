@@ -94,7 +94,10 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 
 	const getTextByLanguage = async (lng = 'es') => {
 		try {
-			state.loading = true
+			dispatch({
+				type: 'SetLoading',
+				payload: true,
+			})
 			const { data } = await api.get<Data>(`/texts?lng=${lng}`)
 			dispatch({
 				type: 'TextByLanguage',
