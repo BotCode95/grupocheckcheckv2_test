@@ -28,7 +28,7 @@ const theme = createTheme({
 
 i18next.init({
 	interpolation: { escapeValue: false },
-	lng: 'es',
+	lng: localStorage.getItem('lng') || 'es',
 	resources: {
 		es: { global: global_es },
 		en: { global: global_en },
