@@ -6,15 +6,22 @@ import { Grid } from '@mui/material'
 import { BannerCTA } from '../components/Banners/BannerCTA'
 import { useTranslation } from 'react-i18next'
 import { Trips } from '../types/texts'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { TextsContext } from '../context/Dashboard/Texts'
 
 export const TripsBlog = () => {
 	const [t] = useTranslation('global')
 
 	const {
-		text: { imagesTrips: trips },
+		text: { imagesTrips: trips, players },
+		getTextByLanguage,
 	} = useContext(TextsContext)
+
+	useEffect(() => {
+		if (players?.length === 0) {
+			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
+		}
+	}, [])
 
 	return (
 		<>

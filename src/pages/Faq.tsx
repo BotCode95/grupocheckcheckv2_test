@@ -4,7 +4,7 @@ import {
 	AccordionSummary,
 	Typography,
 } from '@mui/material'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { BannerPage } from '../components/UI/BannerPage/BannerPage'
 import { Footer } from '../components/UI/Footer'
 import { Navbar } from '../components/navbar/Navbar'
@@ -15,8 +15,14 @@ import { TextsContext } from '../context/Dashboard/Texts'
 
 export const Faq = () => {
 	const [t] = useTranslation('global')
-	const { text } = useContext(TextsContext)
+	const { text, getTextByLanguage } = useContext(TextsContext)
 	const questions = text.questions
+
+	useEffect(() => {
+		if (!text || text?.players?.length === 0) {
+			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
+		}
+	}, [])
 	return (
 		<>
 			<Navbar />
