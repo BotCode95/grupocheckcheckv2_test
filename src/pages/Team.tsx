@@ -14,7 +14,17 @@ import { SpinnerImg } from '../components/UI/Spinners/SpinnerImg'
 export const Team = () => {
 	const [playerSelected, setPlayerSelected] = useState<IPlayer | null>(null)
 	const [t] = useTranslation('global')
-	const { text, loading: loadingFetch } = useContext(TextsContext)
+	const {
+		text,
+		loading: loadingFetch,
+		getTextByLanguage,
+	} = useContext(TextsContext)
+
+	useEffect(() => {
+		if (!text || text?.players?.length === 0) {
+			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
+		}
+	}, [])
 
 	useEffect(() => {
 		if (
@@ -23,7 +33,7 @@ export const Team = () => {
 		) {
 			setPlayerSelected(text.players[0])
 		}
-	}, [text.players])
+	}, [text?.players])
 
 	return (
 		<>

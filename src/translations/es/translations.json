@@ -11,7 +11,7 @@
             "faq": "FAQ",
             "blog": "BLOG"
         },
-        "buttonCTA": "Registrarse"
+        "buttonCTA": "UNIRME"
     },
     "footer": {
         "email": "grupocheckcheck@gmail.com",
@@ -29,7 +29,9 @@
         "youtube": "https://www.youtube.com/channel/UC6B_Q2labPyTD1iXEAG1DeA",
         "twitch": "https://www.twitch.tv/grupocheckcheck",
         "x": "https://x.com/grupocheckcheck",
-        "tiktok": "https://www.tiktok.com/@pokercheckcheck"
+        "tiktok": "https://www.tiktok.com/@pokercheckcheck",
+        "discord": "https://discord.com/channels/767573510406537236/1086428858661752892",
+        "kick": "https://kick.com/grupocheckcheck"
     },
     "intro": {
         "urlSpanish": "grupocheckcheckpoker.com",
@@ -50,19 +52,19 @@
             },
             "growth": {
                 "title": "Sin límites, sólo crecimiento",
-                "description": "En GreupoCheCkcheck, nos dedicamos a fomentar una cultura de mejora continua. Nunca lo detendremos; en cambio,te capacitaremos para maximizar tus habilidades y lograr el éxito en un proceso considerable."
+                "description": "En GrupoCheCkcheck, nos dedicamos a fomentar una cultura de mejora continua. Nunca nos detendremos; Te capacitaremos para maximizar tus habilidades y lograr el éxito en un proceso continuo."
             }
         },
         "community": {
             "title": "Unite a nuestra Comunidad hoy",
-            "description": "Ya sea que aspires a los niveles altos o quieras mejorar tu juego, GrupoCheckCheck es tu destino definitivo para alcanzar la excelencia en el Poker. Da el primer paso para alcanzar tu verdadero potencial y únete a nuestra vibrante comunidad de apasionados del Poker.",
+            "description": "Ya sea que aspires a los niveles altos o quieras mejorar tu juego, GrupoCheckCheck es tu destino definitivo para alcanzar la excelencia en el Póker. Da el primer paso para alcanzar tu verdadero potencial y únete a nuestra vibrante comunidad de apasionados en este deporte mental.",
             "library": {
                 "title": "Amplia videoteca",
                 "description": "Más de 1000 vídeos, con un mínimo de 20 vídeos próximos por mes"
             },
             "coaching": {
                 "title": "Entrenamiento Grupal Regular",
-                "description": "Un sistema de apuestas con 14 niveles diseñados para ayudar a los jugadores de todos los niveles a tener éxito."
+                "description": "2 coaching técnicos semanales y grupales formados en base al conocimiento y experiencia del jugador."
             },
             "support": {
                 "title": "Apoyo dedicado",
@@ -70,9 +72,9 @@
             }
         },
         "cta": {
-            "title": "¿Estás listo para mejorar tu juego? Emprendamos este viaje juntos.",
-            "subtitle": "Tu éxito comienza aquí.",
-            "button": "Registrarse"
+            "title": "Bienvenido a la Familia XX, para formar parte de la escuela debes dar click en UNIRME y completar el formulario de ingreso en nuestra plataforma de DISCORD",
+            "subtitle": "Éxitos!",
+            "button": "Unirme"
         }
     },
     "team": {
@@ -81,7 +83,7 @@
     },
     "bannerCTA": {
         "title": "Tu éxito comienza aquí.",
-        "button": "Registrarse"
+        "button": "Unirme"
     },
     "players": [
         {

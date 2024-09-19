@@ -2,8 +2,8 @@ import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { TextsContext } from '../context/Dashboard/Texts'
 import logo_check_check from '../assets/logo_checkcheck.svg'
-import ArFlag from '../assets/icons/ar.svg'
-import GbFlag from '../assets/icons/gb.svg'
+import arSite from '../assets/flags/argLogo.png'
+import ukSite from '../assets/flags/ukLogo.png'
 import crosses from '../assets/crosses.png'
 import { NavLink } from 'react-router-dom'
 
@@ -24,7 +24,7 @@ export const Intro = () => {
 								className="intro_lang_img"
 								onClick={() => getTextByLanguage('es')}
 							>
-								<img src={ArFlag} alt="AR" />
+								<img src={arSite} alt="AR" />
 							</div>
 							<span>{t('intro.urlSpanish')}</span>
 						</NavLink>
@@ -35,7 +35,7 @@ export const Intro = () => {
 								className="intro_lang_img"
 								onClick={() => getTextByLanguage('en')}
 							>
-								<img src={GbFlag} alt="GB" />
+								<img src={ukSite} alt="GB" />
 							</div>
 							<span>{t('intro.urlEnglish')}</span>
 						</NavLink>

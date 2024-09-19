@@ -10,22 +10,28 @@ import growthImg from '../assets/icons/growth.jpg'
 import supportImg from '../assets/icons/support.png'
 import personImg from '../assets/icons/person.png'
 import videoplayerImg from '../assets/icons/videoplayer.png'
-import { NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Footer } from '../components/UI/Footer'
-import { useLanguage } from '../hooks/useLanguage'
 import { TextsContext } from '../context/Dashboard/Texts'
 
 export const Inicio = () => {
 	const { loading, loadingHome } = useContext(UIContext)
 	const isLoadingOK: string | null = localStorage.getItem('loading')
 	const [t] = useTranslation('global')
-	const lang = useLanguage()
-	const { loading: loadingFetch } = useContext(TextsContext)
-
+	const {
+		text,
+		loading: loadingFetch,
+		getTextByLanguage,
+	} = useContext(TextsContext)
 	useEffect(() => {
 		if (!isLoadingOK) {
 			loadingHome(2000)
+		}
+	}, [])
+
+	useEffect(() => {
+		if (!text || text?.players?.length === 0) {
+			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
 		}
 	}, [])
 
@@ -125,8 +131,9 @@ export const Inicio = () => {
 						<div className="home_cta_container">
 							<h2>{t('home.cta.title')}</h2>
 							<h2>{t('home.cta.subtitle')}</h2>
-							<NavLink
-								to={`/${lang}/signup`}
+							<a
+								href="https://discord.gg/zd3ntsNKuS"
+								target="_blank"
 								rel="noreferrer"
 								style={{ textDecoration: 'none' }}
 							>
@@ -141,7 +148,7 @@ export const Inicio = () => {
 								>
 									{t('home.cta.button')}
 								</Button>
-							</NavLink>
+							</a>
 						</div>
 					</section>
 					<Footer />

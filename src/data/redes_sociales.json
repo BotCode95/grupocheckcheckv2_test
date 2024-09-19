@@ -42,6 +42,18 @@
             "redSocial": "tiktok",
             "colorPrincipal": "#7BC5F8",
             "link" : "https://www.tiktok.com/@pokercheckcheck"
+        },
+        {
+            "nombrePagina": "Grupo Check Check",
+            "redSocial": "kick",
+            "colorPrincipal": "#7BC5F8",
+            "link" : "https://kick.com/grupocheckcheck"
+        },
+        {
+            "nombrePagina": "Grupo Check Check",
+            "redSocial": "discord",
+            "colorPrincipal": "#7BC5F8",
+            "link" : "https://discord.com/channels/767573510406537236/1086428858661752892"
         }
     ],
     "en": [
@@ -87,6 +99,18 @@
             "redSocial": "tiktok",
             "colorPrincipal": "#7BC5F8",
             "link" : "https://www.tiktok.com/@pokercheckcheck"
-        }
+        },
+        {
+            "nombrePagina": "Team Check Check",
+            "redSocial": "kick",
+            "colorPrincipal": "#7BC5F8",
+            "link" : "https://kick.com/grupocheckcheck"
+        },
+        {
+            "nombrePagina": "Team Check Check",
+            "redSocial": "discord",
+            "colorPrincipal": "#7BC5F8",
+            "link" : "https://discord.com/channels/767573510406537236/1086428858661752892"
+        }       
     ]
 }
