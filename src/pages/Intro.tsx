@@ -6,6 +6,7 @@ import arSite from '../assets/flags/argLogo.png'
 import ukSite from '../assets/flags/ukLogo.png'
 import crosses from '../assets/crosses.png'
 import { NavLink } from 'react-router-dom'
+import { urlWebOtherLanguage } from '../constants/urls'
 
 export const Intro = () => {
 	const [t] = useTranslation('global')
@@ -30,7 +31,7 @@ export const Intro = () => {
 						</NavLink>
 					</li>
 					<li>
-						<NavLink to="/en/">
+						<a href={urlWebOtherLanguage}>
 							<div
 								className="intro_lang_img"
 								onClick={() => getTextByLanguage('en')}
@@ -38,7 +39,7 @@ export const Intro = () => {
 								<img src={ukSite} alt="GB" />
 							</div>
 							<span>{t('intro.urlEnglish')}</span>
-						</NavLink>
+						</a>
 					</li>
 				</ul>
 			</div>

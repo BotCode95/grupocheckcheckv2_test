@@ -8,6 +8,7 @@ import logo_check_check from '../../assets/logo_checkcheck.svg'
 import { RedSocialList } from '../RedSocial/RedSocialList'
 import { useLanguage } from '../../hooks/useLanguage'
 import ukLogo from '../../assets/flags/ukLogo.png'
+import { urlWebOtherLanguage } from '../../constants/urls'
 export const Navbar = () => {
 	const [t] = useTranslation('global')
 	const lang = useLanguage()
@@ -128,14 +129,14 @@ export const Navbar = () => {
 									: 'Ir a Team Chek Check'
 							}`}
 						>
-							<NavLink
-								to={`/${lang === 'en' ? 'es' : 'en'}/`}
+							<a
+								href={urlWebOtherLanguage}
 								rel="noreferrer"
 								target="_blank"
 								style={{ textDecoration: 'none' }}
 							>
 								<img src={ukLogo} alt="" width={50} />
-							</NavLink>
+							</a>
 						</Tooltip>
 					</div>
 				</Grid>
