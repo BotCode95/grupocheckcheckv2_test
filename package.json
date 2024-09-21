@@ -42,7 +42,9 @@
     "build-and-docs": "react-scripts build && node create-docs.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "postbuild": "cpx CNAME build/",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
