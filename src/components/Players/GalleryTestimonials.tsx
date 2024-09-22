@@ -1,6 +1,7 @@
 import './GalleryTestimonials.css'
 import { ITestimonial } from '../../types/texts'
 import { useEffect, useRef, useState } from 'react'
+import ContentLoader from 'react-content-loader'
 
 interface Props {
   testimonials: ITestimonial[]
@@ -15,6 +16,8 @@ export const GalleryTestimonials = ({ testimonials }: Props) => {
 	const [isDown, setIsDown] = useState(false)
 	const [startX, setStartX] = useState(0)
 	const [scrollLeft, setScrollLeft] = useState(0)
+	const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([])
+
 
 	const handleMouseDown = (e: React.MouseEvent) => {
 		if (galleryWrapperRef.current) {
@@ -63,12 +66,24 @@ export const GalleryTestimonials = ({ testimonials }: Props) => {
 		}
 	}
 
+	const handleImageLoad = (index: number) => {
+		setImagesLoaded(prev => {
+			const updated = [...prev]
+			updated[index] = true
+			return updated
+		})
+	}
+
 	useEffect(() => {
 		if (galleryWrapperRef.current) {
 			const galleryWidth = galleryWrapperRef.current.scrollWidth
 			const visibleWidth = galleryWrapperRef.current.clientWidth
 			const centerPosition = (galleryWidth - visibleWidth) / 2
 			galleryWrapperRef.current.scrollLeft = centerPosition
+		}
+
+		if (testimonials.length > 0) {
+			setImagesLoaded(new Array(testimonials.length).fill(false))
 		}
 	}, [testimonials])
     
@@ -85,11 +100,37 @@ export const GalleryTestimonials = ({ testimonials }: Props) => {
 			onTouchMove={handleTouchMove}
 		>
 			{
-				testimonials.map(testimonial => (<div
+				testimonials.map((testimonial, index) => (<div
 					key={testimonial.author} className="galleryTestimonials_card"
 				>
 					<div className='galleryTestimonials_imgContainer'>
-						<img src={testimonial.image} alt={testimonial.author} />
+						{!imagesLoaded[index] && ( // Mostrar el Spinner mientras la imagen no está cargada
+							<div style={{
+								width: '100%',
+								height: '100%',
+								display: 'flex',
+								justifyContent: 'center',
+								alignItems: 'center',
+								backgroundColor: 'rgba(0, 0, 0, 1)',
+								borderRadius: '20px'
+							}}>
+								<ContentLoader
+									speed={2}
+									height={'100%'}
+									width={'100%'}
+									backgroundColor="#0e0e0e"
+									foregroundColor="#000"
+								>
+									<rect x="0" y="0" rx="15" ry="15" width="100%" height="100%" />
+								</ContentLoader>
+							</div>
+						)}
+						<img
+							src={testimonial.image}
+							alt={testimonial.author}
+							onLoad={() => handleImageLoad(index)} // Cuando la imagen se carga, actualizamos el estado
+							className={`galleryTestimonials_img ${imagesLoaded[index] ? 'loaded' : 'loading'}`} // Aplicamos clases según el estado
+						/>
 					</div>
 					<div className='galleryTestimonials_info'>
 						<h3 className="galleryTestimonials_title">{testimonial.title}</h3>

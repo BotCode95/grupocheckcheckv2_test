@@ -57,6 +57,19 @@
   font-weight: 300 !important;
   font-style: italic;
 }
+
+.galleryTestimonials_img {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.galleryTestimonials_img.loaded {
+  opacity: 1;
+}
+
+.galleryTestimonials_img.loading {
+  opacity: 0;
+}
 /* 
 .galleryTestimonials_shadow {
   position: absolute;
