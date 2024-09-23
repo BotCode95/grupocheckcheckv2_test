@@ -23,6 +23,7 @@
     "emailjs-com": "^3.2.0",
     "i18next": "^22.4.6",
     "react": "^18.2.0",
+    "react-content-loader": "^7.0.2",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-flagkit": "^2.0.4",

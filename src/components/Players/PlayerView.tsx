@@ -2,6 +2,8 @@ import './PlayerView.css'
 import { Grid } from '@mui/material'
 import { IPlayer } from '../../types/texts'
 import { Spinner } from '../dashboard/Spinner/Spinner'
+import { useState } from 'react'
+import ContentLoader from 'react-content-loader'
 
 interface Props {
 	player: IPlayer | null
@@ -18,6 +20,8 @@ const ChipText = ({ text, type }: ChipTextProps) => {
 }
 
 export const PlayerView = ({ player }: Props) => {
+	const [imageLoaded, setImageLoaded] = useState(false)
+
 	if (!player) {
 		return (
 			<Grid display={'flex'} justifyContent={'center'} padding={10}>
@@ -53,7 +57,25 @@ export const PlayerView = ({ player }: Props) => {
 				</div>
 			</Grid>
 			<Grid item sm={12} md={6} className="playerView_playerImage">
-				<img src={player.image} alt={`${player.player_name}`} />
+				{!imageLoaded && ( 
+					<div className="playerView_placeholder">
+						<ContentLoader
+							speed={2}
+							height={'80%'}
+							width={'80%'}
+							backgroundColor="#0e0e0e"
+							foregroundColor="#000"
+						>
+							<rect x="0" y="0" rx="15" ry="15" width="100%" height="100%" />
+						</ContentLoader>
+					</div>
+				)}
+				<img
+					src={player.image}
+					alt={`${player.player_name}`}
+					onLoad={() => setImageLoaded(true)} 
+					className={imageLoaded ? 'loaded' : 'loading'}
+				/>
 			</Grid>
 		</Grid>
 	)

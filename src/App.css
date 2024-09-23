@@ -658,6 +658,24 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Signup END */
 
+/* Trips */
+
+.trip_image {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.trip_image.loaded {
+  opacity: 1;
+}
+
+.trip_image.loading {
+  opacity: 0;
+  display: none;
+}
+
+/* Trips END*/
+
 /* --- Components UI --- */
 
 /* buttonInscribite */

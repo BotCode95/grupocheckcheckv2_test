@@ -11,14 +11,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.playerView_placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
 .playerView_playerImage img {
   width: 100%;
-  border-radius: 1em;
   max-width: 500px;
-  aspect-ratio: 1/1;
+  height: auto;
   object-fit: cover;
+  border-radius: 1em;
+  aspect-ratio: 1/1;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.playerView_playerImage img.loaded {
+  opacity: 1;
+}
+
+.playerView_playerImage img.loading {
+  opacity: 0;
 }
 
 .playerView_playerName {

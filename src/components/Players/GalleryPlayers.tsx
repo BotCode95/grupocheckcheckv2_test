@@ -1,6 +1,7 @@
 import './GalleryPlayers.css'
 import { IPlayer } from '../../types/texts'
 import { useRef, useState } from 'react'
+import ContentLoader from 'react-content-loader'
 interface Props {
   players: IPlayer[]
   setPlayer: (player: IPlayer) => void
@@ -16,6 +17,7 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 	const [isDown, setIsDown] = useState(false)
 	const [startX, setStartX] = useState(0)
 	const [scrollLeft, setScrollLeft] = useState(0)
+	const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({})
 
 	const handleMouseDown = (e: React.MouseEvent) => {
 		if (galleryWrapperRef.current) {
@@ -63,6 +65,10 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 			galleryWrapperRef.current.scrollLeft = scrollLeft - walk
 		}
 	}
+
+	const handleImageLoad = (playerName: string) => {
+		setLoadedImages(prevState => ({ ...prevState, [playerName]: true }))
+	}
     
 	return <div className="galleryPlayers">
 		<div 
@@ -88,13 +94,30 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 						setPlayer(player)
 					}}
 				>
-					<div
-						style={{
-							backgroundImage: `url(${player.image})`
-						}}
-					>
-						<h3 className="galleryPlayers_playername">{player.player_name.toUpperCase()}</h3>
-						<div className="galleryPlayers_shadow"></div>
+					<div className="galleryPlayers_imageContainer">
+						<img
+							src={player.image}
+							alt={player.player_name}
+							className={`galleryPlayers_image ${loadedImages[player.player_name] ? 'loaded' : 'loading'}`}
+							onLoad={() => handleImageLoad(player.player_name)}
+						/>
+						{!loadedImages[player.player_name] ? (
+							<div className="galleryPlayers_placeholder">
+								<ContentLoader 
+									speed={2}
+									width={250}
+									height={330}
+									viewBox="0 0 250 330"
+									backgroundColor="#0e0e0e"
+									foregroundColor="#000"
+								>
+									<rect x="0" y="0" rx="15" ry="15" width="250" height="330" />
+								</ContentLoader>
+							</div>
+						) : <div className='galleryPlayers_content'>
+							<h3 className="galleryPlayers_playername">{player.player_name.toUpperCase()}</h3>
+							<div className="galleryPlayers_shadow"></div>
+						</div>}
 					</div>
 				</div>))
 			}

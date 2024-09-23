@@ -6,11 +6,13 @@ import { Grid } from '@mui/material'
 import { BannerCTA } from '../components/Banners/BannerCTA'
 import { useTranslation } from 'react-i18next'
 import { Trips } from '../types/texts'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { TextsContext } from '../context/Dashboard/Texts'
+import ContentLoader from 'react-content-loader'
 
 export const TripsBlog = () => {
 	const [t] = useTranslation('global')
+	const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([])
 
 	const {
 		text: { imagesTrips: trips, players },
@@ -21,7 +23,19 @@ export const TripsBlog = () => {
 		if (players?.length === 0) {
 			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
 		}
+
+		if (trips.length > 0) {
+			setImagesLoaded(new Array(trips.length).fill(false))
+		}
 	}, [])
+
+	const handleImageLoad = (index: number) => {
+		setImagesLoaded(prev => {
+			const updated = [...prev]
+			updated[index] = true
+			return updated
+		})
+	}
 
 	return (
 		<>
@@ -50,12 +64,34 @@ export const TripsBlog = () => {
 							display={'flex'}
 							justifyContent={'center'}
 							alignItems={'center'}
+							className='trip_imageContainer'
 						>
+							{!imagesLoaded[index] && ( // Mostrar Spinner si la imagen aún no se ha cargado
+								<div style={{
+									width: '100%',
+									height: '100%',
+									display: 'flex',
+									justifyContent: 'center',
+									alignItems: 'center',
+									backgroundColor: 'rgba(0, 0, 0, 1)'
+								}}>
+									<ContentLoader
+										speed={2}
+										height={'600px'}
+										width={'80%'}
+										backgroundColor="#0e0e0e"
+										foregroundColor="#000"
+									>
+										<rect x="0" y="0" rx="15" ry="15" width="100%" height="600px" />
+									</ContentLoader>
+								</div>
+							)}
 							<img
 								src={trip.image}
-								alt="img_viajes"
-								className="img_viajes"
+								alt={trip.title}
 								style={{ maxWidth: '1024px', width: '100%' }}
+								onLoad={() => handleImageLoad(index)}
+								className={`trip_image ${imagesLoaded[index] ? 'loaded' : 'loading'}`}
 							/>
 						</Grid>
 						{/* <VideosViajesNuevo viajesUrl={trip.videos} /> */}

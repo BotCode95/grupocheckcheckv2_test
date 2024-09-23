@@ -26,20 +26,55 @@
   border: 0px solid var(--primary-color);
 }
 
-.galleryPlayers_card > div {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: grayscale(1);
-  display: flex;
-  align-items: flex-end;
+.galleryPlayers_imageContainer {
   position: relative;
   width: 100%;
   height: 100%;
   border-radius: 1em;
+  filter: grayscale(1);
 }
 
-.galleryPlayers_card.galleryPlayers_selected > div {
+.galleryPlayers_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1em;
+  z-index: 1;
+}
+
+.galleryPlayers_image.loading {
+  opacity: 0;
+}
+
+.galleryPlayers_image.loaded {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.galleryPlayers_content {
+  position: absolute;
+  bottom: 0em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.galleryPlayers_placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.galleryPlayers_card.galleryPlayers_selected .galleryPlayers_imageContainer {
   filter: none;
 }
 
@@ -81,12 +116,3 @@
     width: 200px;
   }
 }
-
-/* .galleryPlayers_card {
-  
-  
-}
-
-.galleryPlayers_playername {
-  width: 250px;
-} */
