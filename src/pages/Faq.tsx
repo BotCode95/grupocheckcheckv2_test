@@ -19,7 +19,7 @@ export const Faq = () => {
 	const questions = text.questions
 
 	useEffect(() => {
-		if (!text || text?.players?.length === 0) {
+		if (!text || text?.questions?.length === 0) {
 			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
 		}
 	}, [])

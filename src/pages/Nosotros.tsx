@@ -65,7 +65,7 @@ export const Nosotros = () => {
 					/>
 				</Grid>
 				<Grid container className="container_jugadores" marginBottom={3}>
-					{text?.players?.length &&
+					{text?.questions?.length &&
 						text.players.map((player, index) => {
 							return (
 								<CardJugador

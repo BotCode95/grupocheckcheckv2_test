@@ -23,6 +23,7 @@ export const Inicio = () => {
 		loading: loadingFetch,
 		getTextByLanguage,
 	} = useContext(TextsContext)
+
 	useEffect(() => {
 		if (!isLoadingOK) {
 			loadingHome(600)
@@ -30,7 +31,8 @@ export const Inicio = () => {
 	}, [])
 
 	useEffect(() => {
-		if (!text || text?.players?.length === 0) {
+		console.log('text', text)
+		if (!text || text?.questions?.length === 0) {
 			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
 		}
 	}, [])
