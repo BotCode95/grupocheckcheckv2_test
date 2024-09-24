@@ -113,13 +113,14 @@ export const Navbar = () => {
 						/>
 					</div>
 					<div className="navbar_signup">
-						<NavLink
-							to={`/${lang}/signup`}
+						<a
+							href="https://discord.gg/zd3ntsNKuS"
+							target="_blank"
 							rel="noreferrer"
 							style={{ textDecoration: 'none' }}
 						>
 							<ButtonInscribite />
-						</NavLink>
+						</a>
 					</div>
 					<div>
 						<Tooltip

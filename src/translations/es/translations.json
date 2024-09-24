@@ -39,7 +39,7 @@
     },
     "home": {
         "title": "Bienvenido a GrupoCheckCheck",
-        "description": "En GrupoCheckCheck somos más que una simple plataforma de bancaje: Somos una comunidad dedicada a capacitar a los jugadores de Poker de todo el mundo. Ya seas un novato que busca perfeccionar tus habilidades o un jugador experimentado que busca dominar, nuestros entrenadores de élite de todo el mundo están aquí para guiarte en cada paso del camino.",
+        "description": "En GrupoCheckCheck somos más que una simple plataforma de bancaje: Somos una comunidad dedicada a capacitar a los jugadores de Póker de todo el mundo. Ya seas un novato que busca perfeccionar tus habilidades o un jugador experimentado que busca dominar, nuestros entrenadores de élite de todo el mundo están aquí para guiarte en cada paso del camino.",
         "why": {
             "title": "¿Por qué elegir GrupoCheckCheck?",
             "coaching": {
@@ -72,7 +72,7 @@
             }
         },
         "cta": {
-            "title": "Bienvenido a la Familia XX, para formar parte de la escuela debes dar click en UNIRME y completar el formulario de ingreso en nuestra plataforma de DISCORD",
+            "title": "Bienvenido a la Familia XX, para formar parte de la escuela debes dar click en el botón UNIRME y completar el formulario de ingreso en nuestra plataforma de DISCORD",
             "subtitle": "Éxitos!",
             "button": "Unirme"
         }
