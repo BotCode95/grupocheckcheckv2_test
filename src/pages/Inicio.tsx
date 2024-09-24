@@ -31,7 +31,6 @@ export const Inicio = () => {
 	}, [])
 
 	useEffect(() => {
-		console.log('text', text)
 		if (!text || text?.questions?.length === 0) {
 			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
 		}
