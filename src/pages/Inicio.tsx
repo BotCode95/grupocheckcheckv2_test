@@ -25,7 +25,7 @@ export const Inicio = () => {
 	} = useContext(TextsContext)
 	useEffect(() => {
 		if (!isLoadingOK) {
-			loadingHome(2000)
+			loadingHome(600)
 		}
 	}, [])
 
