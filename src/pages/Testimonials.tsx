@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { BannerPage } from '../components/UI/BannerPage/BannerPage'
 import { Footer } from '../components/UI/Footer'
 import { Navbar } from '../components/navbar/Navbar'
@@ -9,8 +10,15 @@ import { TextsContext } from '../context/Dashboard/Texts'
 
 export const Testimonials = () => {
 	const [t] = useTranslation('global')
-	const { text } = useContext(TextsContext)
-	const testimonials = text?.testimonials
+	const { text, getTextByLanguage } = useContext(TextsContext)
+
+	useEffect(() => {
+		const language =
+			(typeof window !== 'undefined' && localStorage.getItem('lng')) || 'es'
+		if (!text || text?.questions?.length === 0) {
+			getTextByLanguage(language)
+		}
+	}, [])
 
 	return (
 		<>
@@ -18,8 +26,8 @@ export const Testimonials = () => {
 			<BannerPage title={t('testimonials.title')} />
 			<div className="page my-5">
 				<div className="py-5">
-					{testimonials !== null && testimonials?.length > 0 && (
-						<GalleryTestimonials testimonials={testimonials} />
+					{text?.testimonials !== null && text?.testimonials?.length > 0 && (
+						<GalleryTestimonials testimonials={text.testimonials} />
 					)}
 				</div>
 			</div>

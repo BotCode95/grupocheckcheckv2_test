@@ -49,12 +49,16 @@ const Texts_INITIAL_STATE: TextsState = {
 }
 
 export const TextsProvider: FC<Props> = ({ children }) => {
+	const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
 	const [state, dispatch] = useReducer(
 		textsReducer,
 		Texts_INITIAL_STATE,
 		(initial) => {
 			const lng = localStorage.getItem('lng')
-			const persistedState = sessionStorage.getItem('appState' + lng)
+			let persistedState = null
+			if (!isMobile) {
+				persistedState = sessionStorage.getItem('appState' + lng)
+			}
 
 			if (persistedState) {
 				const parsedState = JSON.parse(persistedState)
@@ -99,11 +103,18 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 				payload: true,
 			})
 			const { data } = await api.get<Data>(`/texts?lng=${lng}`)
+
 			dispatch({
 				type: 'TextByLanguage',
 				payload: data.text[0],
 			})
-			sessionStorage.setItem('appState' + lng, JSON.stringify(data.text[0]))
+
+			// Evitar guardar en sessionStorage si es un dispositivo móvil
+			if (!isMobile) {
+				sessionStorage.setItem('appState' + lng, JSON.stringify(data.text[0]))
+			} else {
+				sessionStorage.clear()
+			}
 			localStorage.setItem('lng', lng)
 		} catch (error) {
 			let message = ''

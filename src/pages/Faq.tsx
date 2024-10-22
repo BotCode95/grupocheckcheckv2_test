@@ -19,10 +19,13 @@ export const Faq = () => {
 	const questions = text.questions
 
 	useEffect(() => {
+		const language =
+			(typeof window !== 'undefined' && localStorage.getItem('lng')) || 'es'
 		if (!text || text?.questions?.length === 0) {
-			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
+			getTextByLanguage(language)
 		}
 	}, [])
+
 	return (
 		<>
 			<Navbar />

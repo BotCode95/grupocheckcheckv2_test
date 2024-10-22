@@ -21,8 +21,10 @@ export const Team = () => {
 	} = useContext(TextsContext)
 
 	useEffect(() => {
+		const language =
+			(typeof window !== 'undefined' && localStorage.getItem('lng')) || 'es'
 		if (!text || text?.questions?.length === 0) {
-			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
+			getTextByLanguage(language)
 		}
 	}, [])
 

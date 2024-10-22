@@ -20,8 +20,10 @@ export const TripsBlog = () => {
 	} = useContext(TextsContext)
 
 	useEffect(() => {
+		const language =
+			(typeof window !== 'undefined' && localStorage.getItem('lng')) || 'es'
 		if (players?.length === 0) {
-			getTextByLanguage(localStorage.getItem('lng') ?? 'es')
+			getTextByLanguage(language)
 		}
 
 		if (trips.length > 0) {
@@ -30,7 +32,7 @@ export const TripsBlog = () => {
 	}, [])
 
 	const handleImageLoad = (index: number) => {
-		setImagesLoaded(prev => {
+		setImagesLoaded((prev) => {
 			const updated = [...prev]
 			updated[index] = true
 			return updated
@@ -64,17 +66,19 @@ export const TripsBlog = () => {
 							display={'flex'}
 							justifyContent={'center'}
 							alignItems={'center'}
-							className='trip_imageContainer'
+							className="trip_imageContainer"
 						>
 							{!imagesLoaded[index] && ( // Mostrar Spinner si la imagen aún no se ha cargado
-								<div style={{
-									width: '100%',
-									height: '100%',
-									display: 'flex',
-									justifyContent: 'center',
-									alignItems: 'center',
-									backgroundColor: 'rgba(0, 0, 0, 1)'
-								}}>
+								<div
+									style={{
+										width: '100%',
+										height: '100%',
+										display: 'flex',
+										justifyContent: 'center',
+										alignItems: 'center',
+										backgroundColor: 'rgba(0, 0, 0, 1)',
+									}}
+								>
 									<ContentLoader
 										speed={2}
 										height={'600px'}
@@ -82,7 +86,14 @@ export const TripsBlog = () => {
 										backgroundColor="#0e0e0e"
 										foregroundColor="#000"
 									>
-										<rect x="0" y="0" rx="15" ry="15" width="100%" height="600px" />
+										<rect
+											x="0"
+											y="0"
+											rx="15"
+											ry="15"
+											width="100%"
+											height="600px"
+										/>
 									</ContentLoader>
 								</div>
 							)}
@@ -91,7 +102,9 @@ export const TripsBlog = () => {
 								alt={trip.title}
 								style={{ maxWidth: '1024px', width: '100%' }}
 								onLoad={() => handleImageLoad(index)}
-								className={`trip_image ${imagesLoaded[index] ? 'loaded' : 'loading'}`}
+								className={`trip_image ${
+									imagesLoaded[index] ? 'loaded' : 'loading'
+								}`}
 							/>
 						</Grid>
 						{/* <VideosViajesNuevo viajesUrl={trip.videos} /> */}
