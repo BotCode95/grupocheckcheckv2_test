@@ -48,7 +48,7 @@ export const MenuMobile = () => {
 				</Grid>
 				<Grid
 					item
-					sm={2}
+					sm={6}
 					display={'flex'}
 					justifyContent={'center'}
 					alignItems={'center'}
@@ -63,11 +63,6 @@ export const MenuMobile = () => {
 							<ButtonInscribite />
 						</NavLink>
 					</div>
-					<div className="navbar_mobile_btn" onClick={menuHandle}>
-						<div className="navbar_mobile_btn_burger"></div>
-					</div>
-				</Grid>
-				<Grid item sm={3}>
 					<Tooltip
 						title={`${
 							lang === 'en' ? 'Ir a Grupo Check Check' : 'Ir a Team Chek Check'
@@ -82,7 +77,13 @@ export const MenuMobile = () => {
 							<img src={ukLogo} alt="" width={50} />
 						</a>
 					</Tooltip>
+					<div className="navbar_mobile_btn" onClick={menuHandle}>
+						<div className="navbar_mobile_btn_burger"></div>
+					</div>
 				</Grid>
+				{/* <Grid item sm={3}>
+					
+				</Grid> */}
 			</Grid>
 			<div className="navbar_mobile_links">
 				<ul className="d-flex gap-3 list-unstyled m-0 navbar_mobile_links_list">
