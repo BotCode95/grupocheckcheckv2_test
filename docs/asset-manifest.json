@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "https://grupocheckcheckpoker.com/static/css/main.4bf4adb7.css",
-    "main.js": "https://grupocheckcheckpoker.com/static/js/main.66deffc9.js",
+    "main.css": "https://grupocheckcheckpoker.com/static/css/main.0bfc0b22.css",
+    "main.js": "https://grupocheckcheckpoker.com/static/js/main.ddefc7c0.js",
     "static/js/787.88a8d568.chunk.js": "https://grupocheckcheckpoker.com/static/js/787.88a8d568.chunk.js",
     "static/media/argLogo.png": "https://grupocheckcheckpoker.com/static/media/argLogo.bbfaeb6739fee352cd74.png",
     "static/media/ukLogo.png": "https://grupocheckcheckpoker.com/static/media/ukLogo.18d01af587840e505fc5.png",
@@ -15,15 +15,15 @@
     "static/media/bannerCutted.jpg": "https://grupocheckcheckpoker.com/static/media/bannerCutted.a9939ec2afcf86185248.jpg",
     "static/media/hernan.jpg": "https://grupocheckcheckpoker.com/static/media/hernan.58f17ec1ed8a433c75b2.jpg",
     "static/media/elson.jpg": "https://grupocheckcheckpoker.com/static/media/elson.51de166d99bd2f725cd8.jpg",
-    "static/media/404.svg": "https://grupocheckcheckpoker.com/static/media/404.ff0ad1f0e1d594361107d94fcad601ad.svg",
+    "static/media/404.svg": "https://grupocheckcheckpoker.com/static/media/404.aab42737a9cb1db2d2e8eae715714043.svg",
     "static/media/coaching.jpg": "https://grupocheckcheckpoker.com/static/media/coaching.1a46f19da75c48f9d369.jpg",
     "static/media/desarrollo.jpg": "https://grupocheckcheckpoker.com/static/media/desarrollo.f1d2f6cc1adb8fd77825.jpg",
     "static/media/bg.png": "https://grupocheckcheckpoker.com/static/media/bg.33a5f488d7ebcdb738fc.png",
     "static/media/growth.jpg": "https://grupocheckcheckpoker.com/static/media/growth.015f693455e4cb9b2443.jpg",
-    "static/media/casino-chip.svg": "https://grupocheckcheckpoker.com/static/media/casino-chip.25110f25f14e0e65bf976e12eaa499c0.svg",
+    "static/media/casino-chip.svg": "https://grupocheckcheckpoker.com/static/media/casino-chip.d97d9807c89a68fb651b7a8440d57242.svg",
     "static/media/logo_checkcheck.svg": "https://grupocheckcheckpoker.com/static/media/logo_checkcheck.645f9f2acacf43bd2a93b50090453034.svg",
-    "static/media/logo_check.svg": "https://grupocheckcheckpoker.com/static/media/logo_check.ce76084eca86be2d6c232afeb835f5a2.svg",
-    "static/media/poker-cards.svg": "https://grupocheckcheckpoker.com/static/media/poker-cards.e9b3850b6312e99ee8f14bb28320143c.svg",
+    "static/media/logo_check.svg": "https://grupocheckcheckpoker.com/static/media/logo_check.ff2c1af90c651a5095300365de77eeda.svg",
+    "static/media/poker-cards.svg": "https://grupocheckcheckpoker.com/static/media/poker-cards.4197c97fa51674ee6721bcd028e899f5.svg",
     "static/media/instagramOutlined.svg": "https://grupocheckcheckpoker.com/static/media/instagramOutlined.8d0cc729ef1b01b6dac49effd8c784af.svg",
     "static/media/FlagAR.svg": "https://grupocheckcheckpoker.com/static/media/FlagAR.3dd319bc127b3e5bc2bb8cba50bc2848.svg",
     "static/media/discordOutlined.svg": "https://grupocheckcheckpoker.com/static/media/discordOutlined.41719033862c45ba394cab761db0cff4.svg",
@@ -36,12 +36,12 @@
     "static/media/youtubeOutlined.svg": "https://grupocheckcheckpoker.com/static/media/youtubeOutlined.a3570a3decee201d9dcbb2a5eaab459c.svg",
     "static/media/twitchOutlined.svg": "https://grupocheckcheckpoker.com/static/media/twitchOutlined.25030d989537c01b88f10fabd9c68d50.svg",
     "static/media/twitch.svg": "https://grupocheckcheckpoker.com/static/media/twitch.e266946ea07c14281a0a369cc777c138.svg",
-    "main.4bf4adb7.css.map": "https://grupocheckcheckpoker.com/static/css/main.4bf4adb7.css.map",
-    "main.66deffc9.js.map": "https://grupocheckcheckpoker.com/static/js/main.66deffc9.js.map",
+    "main.0bfc0b22.css.map": "https://grupocheckcheckpoker.com/static/css/main.0bfc0b22.css.map",
+    "main.ddefc7c0.js.map": "https://grupocheckcheckpoker.com/static/js/main.ddefc7c0.js.map",
     "787.88a8d568.chunk.js.map": "https://grupocheckcheckpoker.com/static/js/787.88a8d568.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4bf4adb7.css",
-    "static/js/main.66deffc9.js"
+    "static/css/main.0bfc0b22.css",
+    "static/js/main.ddefc7c0.js"
   ]
 }
