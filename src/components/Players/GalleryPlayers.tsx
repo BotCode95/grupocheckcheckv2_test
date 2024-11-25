@@ -2,17 +2,20 @@ import './GalleryPlayers.css'
 import { IPlayer } from '../../types/texts'
 import { useRef, useState } from 'react'
 import ContentLoader from 'react-content-loader'
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
+import { useLanguage } from '../../hooks/useLanguage'
 interface Props {
-  players: IPlayer[]
-  setPlayer: (player: IPlayer) => void
+	players: IPlayer[]
+	setPlayer: (player: IPlayer) => void
 	playerSelected: IPlayer | null
 }
 
-// Ajusta el factor de desplazamiento según sea necesario
-const SPEED_GALLERY = 1
+const SPEED_GALLERY = 1 // Ajusta el factor de desplazamiento según sea necesario
+const SCROLL_STEP = 700 // Cantidad de desplazamiento por click
 
 export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) => {
-
+	const lang = useLanguage()
 	const galleryWrapperRef = useRef<HTMLDivElement>(null)
 	const [isDown, setIsDown] = useState(false)
 	const [startX, setStartX] = useState(0)
@@ -40,7 +43,7 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 		e.preventDefault()
 		if (galleryWrapperRef.current) {
 			const x = e.pageX - galleryWrapperRef.current.offsetLeft
-			const walk = (x - startX) * SPEED_GALLERY 
+			const walk = (x - startX) * SPEED_GALLERY
 			galleryWrapperRef.current.scrollLeft = scrollLeft - walk
 		}
 	}
@@ -69,10 +72,36 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 	const handleImageLoad = (playerName: string) => {
 		setLoadedImages(prevState => ({ ...prevState, [playerName]: true }))
 	}
-    
+
+	const scrollGallery = (direction: 'left' | 'right') => {
+		if (galleryWrapperRef.current) {
+			const scrollAmount = direction === 'left' ? -SCROLL_STEP : SCROLL_STEP
+			galleryWrapperRef.current.scrollBy({
+				left: scrollAmount,
+				behavior: 'smooth',
+			})
+		}
+	}
+
 	return <div className="galleryPlayers">
-		<div 
-			className='galleryPlayers_wrapper'                 
+		{lang === 'es' && <>
+			<button
+				className="galleryPlayers_arrow galleryPlayers_arrow--left"
+				onClick={() => scrollGallery('left')}
+				aria-label="Scroll Left"
+			>
+				<ArrowCircleLeftIcon fontSize='inherit' />
+			</button>
+			<button
+				className="galleryPlayers_arrow galleryPlayers_arrow--right"
+				onClick={() => scrollGallery('right')}
+				aria-label="Scroll Right"
+			>
+				<ArrowCircleRightIcon fontSize='inherit' />
+			</button>
+		</>}
+		<div
+			className='galleryPlayers_wrapper'
 			ref={galleryWrapperRef}
 			onMouseDown={handleMouseDown}
 			onMouseLeave={handleMouseLeave}
@@ -90,7 +119,7 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 						if (element) {
 							const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 150
 							window.scrollTo({ top: offsetTop, behavior: 'smooth' })
-						}	
+						}
 						setPlayer(player)
 					}}
 				>
@@ -103,7 +132,7 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 						/>
 						{!loadedImages[player.player_name] ? (
 							<div className="galleryPlayers_placeholder">
-								<ContentLoader 
+								<ContentLoader
 									speed={2}
 									width={250}
 									height={330}

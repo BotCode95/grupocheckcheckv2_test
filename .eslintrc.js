@@ -23,7 +23,8 @@ module.exports = {
 	'rules': {
 		'indent': [
 			'error',
-			'tab'
+			'tab',
+			{ 'SwitchCase': 1 }
 		],
 		'linebreak-style': [
 			'error',
@@ -38,6 +39,6 @@ module.exports = {
 			'never'
 		],
 		'react/react-in-jsx-scope': 'off',
-		'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.ts', '.jsx', '.tsx'] }], 
+		'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.ts', '.jsx', '.tsx'] }],
 	}
 }
