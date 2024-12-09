@@ -676,7 +676,47 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Trips END*/
 
+/* Dashboard */
+
+.dashboard_sidebar_nav {
+  margin-top: 4em;
+}
+
+.dashboard_sidebar_nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+.dashboard_sidebar_nav ul a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5em 1.5em;
+  background-color: transparent;
+  display: flex;
+  border-radius: 0.5em;
+  margin-bottom: 16px;
+  transition: background-color ease 300ms;
+}
+
+.dashboard_sidebar_nav ul a:hover,
+.dashboard_sidebar_nav ul a.active {
+  background-color: var(--primary-color);
+}
+
+.dashboard_sidebar_nav ul a div {
+  margin-right: 16px;
+}
+
+/* Dashboard END */
+
 /* --- Components UI --- */
+
+/* Material UI Table Pagination */
+.MuiTablePagination-displayedRows {
+  margin-bottom: 2px;
+}
 
 /* buttonInscribite */
 
