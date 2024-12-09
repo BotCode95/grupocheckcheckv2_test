@@ -1,6 +1,6 @@
 import { Link, Navigate, NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { UserContext } from '../context/UserContext'
-import { useContext, useMemo } from 'react'
+import { useContext, useEffect } from 'react'
 import logo_check_check from '../assets/logo_checkcheck.svg'
 import icon_players from '../assets/icons/players.svg'
 import icon_testimonials from '../assets/icons/testimonials.svg'
@@ -18,7 +18,7 @@ const Sidebar: React.FC = () => {
 	const { language, setLanguage, setLoading, loading } = useContext(TextsContext)
 	const { logout } = useContext(UserContext)
 	const location = useLocation()
-	
+
 	return <div style={{ maxWidth: '250px', width: '100%', padding: '2em 1em', textAlign: 'center', borderRight: '2px solid rgba(255,255,255,0.05)', height: '100vh', display: 'flex', flexDirection: 'column' }}>
 		<div
 		>
@@ -87,14 +87,15 @@ const Sidebar: React.FC = () => {
 
 export const DashboardLayout: React.FC = () => {
 	const { status } = useContext(UserContext)
-	const { text, loading } = useContext(TextsContext)
+	const { text, loading, language, setLanguage } = useContext(TextsContext)
 	if (status !== 'AUTHENTICATED') {
 		return <Navigate to={'/login'} />
 	}
-
-	const data = useMemo(() => {
-		return text
-	}, [text])
+	
+	useEffect(() => {
+		setLanguage(language)
+	}, [])
+	
 
 	return <div style={{ display: 'flex' }}>
 		<Sidebar />
