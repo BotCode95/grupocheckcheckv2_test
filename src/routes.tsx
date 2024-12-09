@@ -9,16 +9,16 @@ import {
 	Intro,
 	Signup,
 	Login,
+	DashboardLayout
 } from './pages'
-import { Home, TextsEdit, LatestVideos } from './pages/dashboard'
-import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute'
 
 export const AppRoutes = () => {
 	return (
 		<HashRouter>
 			<Routes>
 				<Route path="/">
-					<Route index element={<Intro />} />
+					<Route path="/" element={<Intro />} />
+					<Route path="/login" element={<Login />} />
 					<Route path="/es">
 						<Route index element={<Inicio />} />
 						<Route path="/es/teams" element={<Team />} />
@@ -35,20 +35,7 @@ export const AppRoutes = () => {
 						<Route path="/en/faq" element={<Faq />} />
 						<Route path="/en/signup" element={<Signup />} />
 					</Route>
-
-					<Route path="/login" element={<Login />} />
-					{/* <Route path="/nosotros" element={<Nosotros />} />
-      <Route path="/entrevistas" element={<Entrevistas />} />
-      <Route path="/viajes" element={<Viajes />} /> */}
-					<Route
-						path="/dashboard"
-						element={<ProtectedRoute redirectTo="/login" />}
-					>
-						<Route path="/dashboard" element={<Home />} />
-						<Route path="/dashboard/videos" element={<LatestVideos />} />
-						<Route path="/dashboard/texts" element={<TextsEdit />} />
-					</Route>
-
+					<Route path="/dashboard/*" element={<DashboardLayout />} />
 					<Route path="*" element={<Error404 />} />
 				</Route>
 			</Routes>

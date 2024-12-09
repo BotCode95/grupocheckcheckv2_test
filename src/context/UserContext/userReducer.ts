@@ -22,7 +22,8 @@ export const userReducer = (state: UserState, action: UserActionType): UserState
 		case 'LOGOUT':
 			return {
 				...state,
-				token: null
+				token: null,
+				status: 'NOT-AUTHENTICATED'
 			}
 		case 'MESSAGE_ERROR':
 			return {
