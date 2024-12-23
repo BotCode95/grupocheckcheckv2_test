@@ -114,14 +114,7 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 			{
 				players.map(player => (<div
 					key={player.player_name} className={`galleryPlayers_card ${playerSelected?.player_name === player.player_name && 'galleryPlayers_selected'}`}
-					onClick={() => {
-						const element = document.getElementById('playerView')
-						if (element) {
-							const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 150
-							window.scrollTo({ top: offsetTop, behavior: 'smooth' })
-						}
-						setPlayer(player)
-					}}
+					onClick={() => (setPlayer(player))}
 				>
 					<div className="galleryPlayers_imageContainer">
 						<img

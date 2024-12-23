@@ -40,12 +40,12 @@ export const MenuMobile = () => {
 						/>
 					</NavLink>
 				</Grid>
-				<Grid item sm={3} className="navbar_social">
+				{/* <Grid item sm={3} className="navbar_social">
 					<RedSocialList
 						redes={['twitch', 'instagram', 'youtube']}
 						type="contained"
 					/>
-				</Grid>
+				</Grid> */}
 				<Grid
 					item
 					sm={6}
