@@ -83,6 +83,24 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 		}
 	}
 
+	const handlePlayerSelect = (player: IPlayer) => {
+		setPlayer(player)
+		requestAnimationFrame(() => {
+			if (galleryWrapperRef.current) {
+				const selectedCard = document.getElementById(`player-${player.player_name}`)
+				if (selectedCard) {
+					const gallery = galleryWrapperRef.current
+					const cardRect = selectedCard.getBoundingClientRect()
+					const galleryRect = gallery.getBoundingClientRect()
+	
+					const offset = cardRect.left - galleryRect.left - (gallery.clientWidth / 2) + (cardRect.width / 2)
+	
+					gallery.scrollBy({ left: offset, behavior: 'smooth' })
+				}
+			}
+		})
+	}
+
 	return <div className="galleryPlayers">
 		{lang === 'es' && <>
 			<button
@@ -113,8 +131,12 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 		>
 			{
 				players.map(player => (<div
-					key={player.player_name} className={`galleryPlayers_card ${playerSelected?.player_name === player.player_name && 'galleryPlayers_selected'}`}
-					onClick={() => (setPlayer(player))}
+					key={player.player_name}
+					id={`player-${player.player_name}`}
+					className={`galleryPlayers_card ${playerSelected?.player_name === player.player_name ? 'galleryPlayers_selected' : ''}`}
+					onClick={() => {
+						if (player.player_name !== playerSelected?.player_name) handlePlayerSelect(player)
+					}}
 				>
 					<div className="galleryPlayers_imageContainer">
 						<img
