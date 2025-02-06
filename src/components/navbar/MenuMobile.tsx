@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom'
 import logo_check_check from '../../assets/logo_checkcheck.svg'
 import { useTranslation } from 'react-i18next'
-import { Grid, Tooltip } from '@mui/material'
+import { Grid } from '@mui/material'
 import { ButtonInscribite } from '../UI/Buttons/ButtonInscribite'
 import { RedSocialList } from '../RedSocial/RedSocialList'
 import { useLanguage } from '../../hooks/useLanguage'
-import { urlWebOtherLanguage } from '../../constants/urls'
-import ukLogo from '../../assets/flags/ukLogo.png'
+// import { urlWebOtherLanguage } from '../../constants/urls'
+// import ukLogo from '../../assets/flags/ukLogo.png'
 
 export const MenuMobile = () => {
 	const [t] = useTranslation('global')
@@ -63,7 +63,7 @@ export const MenuMobile = () => {
 							<ButtonInscribite />
 						</NavLink>
 					</div>
-					<Tooltip
+					{/* <Tooltip
 						title={`${
 							lang === 'en' ? 'Ir a Grupo Check Check' : 'Ir a Team Chek Check'
 						}`}
@@ -76,7 +76,7 @@ export const MenuMobile = () => {
 						>
 							<img src={ukLogo} alt="" width={50} />
 						</a>
-					</Tooltip>
+					</Tooltip> */}
 					<div className="navbar_mobile_btn" onClick={menuHandle}>
 						<div className="navbar_mobile_btn_burger"></div>
 					</div>

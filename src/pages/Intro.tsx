@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { TextsContext } from '../context/Dashboard/Texts'
 import logo_check_check from '../assets/logo_checkcheck.svg'
 import arSite from '../assets/flags/argLogo.png'
-import ukSite from '../assets/flags/ukLogo.png'
+// import ukSite from '../assets/flags/ukLogo.png'
 import crosses from '../assets/crosses.png'
 import { NavLink } from 'react-router-dom'
-import { urlWebOtherLanguage } from '../constants/urls'
+// import { urlWebOtherLanguage } from '../constants/urls'
 
 export const Intro = () => {
 	const [t] = useTranslation('global')
@@ -30,7 +30,7 @@ export const Intro = () => {
 							<span>{t('intro.urlSpanish')}</span>
 						</NavLink>
 					</li>
-					<li>
+					{/* <li>
 						<a href={urlWebOtherLanguage}>
 							<div
 								className="intro_lang_img"
@@ -40,7 +40,7 @@ export const Intro = () => {
 							</div>
 							<span>{t('intro.urlEnglish')}</span>
 						</a>
-					</li>
+					</li> */}
 				</ul>
 			</div>
 			<div className="intro_crosses">

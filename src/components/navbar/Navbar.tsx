@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { Grid, Tooltip } from '@mui/material'
+import { Grid } from '@mui/material'
 import { ButtonInscribite } from '../UI/Buttons/ButtonInscribite'
 import { MenuMobile } from './MenuMobile'
 import { ScroolToTop } from '../UI/Scrool/ScroolToTop'
@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next'
 import logo_check_check from '../../assets/logo_checkcheck.svg'
 import { RedSocialList } from '../RedSocial/RedSocialList'
 import { useLanguage } from '../../hooks/useLanguage'
-import ukLogo from '../../assets/flags/ukLogo.png'
-import { urlWebOtherLanguage } from '../../constants/urls'
+// import ukLogo from '../../assets/flags/ukLogo.png'
+// import { urlWebOtherLanguage } from '../../constants/urls'
 export const Navbar = () => {
 	const [t] = useTranslation('global')
 	const lang = useLanguage()
@@ -122,7 +122,7 @@ export const Navbar = () => {
 							<ButtonInscribite />
 						</a>
 					</div>
-					<div>
+					{/* <div>
 						<Tooltip
 							title={`${
 								lang === 'en'
@@ -139,7 +139,7 @@ export const Navbar = () => {
 								<img src={ukLogo} alt="" width={50} />
 							</a>
 						</Tooltip>
-					</div>
+					</div> */}
 				</Grid>
 			</Grid>
 		</nav>
