@@ -25,7 +25,7 @@ export const Testimonials = () => {
 			<Navbar />
 			<BannerPage title={t('testimonials.title')} />
 			<div className="page my-5">
-				<div className="py-5">
+				<div className="py-3">
 					{text?.testimonials !== null && text?.testimonials?.length > 0 && (
 						<GalleryTestimonials testimonials={text.testimonials} />
 					)}

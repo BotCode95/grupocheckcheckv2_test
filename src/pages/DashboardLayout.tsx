@@ -2,6 +2,7 @@ import { Link, Navigate, NavLink, Route, Routes, useLocation } from 'react-route
 import { UserContext } from '../context/UserContext'
 import { useContext, useEffect } from 'react'
 import logo_check_check from '../assets/logo_checkcheck.svg'
+import icon_home from '../assets/icons/home.svg'
 import icon_players from '../assets/icons/players.svg'
 import icon_testimonials from '../assets/icons/testimonials.svg'
 import flag_arg from '../assets/icons/ar.svg'
@@ -13,13 +14,14 @@ import { Testimonials } from './dashboard/Testimonials'
 import { Questions } from './dashboard/Questions'
 import { Button } from '@mui/material'
 import { ColorRing } from 'react-loader-spinner'
+import { Home } from './dashboard/Home'
 
 const Sidebar: React.FC = () => {
 	const { language, setLanguage, setLoading, loading } = useContext(TextsContext)
 	const { logout } = useContext(UserContext)
 	const location = useLocation()
 
-	return <div style={{ maxWidth: '250px', width: '100%', padding: '2em 1em', textAlign: 'center', borderRight: '2px solid rgba(255,255,255,0.05)', height: '100vh', display: 'flex', flexDirection: 'column' }}>
+	return <div style={{ maxWidth: '250px', width: '100%', padding: '2em 1em', textAlign: 'center', borderRight: '2px solid rgba(255,255,255,0.05)', height: '100vh', display: 'flex', flexDirection: 'column', position: 'sticky', top: 0 }}>
 		<div
 		>
 			<NavLink aria-current='page' to={'/'}>
@@ -31,6 +33,12 @@ const Sidebar: React.FC = () => {
 		</div>
 		<nav className='dashboard_sidebar_nav'>
 			<ul>
+				<li><Link className={location.pathname?.includes('home') ? 'active' : ''} to='/dashboard/home'>
+					<div>
+						<img src={icon_home} />
+					</div>
+					Home
+				</Link></li>
 				<li><Link className={location.pathname?.includes('players') ? 'active' : ''} to='/dashboard/players'>
 					<div>
 						<img src={icon_players} />
@@ -51,10 +59,10 @@ const Sidebar: React.FC = () => {
 				</Link></li>
 			</ul>
 		</nav>
-		<div style={{fontSize: '0.8em', marginTop: '4em' }}>
+		<div style={{ fontSize: '0.8em', marginTop: '4em' }}>
 			Versión en <br />
-			<Button 
-				style={{color: 'white', borderRadius: '0.5em', padding: '0.5em 1.2em', fontSize: '1.2em', margin: '1em 0', backgroundColor: `${language.includes('es') ? 'var(--primary-color)' : 'transparent'}`}}
+			<Button
+				style={{ color: 'white', borderRadius: '0.5em', padding: '0.5em 1.2em', fontSize: '1.2em', margin: '1em 0', backgroundColor: `${language.includes('es') ? 'var(--primary-color)' : 'transparent'}` }}
 				onClick={() => {
 					setLoading(true)
 					setLanguage('es')
@@ -66,7 +74,7 @@ const Sidebar: React.FC = () => {
 			</Button>
 			<br />
 			<Button
-				style={{color: 'white', borderRadius: '0.5em', padding: '0.5em 1.2em', fontSize: '1.2em', backgroundColor: `${language.includes('en') ? 'var(--primary-color)' : 'transparent'}`}}
+				style={{ color: 'white', borderRadius: '0.5em', padding: '0.5em 1.2em', fontSize: '1.2em', backgroundColor: `${language.includes('en') ? 'var(--primary-color)' : 'transparent'}` }}
 				onClick={() => {
 					setLoading(true)
 					setLanguage('en')
@@ -78,7 +86,7 @@ const Sidebar: React.FC = () => {
 			</Button>
 		</div>
 		<div style={{ marginTop: 'auto' }}>
-			<Button size='small' style={{ color: 'var(--secondary-color)', fontSize: '0.7em'}} onClick={() => logout()}>
+			<Button size='small' style={{ color: 'var(--secondary-color)', fontSize: '0.7em' }} onClick={() => logout()}>
 				LOG OUT
 			</Button>
 		</div>
@@ -91,19 +99,20 @@ export const DashboardLayout: React.FC = () => {
 	if (status !== 'AUTHENTICATED') {
 		return <Navigate to={'/login'} />
 	}
-	
+
 	useEffect(() => {
 		setLanguage(language)
 	}, [])
-	
+
 
 	return <div style={{ display: 'flex' }}>
 		<Sidebar />
-		{loading ? <div style={{placeContent: 'center', width: '100%', textAlign: 'center'}}>
+		{loading ? <div style={{ placeContent: 'center', width: '100%', textAlign: 'center' }}>
 			<ColorRing width='50px' height='50px' colors={['white', 'white', 'white', 'white', 'white']} />
 		</div> : <div style={{ padding: '3rem', color: 'white', width: '100%' }}>
 			<Routes>
-				<Route path="/" element={<Navigate to="/dashboard/players" replace />} />
+				<Route path="/" element={<Navigate to="/dashboard/home" replace />} />
+				<Route path="home" element={<Home />} />
 				<Route path="players" element={<Players />} />
 				<Route path="testimonials" element={<Testimonials />} />
 				<Route path="faqs" element={<Questions />} />

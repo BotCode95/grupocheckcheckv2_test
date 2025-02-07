@@ -38,6 +38,50 @@ export const objTextEmpty = {
 	testimonials: [],
 	language: 'es',
 	imagesTrips: [],
+	homeTexts: {
+		title: '',
+		description: '',
+		why: {
+			title: '',
+			coaching: {
+				title: '',
+				description: ''
+			},
+			potential: {
+				title: '',
+				description: ''
+			},
+			growth: {
+				title: '',
+				description: ''
+			}
+		},
+		community: {
+			title: '',
+			description: '',
+			library: {
+				title: '',
+				description: ''
+			},
+			coaching: {
+				title: '',
+				description: ''
+			},
+			support: {
+				title: '',
+				description: ''
+			}
+		},
+		primaryCTA: {
+			title: '',
+			subtitle: '',
+			button: ''
+		},
+		secondaryCTA: {
+			title: '',
+			button: ''
+		}
+	}
 }
 
 const Texts_INITIAL_STATE: TextsState = {

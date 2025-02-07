@@ -78,63 +78,63 @@ export const Inicio = () => {
 						<img src={banner} />
 					</div>
 					<main>
-						<h1>{t('home.title')}</h1>
+						<h1>{text?.homeTexts?.title || t('home.title')}</h1>
 						<div className="home_main_hr"></div>
-						<p>{t('home.description')}</p>
+						<p>{text?.homeTexts?.description || t('home.description')}</p>
 						<section className="home_why">
-							<h2>{t('home.why.title')}</h2>
+							<h2>{text?.homeTexts?.why?.title || t('home.why.title')}</h2>
 							<Grid container className="home_why_list">
 								<Grid item md={4} sm={12} className="home_why_list_item">
-									<img src={coachingImg} alt="Expert Coaching" width={110} />
-									<h3>{t('home.why.coaching.title')}</h3>
-									<p>{t('home.why.coaching.description')}</p>
+									<img src={coachingImg} alt={text?.homeTexts?.why?.coaching?.title} width={110} />
+									<h3>{text?.homeTexts?.why?.coaching?.title || t('home.why.coaching.title')}</h3>
+									<p>{text?.homeTexts?.why?.coaching?.description || t('home.why.coaching.description')}</p>
 								</Grid>
 								<Grid item md={4} sm={12} className="home_why_list_item">
 									<img
 										src={desarrolloImg}
-										alt="Unleash Your Potential"
+										alt={text?.homeTexts?.why?.potential?.title}
 										width={116}
 									/>
-									<h3>{t('home.why.potential.title')}</h3>
-									<p>{t('home.why.potential.description')}</p>
+									<h3>{text?.homeTexts?.why?.potential?.title || t('home.why.potential.title')}</h3>
+									<p>{text?.homeTexts?.why?.potential?.description || t('home.why.potential.description')}</p>
 								</Grid>
 								<Grid item md={4} sm={12} className="home_why_list_item">
 									<img
 										src={growthImg}
-										alt="No Limits, Only Growth"
+										alt={text?.homeTexts?.why?.growth?.title}
 										width={116}
 									/>
-									<h3>{t('home.why.growth.title')}</h3>
-									<p>{t('home.why.growth.description')}</p>
+									<h3>{text?.homeTexts?.why?.growth?.title || t('home.why.growth.title')}</h3>
+									<p>{text?.homeTexts?.why?.growth?.description || ('home.why.growth.description')}</p>
 								</Grid>
 							</Grid>
 						</section>
 						<section className="home_community">
-							<h2>{t('home.community.title')}</h2>
-							<p>{t('home.community.description')}</p>
+							<h2>{text?.homeTexts?.community?.title || t('home.community.title')}</h2>
+							<p>{text?.homeTexts?.community?.description || t('home.community.description')}</p>
 							<div className="home_community_list">
 								<div className="home_community_list_item">
 									<img src={videoplayerImg} width={100} />
-									<h4>{t('home.community.library.title')}</h4>
-									<p>{t('home.community.library.description')}</p>
+									<h4>{text?.homeTexts?.community?.library?.title || t('home.community.library.title')}</h4>
+									<p>{text?.homeTexts?.community?.library?.description || t('home.community.library.description')}</p>
 								</div>
 								<div className="home_community_list_item">
 									<img src={personImg} width={100} />
-									<h4>{t('home.community.coaching.title')}</h4>
-									<p>{t('home.community.coaching.description')}</p>
+									<h4>{text?.homeTexts?.community?.coaching?.title || t('home.community.coaching.title')}</h4>
+									<p>{text?.homeTexts?.community?.coaching?.description || t('home.community.coaching.description')}</p>
 								</div>
 								<div className="home_community_list_item">
 									<img src={supportImg} width={100} />
-									<h4>{t('home.community.support.title')}</h4>
-									<p>{t('home.community.support.description')}</p>
+									<h4>{text?.homeTexts?.community?.support?.title || t('home.community.support.title')}</h4>
+									<p>{text?.homeTexts?.community?.support?.description || t('home.community.support.description')}</p>
 								</div>
 							</div>
 						</section>
 					</main>
 					<section className="home_cta">
 						<div className="home_cta_container">
-							<h2>{t('home.cta.title')}</h2>
-							<h2>{t('home.cta.subtitle')}</h2>
+							<h2>{text?.homeTexts?.primaryCTA?.title || t('home.cta.title')}</h2>
+							<h2>{text?.homeTexts?.primaryCTA?.subtitle || t('home.cta.subtitle')}</h2>
 							<a
 								href="https://discord.gg/zd3ntsNKuS"
 								target="_blank"
@@ -150,7 +150,7 @@ export const Inicio = () => {
 										fontSize: 20,
 									}}
 								>
-									{t('home.cta.button')}
+									{text?.homeTexts?.primaryCTA?.button || t('home.cta.button')}
 								</Button>
 							</a>
 						</div>

@@ -92,10 +92,30 @@ export const GalleryPlayers = ({ players, setPlayer, playerSelected }: Props) =>
 					const gallery = galleryWrapperRef.current
 					const cardRect = selectedCard.getBoundingClientRect()
 					const galleryRect = gallery.getBoundingClientRect()
-	
-					const offset = cardRect.left - galleryRect.left - (gallery.clientWidth / 2) + (cardRect.width / 2)
-	
-					gallery.scrollBy({ left: offset, behavior: 'smooth' })
+
+					// Calculamos el desplazamiento solo lo necesario
+					const cardLeft = cardRect.left - galleryRect.left
+					const cardRight = cardRect.right - galleryRect.left
+					const galleryWidth = galleryRect.width
+
+					let offset = 0
+					if (window.innerWidth <= 768) {  // Si es móvil
+						// En móviles, se centra la tarjeta
+						offset = cardRect.left - galleryRect.left - (gallery.clientWidth / 2) + (cardRect.width / 2)
+					} else {  // Si es escritorio
+						// Verificamos si la tarjeta está fuera del área visible
+						if (cardLeft < 0) {
+							// Si la tarjeta está a la izquierda, la movemos hasta el borde izquierdo
+							offset = cardLeft
+						} else if (cardRight > galleryWidth) {
+							// Si la tarjeta está a la derecha, la movemos hasta el borde derecho
+							offset = cardRight - galleryWidth
+						}
+					}
+
+					if (offset !== 0) {
+						gallery.scrollBy({ left: offset, behavior: 'smooth' })
+					}
 				}
 			}
 		})

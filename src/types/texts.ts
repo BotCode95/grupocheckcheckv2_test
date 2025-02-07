@@ -18,12 +18,13 @@ export interface IText {
     players: IPlayer[]
     imagesTrips: Trips[],
     testimonials: ITestimonial[],
-    questions: IQuestion[]
+    questions: IQuestion[],
+    homeTexts: IHomeTexts
 }
 
-export interface ITextOmitId extends Omit<IText, '_id'> {}
+export interface ITextOmitId extends Omit<IText, '_id'> { }
 
-export interface IPlayer{
+export interface IPlayer {
     player_name: string
     description: string
     type_of_game?: string
@@ -52,4 +53,49 @@ export interface Trips {
     id?: string
     title: string
     image: string
+}
+
+export interface IHomeTexts {
+    title: string,
+    description: string,
+    why: {
+        title: string,
+        coaching: {
+            title: string,
+            description: string
+        },
+        potential: {
+            title: string,
+            description: string
+        },
+        growth: {
+            title: string,
+            description: string
+        }
+    },
+    community: {
+        title: string,
+        description: string,
+        library: {
+            title: string,
+            description: string
+        },
+        coaching: {
+            title: string,
+            description: string
+        },
+        support: {
+            title: string,
+            description: string
+        }
+    },
+    primaryCTA: {
+        title: string,
+        subtitle: string,
+        button: string
+    },
+    secondaryCTA: {
+        title: string,
+        button: string
+    }
 }
