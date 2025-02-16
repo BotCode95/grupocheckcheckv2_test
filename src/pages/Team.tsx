@@ -20,6 +20,8 @@ export const Team = () => {
 		getTextByLanguage,
 	} = useContext(TextsContext)
 
+	console.log('text', text)
+
 	useEffect(() => {
 		const language =
 			(typeof window !== 'undefined' && localStorage.getItem('lng')) || 'es'
@@ -57,7 +59,9 @@ export const Team = () => {
 			) : (
 				<div className="page">
 					<div className="page_container">
-						<p className="team_paragraph">{t('team.description')}</p>
+						<p className="team_paragraph">
+							{text?.homeTexts?.titleTeam || t('team.description')}
+						</p>
 						<GalleryPlayers
 							players={text.players}
 							playerSelected={playerSelected}

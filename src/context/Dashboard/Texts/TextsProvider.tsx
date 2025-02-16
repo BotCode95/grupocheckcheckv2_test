@@ -16,7 +16,7 @@ export interface TextsState {
 	message: string
 }
 
-export const objTextEmpty = {
+export const objTextEmpty: IText = {
 	_id: '',
 	home: '',
 	us: '',
@@ -45,43 +45,51 @@ export const objTextEmpty = {
 			title: '',
 			coaching: {
 				title: '',
-				description: ''
+				image: '',
+				description: '',
 			},
 			potential: {
 				title: '',
-				description: ''
+				image: '',
+				description: '',
 			},
 			growth: {
 				title: '',
-				description: ''
-			}
+				image: '',
+				description: '',
+			},
 		},
 		community: {
 			title: '',
 			description: '',
 			library: {
 				title: '',
-				description: ''
+				image: '',
+				description: '',
 			},
 			coaching: {
+				image: '',
 				title: '',
-				description: ''
+				description: '',
 			},
 			support: {
 				title: '',
-				description: ''
-			}
+				image: '',
+				description: '',
+			},
 		},
 		primaryCTA: {
 			title: '',
 			subtitle: '',
-			button: ''
+			button: '',
 		},
 		secondaryCTA: {
 			title: '',
-			button: ''
-		}
-	}
+			button: '',
+		},
+		titleTeam: '',
+		titleTestimonial: '',
+	},
 }
 
 const Texts_INITIAL_STATE: TextsState = {
@@ -140,7 +148,7 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 		}
 	}
 
-	const getTextByLanguage = async (lng = 'es') => {
+	const getTextByLanguage = async (lng = 'es', cache = true) => {
 		try {
 			dispatch({
 				type: 'SetLoading',
@@ -154,7 +162,7 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 			})
 
 			// Evitar guardar en sessionStorage si es un dispositivo móvil
-			if (!isMobile) {
+			if (!isMobile && cache === true) {
 				sessionStorage.setItem('appState' + lng, JSON.stringify(data.text[0]))
 			} else {
 				sessionStorage.clear()

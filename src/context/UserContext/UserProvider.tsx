@@ -1,4 +1,4 @@
-import { FC, useReducer } from 'react'
+import { FC, useEffect, useReducer } from 'react'
 import { UserContext, userReducer } from '.'
 import api from '../../api/api'
 import {
@@ -29,9 +29,9 @@ const User_INITIAL_STATE: UserState = {
 
 export const UserProvider: FC<Props> = ({ children }) => {
 	const [state, dispatch] = useReducer(userReducer, User_INITIAL_STATE)
-	// useEffect(() => {
-	// 	getToken()
-	// }, [])
+	useEffect(() => {
+		getToken()
+	}, [])
 	const login = async (loginUser: Login): Promise<void> => {
 		try {
 			const { data } = await api.post<LoginResponse>('/auth/login', loginUser)

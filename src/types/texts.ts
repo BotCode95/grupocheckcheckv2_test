@@ -58,37 +58,8 @@ export interface Trips {
 export interface IHomeTexts {
     title: string,
     description: string,
-    why: {
-        title: string,
-        coaching: {
-            title: string,
-            description: string
-        },
-        potential: {
-            title: string,
-            description: string
-        },
-        growth: {
-            title: string,
-            description: string
-        }
-    },
-    community: {
-        title: string,
-        description: string,
-        library: {
-            title: string,
-            description: string
-        },
-        coaching: {
-            title: string,
-            description: string
-        },
-        support: {
-            title: string,
-            description: string
-        }
-    },
+    why:WhyText,
+    community:CommunityText,
     primaryCTA: {
         title: string,
         subtitle: string,
@@ -97,5 +68,29 @@ export interface IHomeTexts {
     secondaryCTA: {
         title: string,
         button: string
-    }
+    },
+    titleTeam: string,
+    titleTestimonial: string
+}
+
+
+export interface WhyText {
+    title: string,
+    coaching: TextBanner,
+    potential:TextBanner,
+    growth: TextBanner,
+}
+
+export interface CommunityText {
+    title: string,
+    description: string,
+    library: TextBanner
+    coaching: TextBanner,
+    support: TextBanner
+}
+
+export interface TextBanner {
+    title: string
+    description?: string
+    image?: string
 }

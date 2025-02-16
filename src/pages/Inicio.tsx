@@ -85,56 +85,124 @@ export const Inicio = () => {
 							<h2>{text?.homeTexts?.why?.title || t('home.why.title')}</h2>
 							<Grid container className="home_why_list">
 								<Grid item md={4} sm={12} className="home_why_list_item">
-									<img src={coachingImg} alt={text?.homeTexts?.why?.coaching?.title} width={110} />
-									<h3>{text?.homeTexts?.why?.coaching?.title || t('home.why.coaching.title')}</h3>
-									<p>{text?.homeTexts?.why?.coaching?.description || t('home.why.coaching.description')}</p>
+									<img
+										src={text?.homeTexts?.why?.coaching?.image || coachingImg}
+										alt={text?.homeTexts?.why?.coaching?.title}
+										width={110}
+									/>
+									<h3>
+										{text?.homeTexts?.why?.coaching?.title ||
+											t('home.why.coaching.title')}
+									</h3>
+									<p>
+										{text?.homeTexts?.why?.coaching?.description ||
+											t('home.why.coaching.description')}
+									</p>
 								</Grid>
 								<Grid item md={4} sm={12} className="home_why_list_item">
 									<img
-										src={desarrolloImg}
+										src={
+											text?.homeTexts?.why?.potential?.image || desarrolloImg
+										}
 										alt={text?.homeTexts?.why?.potential?.title}
 										width={116}
 									/>
-									<h3>{text?.homeTexts?.why?.potential?.title || t('home.why.potential.title')}</h3>
-									<p>{text?.homeTexts?.why?.potential?.description || t('home.why.potential.description')}</p>
+									<h3>
+										{text?.homeTexts?.why?.potential?.title ||
+											t('home.why.potential.title')}
+									</h3>
+									<p>
+										{text?.homeTexts?.why?.potential?.description ||
+											t('home.why.potential.description')}
+									</p>
 								</Grid>
 								<Grid item md={4} sm={12} className="home_why_list_item">
 									<img
-										src={growthImg}
+										src={text?.homeTexts?.why?.growth?.image || growthImg}
 										alt={text?.homeTexts?.why?.growth?.title}
 										width={116}
 									/>
-									<h3>{text?.homeTexts?.why?.growth?.title || t('home.why.growth.title')}</h3>
-									<p>{text?.homeTexts?.why?.growth?.description || ('home.why.growth.description')}</p>
+									<h3>
+										{text?.homeTexts?.why?.growth?.title ||
+											t('home.why.growth.title')}
+									</h3>
+									<p>
+										{text?.homeTexts?.why?.growth?.description ||
+											'home.why.growth.description'}
+									</p>
 								</Grid>
 							</Grid>
 						</section>
 						<section className="home_community">
-							<h2>{text?.homeTexts?.community?.title || t('home.community.title')}</h2>
-							<p>{text?.homeTexts?.community?.description || t('home.community.description')}</p>
+							<h2>
+								{text?.homeTexts?.community?.title || t('home.community.title')}
+							</h2>
+							<p>
+								{text?.homeTexts?.community?.description ||
+									t('home.community.description')}
+							</p>
 							<div className="home_community_list">
 								<div className="home_community_list_item">
-									<img src={videoplayerImg} width={100} />
-									<h4>{text?.homeTexts?.community?.library?.title || t('home.community.library.title')}</h4>
-									<p>{text?.homeTexts?.community?.library?.description || t('home.community.library.description')}</p>
+									<img
+										src={
+											text?.homeTexts?.community?.library?.image ||
+											videoplayerImg
+										}
+										width={100}
+									/>
+									<h4>
+										{text?.homeTexts?.community?.library?.title ||
+											t('home.community.library.title')}
+									</h4>
+									<p>
+										{text?.homeTexts?.community?.library?.description ||
+											t('home.community.library.description')}
+									</p>
 								</div>
 								<div className="home_community_list_item">
-									<img src={personImg} width={100} />
-									<h4>{text?.homeTexts?.community?.coaching?.title || t('home.community.coaching.title')}</h4>
-									<p>{text?.homeTexts?.community?.coaching?.description || t('home.community.coaching.description')}</p>
+									<img
+										src={
+											text?.homeTexts?.community?.coaching?.image || personImg
+										}
+										width={100}
+									/>
+									<h4>
+										{text?.homeTexts?.community?.coaching?.title ||
+											t('home.community.coaching.title')}
+									</h4>
+									<p>
+										{text?.homeTexts?.community?.coaching?.description ||
+											t('home.community.coaching.description')}
+									</p>
 								</div>
 								<div className="home_community_list_item">
-									<img src={supportImg} width={100} />
-									<h4>{text?.homeTexts?.community?.support?.title || t('home.community.support.title')}</h4>
-									<p>{text?.homeTexts?.community?.support?.description || t('home.community.support.description')}</p>
+									<img
+										src={
+											text?.homeTexts?.community?.support?.image || supportImg
+										}
+										width={100}
+									/>
+									<h4>
+										{text?.homeTexts?.community?.support?.title ||
+											t('home.community.support.title')}
+									</h4>
+									<p>
+										{text?.homeTexts?.community?.support?.description ||
+											t('home.community.support.description')}
+									</p>
 								</div>
 							</div>
 						</section>
 					</main>
 					<section className="home_cta">
 						<div className="home_cta_container">
-							<h2>{text?.homeTexts?.primaryCTA?.title || t('home.cta.title')}</h2>
-							<h2>{text?.homeTexts?.primaryCTA?.subtitle || t('home.cta.subtitle')}</h2>
+							<h2>
+								{text?.homeTexts?.primaryCTA?.title || t('home.cta.title')}
+							</h2>
+							<h2>
+								{text?.homeTexts?.primaryCTA?.subtitle ||
+									t('home.cta.subtitle')}
+							</h2>
 							<a
 								href="https://discord.gg/zd3ntsNKuS"
 								target="_blank"

@@ -8,7 +8,7 @@ export interface ContextProps {
 	message: string
 	loading: boolean
 	getTexts: () => Promise<void>
-	getTextByLanguage: (lng?: string) => Promise<void>
+	getTextByLanguage: (lng?: string, cache?: boolean) => Promise<void>
 	setLanguage: (lng: LNG) => void
 	setLoading: (loading: boolean) => void
 	updateTexts: (id: string, text: IText) => Promise<void>
