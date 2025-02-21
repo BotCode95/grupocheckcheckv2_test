@@ -16,7 +16,7 @@ export interface IText {
     about_us: string
     language: string
     players: IPlayer[]
-    imagesTrips: Trips[],
+    imagesTrips: Blog,
     testimonials: ITestimonial[],
     questions: IQuestion[],
     homeTexts: IHomeTexts
@@ -49,6 +49,11 @@ export interface IQuestion {
     description: string;
 }
 
+export interface Blog {
+    title?: string;
+    description?: string;
+    trips: Trips[]
+}
 export interface Trips {
     id?: string
     title: string
@@ -70,7 +75,9 @@ export interface IHomeTexts {
         button: string
     },
     titleTeam: string,
-    titleTestimonial: string
+    titleTestimonial: string,
+    socialMediaMenu: Array<SocialMedia>,
+    socialMediaFooter: Array<SocialMedia>
 }
 
 
@@ -93,4 +100,10 @@ export interface TextBanner {
     title: string
     description?: string
     image?: string
+}
+
+export interface SocialMedia {
+    name: string,
+    url: string,
+    image: string
 }

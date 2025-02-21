@@ -15,9 +15,15 @@ import { useLanguage } from '../../hooks/useLanguage'
 import { useTranslation } from 'react-i18next'
 
 interface Props {
-	redes: string[]
+	redes: SocialMediaArray[]
 	width?: number
 	type: 'contained' | 'outlined'
+}
+
+interface SocialMediaArray {
+	name: string
+	url: string
+	image: string
 }
 interface PropsItem {
 	nombrePagina: string
@@ -108,7 +114,7 @@ const RedSocialItem = ({
 		<li>
 			<a href={link} target="_blank" rel="noreferrer">
 				<img
-					src={selectImage(redSocial, type)}
+					src={redSocial}
 					alt={`${redSocial} - ${nombrePagina}`}
 					width={width}
 				/>
@@ -119,26 +125,20 @@ const RedSocialItem = ({
 
 export const RedSocialList = ({ redes, width, type }: Props) => {
 	const lang = useLanguage()
-	const [t] = useTranslation('global')
 	return (
 		<ul className="d-flex gap-3 list-unstyled m-0 red_social_list">
 			{redes?.length > 0 &&
 				lang &&
-				redes.map((red) => {
-					const result = redSocialJSON[lang].find((el) => el.redSocial === red)
-					return (
-						result && (
-							<RedSocialItem
-								key={red}
-								width={width}
-								redSocial={result.redSocial}
-								link={t(`socialMedia.${result.redSocial}`)}
-								nombrePagina={result.nombrePagina}
-								type={type}
-							/>
-						)
-					)
-				})}
+				redes.map((red) => (
+					<RedSocialItem
+						key={red.name}
+						width={width}
+						redSocial={red.image}
+						link={red.url}
+						nombrePagina={red.name}
+						type={type}
+					/>
+				))}
 		</ul>
 	)
 }

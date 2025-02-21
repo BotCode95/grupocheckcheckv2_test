@@ -37,7 +37,11 @@ export const objTextEmpty: IText = {
 	questions: [],
 	testimonials: [],
 	language: 'es',
-	imagesTrips: [],
+	imagesTrips: {
+		title: '',
+		description: '',
+		trips: [{ id: '', title: '', image: '' }],
+	},
 	homeTexts: {
 		title: '',
 		description: '',
@@ -89,6 +93,8 @@ export const objTextEmpty: IText = {
 		},
 		titleTeam: '',
 		titleTestimonial: '',
+		socialMediaMenu: [],
+		socialMediaFooter: [],
 	},
 }
 
@@ -191,6 +197,7 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 				'se vera reflejado en la web en unos segundos.',
 				'success'
 			)
+			sessionStorage.clear()
 		} catch (error) {
 			let message = ''
 			if (error instanceof Error) message = error.message

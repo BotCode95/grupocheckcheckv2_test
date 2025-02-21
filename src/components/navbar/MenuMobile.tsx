@@ -5,12 +5,18 @@ import { Grid } from '@mui/material'
 import { ButtonInscribite } from '../UI/Buttons/ButtonInscribite'
 import { RedSocialList } from '../RedSocial/RedSocialList'
 import { useLanguage } from '../../hooks/useLanguage'
+import { useContext } from 'react'
+import { TextsContext } from '../../context/Dashboard/Texts'
 // import { urlWebOtherLanguage } from '../../constants/urls'
 // import ukLogo from '../../assets/flags/ukLogo.png'
 
 export const MenuMobile = () => {
 	const [t] = useTranslation('global')
 	const lang = useLanguage()
+
+	const { text } = useContext(TextsContext)
+
+	console.log('text', text)
 
 	const menuHandle = () => {
 		const btn = document.querySelector('.navbar_mobile_btn')
@@ -145,11 +151,13 @@ export const MenuMobile = () => {
 					</li>
 				</ul>
 				<div className="navbar_mobile_social">
-					<RedSocialList
-						redes={['twitch', 'instagram', 'youtube']}
-						type="contained"
-						width={32}
-					/>
+					{text?.homeTexts?.socialMediaMenu && (
+						<RedSocialList
+							redes={text.homeTexts.socialMediaMenu}
+							type="contained"
+							width={32}
+						/>
+					)}
 				</div>
 			</div>
 		</div>

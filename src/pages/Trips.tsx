@@ -15,7 +15,7 @@ export const TripsBlog = () => {
 	const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([])
 
 	const {
-		text: { imagesTrips: trips, players },
+		text: { imagesTrips, players },
 		getTextByLanguage,
 	} = useContext(TextsContext)
 
@@ -26,8 +26,8 @@ export const TripsBlog = () => {
 			getTextByLanguage(language)
 		}
 
-		if (trips.length > 0) {
-			setImagesLoaded(new Array(trips.length).fill(false))
+		if (imagesTrips.trips.length > 0) {
+			setImagesLoaded(new Array(imagesTrips.trips.length).fill(false))
 		}
 	}, [])
 
@@ -44,7 +44,7 @@ export const TripsBlog = () => {
 			<Navbar />
 			<BannerPage title={t('header.pages.blog')} />
 			<div className="page_container mt-5 ">
-				{trips.map((trip: Trips, index) => (
+				{imagesTrips.trips.map((trip: Trips, index) => (
 					<Grid container key={index} className="py-5">
 						<Grid
 							item

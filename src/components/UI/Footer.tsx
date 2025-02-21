@@ -4,10 +4,14 @@ import logo_checkcheck from '../../assets/logo_checkcheck.svg'
 import { useTranslation } from 'react-i18next'
 import { RedSocialList } from '../RedSocial/RedSocialList'
 import { useLanguage } from '../../hooks/useLanguage'
+import { useContext } from 'react'
+import { TextsContext } from '../../context/Dashboard/Texts'
 
 export const Footer = () => {
 	const [t] = useTranslation('global')
 	const lang = useLanguage()
+	const { text } = useContext(TextsContext)
+
 	return (
 		<div className="footer">
 			<div className="footer_container">
@@ -104,19 +108,13 @@ export const Footer = () => {
 				<div className="footer_hr"></div>
 				<Grid container>
 					<Grid item md={6} sm={12} className="footer_social">
-						<RedSocialList
-							redes={[
-								'twitch',
-								'instagram',
-								'youtube',
-								'x',
-								'tiktok',
-								'discord',
-								'kick',
-							]}
-							type="outlined"
-							width={32}
-						/>
+						{text?.homeTexts?.socialMediaFooter && (
+							<RedSocialList
+								redes={text.homeTexts.socialMediaFooter}
+								type="outlined"
+								width={32}
+							/>
+						)}
 					</Grid>
 					<Grid item md={6} sm={12} className="footer_copy">
 						{`© ${new Date().getFullYear()} Check Check Group. All rights reserved`}

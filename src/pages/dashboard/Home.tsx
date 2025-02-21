@@ -29,6 +29,7 @@ import {
 	type IHomeTexts,
 } from '../../types/texts'
 import { FormImage } from './Images/FormImage'
+import { SocialMediaEditor } from './socialMedia/SocialMediaEditor'
 
 const initialFormState: IHomeTexts = {
 	title: '',
@@ -81,6 +82,8 @@ const initialFormState: IHomeTexts = {
 	},
 	titleTeam: '',
 	titleTestimonial: '',
+	socialMediaMenu: [],
+	socialMediaFooter: [],
 }
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -183,7 +186,6 @@ export const Home = () => {
 							[parentObjKey]: {
 								...parentObj,
 								[childObjKey]: {
-									...(parentObj as any)[childObjKey],
 									image: reader.result as string,
 									title: fieldName?.title,
 									description: fieldName?.description,
@@ -197,6 +199,42 @@ export const Home = () => {
 
 			reader.readAsDataURL(file)
 		}
+	}
+
+	// Función para manejar cambios en un elemento específico
+	const handleSocialMediaChange = (
+		type: 'socialMediaMenu' | 'socialMediaFooter',
+		index: number,
+		field: string,
+		value: string
+	) => {
+		setFormState((prev) => {
+			const updatedArray = [...prev[type]]
+			updatedArray[index] = { ...updatedArray[index], [field]: value }
+			return { ...prev, [type]: updatedArray }
+		})
+	}
+
+	// Función para agregar un nuevo elemento
+	const handleAddSocialMedia = (
+		type: 'socialMediaMenu' | 'socialMediaFooter'
+	) => {
+		setFormState((prev) => ({
+			...prev,
+			[type]: [...prev[type], { name: '', image: '', url: '' }],
+		}))
+	}
+
+	// Función para eliminar un elemento
+	const handleDeleteSocialMedia = (
+		type: 'socialMediaMenu' | 'socialMediaFooter',
+		index: number
+	) => {
+		setFormState((prev) => {
+			const updatedArray = [...prev[type]]
+			updatedArray.splice(index, 1)
+			return { ...prev, [type]: updatedArray }
+		})
 	}
 
 	useEffect(() => {
@@ -523,6 +561,39 @@ export const Home = () => {
 					color="error"
 					className="my-3"
 				/>
+				<h4 className="mt-4">Redes Sociales - Menú</h4>
+				{formState?.socialMediaMenu.map((socialMedia, index) => (
+					<SocialMediaEditor
+						key={index}
+						socialMedia={socialMedia}
+						onChange={(field, value) =>
+							handleSocialMediaChange('socialMediaMenu', index, field, value)
+						}
+						onDelete={() => handleDeleteSocialMedia('socialMediaMenu', index)}
+					/>
+				))}
+				<Button
+					startIcon={<ControlPoint />}
+					variant="contained"
+					onClick={() => handleAddSocialMedia('socialMediaMenu')}
+				></Button>
+
+				<h4 className="mt-4">Redes Sociales - Footer</h4>
+				{formState.socialMediaFooter.map((socialMedia, index) => (
+					<SocialMediaEditor
+						key={index}
+						socialMedia={socialMedia}
+						onChange={(field, value) =>
+							handleSocialMediaChange('socialMediaFooter', index, field, value)
+						}
+						onDelete={() => handleDeleteSocialMedia('socialMediaFooter', index)}
+					/>
+				))}
+				<Button
+					startIcon={<ControlPoint />}
+					variant="contained"
+					onClick={() => handleAddSocialMedia('socialMediaFooter')}
+				></Button>
 				<Button
 					variant="contained"
 					fullWidth

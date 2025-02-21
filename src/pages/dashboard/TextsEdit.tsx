@@ -61,39 +61,39 @@ export const TextsEdit = () => {
 		}))
 	}
 
-	const onChangetrips = (
-		e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-		id = Date.now().toString()
-	) => {
-		setTexts((prevState) => ({
-			...prevState,
-			imagesTrips: prevState.imagesTrips?.map((el: Trips) => {
-				return el.id === id ? { ...el, [e.target.name]: e.target.value } : el
-			}),
-		}))
-	}
+	// const onChangetrips = (
+	// 	e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+	// 	id = Date.now().toString()
+	// ) => {
+	// 	setTexts((prevState) => ({
+	// 		...prevState,
+	// 		imagesTrips: prevState.imagesTrips?.trips?.map((el: Trips) => {
+	// 			return el.id === id ? { ...el, [e.target.name]: e.target.value } : el
+	// 		}),
+	// 	}))
+	// }
 
-	const addTrip = () => {
-		setTexts((prevState) => ({
-			...prevState,
-			imagesTrips: [
-				...(prevState.imagesTrips ?? []),
-				{ id: Date.now().toString(), title: '', image: '' },
-			],
-		}))
+	// const addTrip = () => {
+	// 	setTexts((prevState) => ({
+	// 		...prevState,
+	// 		imagesTrips: [
+	// 			...(prevState.imagesTrips ?? []),
+	// 			{ id: Date.now().toString(), title: '', image: '' },
+	// 		],
+	// 	}))
 
-		setIsDeleteButtonDisabled(false)
-	}
+	// 	setIsDeleteButtonDisabled(false)
+	// }
 
-	const deleteVideo = () => {
-		setTexts((prevState) => ({
-			...prevState,
-			imagesTrips: prevState?.imagesTrips!.slice(0, -1),
-		}))
-		if (texts.imagesTrips?.length === 2) {
-			setIsDeleteButtonDisabled(true)
-		}
-	}
+	// const deleteVideo = () => {
+	// 	setTexts((prevState) => ({
+	// 		...prevState,
+	// 		imagesTrips: prevState?.imagesTrips!.slice(0, -1),
+	// 	}))
+	// 	if (texts.imagesTrips?.length === 2) {
+	// 		setIsDeleteButtonDisabled(true)
+	// 	}
+	// }
 	return (
 		<div style={{ color: 'white' }}>
 			<NavbarDashboard />
@@ -186,7 +186,7 @@ export const TextsEdit = () => {
 								title={'Viajes'}
 								classname={`${styles.text_titles_edit} ${styles.text_title_edit_player}`}
 							/>
-							{texts.imagesTrips?.map((trip, index) => (
+							{texts.imagesTrips?.trips.map((trip, index) => (
 								<Grid container key={index}>
 									<Grid item xs={12} md={12} className={styles.grid_column}>
 										<Grid container>
@@ -196,13 +196,13 @@ export const TextsEdit = () => {
 												display={'flex'}
 												justifyContent={'center'}
 											>
-												<InputText
+												{/* <InputText
 													classname={styles.input_text}
 													placeholder={'nombre viaje'}
 													name="title"
 													value={trip.title}
 													onChange={(e) => onChangetrips(e, trip.id)}
-												/>
+												/> */}
 											</Grid>
 											<Grid
 												item
@@ -210,13 +210,13 @@ export const TextsEdit = () => {
 												display={'flex'}
 												justifyContent={'flex-start'}
 											>
-												<InputText
+												{/* <InputText
 													classname={`${styles.input_text} ${styles.input_url}`}
 													placeholder={'Imagen'}
 													name="image"
 													value={trip.image}
 													onChange={(e) => onChangetrips(e, trip.id)}
-												/>
+												/> */}
 											</Grid>
 										</Grid>
 									</Grid>
@@ -229,11 +229,11 @@ export const TextsEdit = () => {
 								justifyContent={'flex-end'}
 								paddingRight={'5rem'}
 							>
-								<ButtonAddInput title={'Agregar video'} onClick={addTrip} />
-								<ButtonDeleteInput
+								{/* <ButtonAddInput title={'Agregar video'} onClick={addTrip} /> */}
+								{/* <ButtonDeleteInput
 									onClick={deleteVideo}
 									disabled={isDeleteButtonDisabled}
-								/>
+								/> */}
 							</Grid>
 
 							<Grid container>

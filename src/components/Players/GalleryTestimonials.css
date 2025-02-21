@@ -134,15 +134,8 @@
     font-size: 14px;
     font-weight: 400 !important;
   }
-
+  .galleryTestimonials_wrapper {
+    padding-right: 2em; 
+  }
 
 }
-
-/* .galleryPlayers_card {
-  
-  
-}
-
-.galleryPlayers_playername {
-  width: 250px;
-} */

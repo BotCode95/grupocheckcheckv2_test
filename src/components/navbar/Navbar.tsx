@@ -7,11 +7,14 @@ import { useTranslation } from 'react-i18next'
 import logo_check_check from '../../assets/logo_checkcheck.svg'
 import { RedSocialList } from '../RedSocial/RedSocialList'
 import { useLanguage } from '../../hooks/useLanguage'
+import { useContext } from 'react'
+import { TextsContext } from '../../context/Dashboard/Texts'
 // import ukLogo from '../../assets/flags/ukLogo.png'
 // import { urlWebOtherLanguage } from '../../constants/urls'
 export const Navbar = () => {
 	const [t] = useTranslation('global')
 	const lang = useLanguage()
+	const { text } = useContext(TextsContext)
 
 	return (
 		<nav className="navbar">
@@ -107,10 +110,12 @@ export const Navbar = () => {
 					alignItems={'center'}
 				>
 					<div className="navbar_social">
-						<RedSocialList
-							redes={['twitch', 'instagram', 'youtube']}
-							type="contained"
-						/>
+						{text?.homeTexts?.socialMediaMenu && (
+							<RedSocialList
+								redes={text.homeTexts.socialMediaMenu}
+								type="contained"
+							/>
+						)}
 					</div>
 					<div className="navbar_signup">
 						<a
