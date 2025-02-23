@@ -138,7 +138,7 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 
 	const getTexts = async () => {
 		try {
-			const { data } = await api.get('/texts')
+			const { data } = await api.get('/texts_test')
 			dispatch({
 				type: 'Texts',
 				payload: data,
@@ -160,7 +160,7 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 				type: 'SetLoading',
 				payload: true,
 			})
-			const { data } = await api.get<Data>(`/texts?lng=${lng}`)
+			const { data } = await api.get<Data>(`/texts_test?lng=${lng}`)
 
 			dispatch({
 				type: 'TextByLanguage',
@@ -187,7 +187,7 @@ export const TextsProvider: FC<Props> = ({ children }) => {
 
 	const updateTexts = async (id: string, text: IText) => {
 		try {
-			const { data } = await api.put<Data>(`/texts/${id}`, text)
+			const { data } = await api.put<Data>(`/texts_test/${id}`, text)
 			dispatch({
 				type: 'UpdateText',
 				payload: data.text[0],
